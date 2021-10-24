@@ -6,7 +6,8 @@ const search_engines = {
     d: "https://www.duckduckgo.com/?q=",
     dd: "https://html.duckduckgo.com/html/?q=",
     g: "https://www.google.com/search?q=",
-    s: "https://searx.gnous.eu/search?q="
+    s: "https://searx.gnous.eu/search?q=",
+    yt: "https://www.youtube.com/results?search_query="
 };
 
 function submitted(event) {
