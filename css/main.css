@@ -154,14 +154,15 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: #c1c1c1;
+  background: #690000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #980000;
-  border-radius: 5px;
+  background: #868686;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #690000;
+  background: #a1a1a1; 
 }
+
