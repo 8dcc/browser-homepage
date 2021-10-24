@@ -65,43 +65,31 @@
                 </div>
             </div>
         </div>
-        <script>
-            function currentTime() {
-                var date = new Date();
-                var hour = date.getHours();
-                var min = date.getMinutes();
-                var sec = date.getSeconds();
-                hour = updateTime(hour);
-                min = updateTime(min);
-                sec = updateTime(sec);
-                document.getElementById("clock").innerText = hour + " : " + min + " : " + sec;
-                var t = setTimeout(currentTime, 1000);
-            }
-
-            function updateTime(k) {
-                if (k < 10) {
-                    return "0" + k;
-                }
-                else {
-                    return k;
-                }
-            }
-
-            currentTime();
-        </script>
-        <script>
-            const f = document.getElementById("form");
-            const q = document.getElementById("query");
-            const search_engine = "https://www.duckduckgo.com/?q=";
-
-            function submitted(event) {
-                event.preventDefault();
-                const url = search_engine + q.value;
-                window.location.replace(url, "_blank");
-            }
-
-            q.focus()  // Focus the search bar
-            f.addEventListener("submit", submitted);
-        </script>
+        <div class="todo-container">
+            <div class="todo-title">
+                Todo
+            </div>
+            <form class="todo-form">
+                <input type="text" class="todo-input" placeholder="Add item...">
+                <button type="submit" class="add-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                            text-anchor="none" style="mix-blend-mode: normal">
+                            <path d="M0,172v-172h172v172z" fill="none"></path>
+                            <g fill="#b2b2b2">
+                                <path
+                                    d="M86,14.33333c-39.517,0 -71.66667,32.14967 -71.66667,71.66667c0,39.517 32.14967,71.66667 71.66667,71.66667c39.517,0 71.66667,-32.14967 71.66667,-71.66667c0,-39.517 -32.14967,-71.66667 -71.66667,-71.66667zM86,28.66667c31.61217,0 57.33333,25.72117 57.33333,57.33333c0,31.61217 -25.72117,57.33333 -57.33333,57.33333c-31.61217,0 -57.33333,-25.72117 -57.33333,-57.33333c0,-31.61217 25.72117,-57.33333 57.33333,-57.33333zM78.83333,57.33333v21.5h-21.5v14.33333h21.5v21.5h14.33333v-21.5h21.5v-14.33333h-21.5v-21.5z">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+            </form>
+            <ul class="todo-items">
+            </ul>
+        </div>
+        <script type="text/javascript" src="js/clock.js"></script>
+        <script type="text/javascript" src="js/search-bar.js"></script>
+        <script type="text/javascript" src="js/todo.js"></script>
     </body>
 </html>
