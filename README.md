@@ -23,6 +23,7 @@
 - Changed height, margins and sizes (Very easy to change)
 - Added search engines using [keywords](https://github.com/r4v10l1/browser-homepage/blob/main/js/search-bar.js#L5) in the search bar.
 - JS is now in different files.
+- Fixed background repeat thing. Now it covers all the screen. THE SCREENSHOTS ARE STILL WITH THE REPEATED BACKGROUND.
 
 ## Firefox guide
 [Click me](https://stpg.tk/guides/firefox-startpage/).
