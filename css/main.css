@@ -213,6 +213,10 @@ a:hover {
     background: url("../images/check.svg") center / contain no-repeat;
 }
 
+.checkbox:hover {
+    cursor: pointer;
+}
+
 .delete-button {
     float: right;
     height: 25px;
