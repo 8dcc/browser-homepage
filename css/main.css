@@ -140,3 +140,28 @@ a {
 a:hover {
     color: #690000;
 }
+
+/* ----------------------------------------------------------------- */
+/* Scroll bar */
+
+:root {
+    scrollbar-color: #868686 #690000;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c1c1c1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #980000;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #690000;
+}
