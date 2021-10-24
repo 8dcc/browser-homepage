@@ -12,15 +12,31 @@ hr {
 }
 
 /* ----------------------------------------------------------------- */
-/* Main holder */
-
+/* Main holders */
 .bitch-main {
     background-color: #121212;
-    margin: 180px 30%;
-    height: 430px;
+    opacity: 95%;
+    margin: 70px 32% 10px 32%;
     padding: 1px;
     padding-left: 30px;
     padding-right: 30px;
+    height: 430px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 7px;
+    border-color: #333333;
+}
+
+.todo-container {
+    background-color: #121212;
+    opacity: 95%;
+    margin: 0px 32% 0px 32%;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* height: 350px; */
+    height: auto;
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
@@ -29,7 +45,6 @@ hr {
 
 /* ----------------------------------------------------------------- */
 /* Clock */
-
 #clock {
     font-family: 'Orbitron', sans-serif;
     color: #980000;
@@ -40,7 +55,6 @@ hr {
 
 /* ----------------------------------------------------------------- */
 /* Search bar */
-
 .search-bar {
     margin-top: 3%;
     margin-bottom: 3%;
@@ -91,7 +105,6 @@ button {
 
 /* ----------------------------------------------------------------- */
 /* Bookmarks */
-
 .bookmarks {
     display: flex;
     height: 240px;
@@ -100,15 +113,12 @@ button {
 .list-column {
     background-color: #111;
     text-align: center;
-
     /* padding: 15px;
     padding-top: 10px; */
-
     width: 100%;
     margin-right: 1%;
     margin-left: 1%;
     float: left;
-
     border-style: solid;
     border-width: 1px;
     border-radius: 7px;
@@ -142,27 +152,98 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------- */
-/* Scroll bar */
+/* Todo list */
+.todo-title {
+    text-align: center;
+    color: #c1c1c1;
+    padding: 10px;
+    font-size: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
 
+.todo-items {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 10px 5px 13px 5px;
+}
+
+.todo-items-fill {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 10px 5px 13px 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+    border-color: #333;
+}
+
+.item {
+    padding: 5px 2px 5px 10px;
+    color: #f2f2f2;
+    font-size: 15px;
+    font-family: 'Titillium Web', sans-serif;
+
+    border-style: solid;
+    border-bottom-style: none;
+    border-width: 1px;
+    border-color: #333;
+}
+
+.item:first-child {
+    border-style: solid;
+    border-bottom-style: none;
+    border-width: 1px;
+    border-color: #333;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.item:last-child {
+    border-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #333;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.checkbox {
+    margin-right: 10px;
+    background: url("../images/check.svg") center / contain no-repeat;
+}
+
+.delete-button {
+    float: right;
+    height: 25px;
+    background: url("../images/close.png") center / contain no-repeat;
+    border: none;
+    outline: none;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+/* ----------------------------------------------------------------- */
+/* Scroll bar */
 :root {
     scrollbar-color: #868686 #690000;
     scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #690000;
+    background: #690000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #868686;
-  border-radius: 4px;
+    background: #868686;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1; 
+    background: #a1a1a1;
 }
-
