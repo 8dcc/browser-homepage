@@ -1,5 +1,28 @@
-# Browser homepage
-**My browser homepage.**
+<div align="center">
+  <h1>Browser homepage</h1>
+  <b>My browser homepage.</b><br>
+  <p>Inspired by <a href="https://boards.4chan.org/wg/thread/7801612">/wg/</a>, <a href="https://boards.4chan.org/wg/thread/7801612#p7822666">anon</a> and <a href="https://boards.4chan.org/wg/thread/7801612#p7827588">anon</a>.</p>
+</div>
+
+## Table of contents
+1. [Details](https://github.com/r4v10l1/browser-homepage#Details)
+2. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
+3. [Firefox guide](https://github.com/r4v10l1/browser-homepage#Firefox-guide)
+4. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
+
+## Details
+
+- The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items.
+- You can mark items as done or delete them.
+- The container size changes depending on the ammount of todo items.
+
+## Changes
+
+- Added a bit of transparency to main container.
+- Added todo list.
+- Changed height, margins and sizes (Very easy to change)
+- Added search engines using [keywords](https://github.com/r4v10l1/browser-homepage/blob/main/js/search-bar.js#L5) in the search bar.
+- JS is now in different files.
 
 ## Firefox guide
 [Click me](https://stpg.tk/guides/firefox-startpage/).
@@ -36,4 +59,6 @@ try {
 For example `file:///home/user/Documents/startpage/index.html`.
 
 ## Screenshots
-![screenshot](screenshots/screenshot1.png)
+![screenshot2](screenshots/screenshot2.png)
+(Old)
+![screenshot1](screenshots/screenshot1.png)
