@@ -13,6 +13,7 @@
 ## Details
 
 - The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items.
+  ![Localstorage screenshot](screenshots/screenshot3.png)
 - You can mark items as done or delete them.
 - The container size changes depending on the ammount of todo items.
 
