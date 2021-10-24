@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Home</title>
+        <link rel="icon" href="./images/icon.png">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="bitch-main">
+            <div id="clock"></div>
+            <div class="search-bar">
+                <form role="search" id="form">
+                    <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content" />
+                    <button>
+                        <svg viewBox="0 0 1024 1024">
+                            <path
+                                class="path1" fill="#b2b2b2"
+                                d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
+                            </path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="bookmarks">
+                <div class="list-column">
+                    <div class="list-title">
+                        Social
+                    </div>
+                    <div class="list-items">
+                        <a href="https://web.telegram.org/k/">Telegram</a><br>
+                        <a href="https://discord.com/login">Discord</a><br>
+                        <a href="https://mail.google.com/mail/u/0/">Mail</a><br>
+                        <hr>
+                        <a href="https://www.youtube.com/">YouTube</a><br>
+                        <a href="https://open.spotify.com/collection/tracks">Spotify</a><br>
+                        <a href="https://soundcloud.com/">SoundCloud</a><br>
+                    </div>
+                </div>
+                <div class="list-column">
+                    <div class="list-title">
+                        Big brain
+                    </div>
+                    <div class="list-items">
+                        <a href="https://github.com/r4v10l1">Github</a><br>
+                        <a href="https://www.codewars.com/">Codewars</a><br>
+                        <hr>
+                        <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a><br>
+                        <a href="https://wiki.archlinux.org">Arch wiki</a><br>
+                        <a href="https://wiki.gentoo.org/wiki/Main_Page">Gentoo wiki</a><br>
+                    </div>
+                </div>
+                <div class="list-column">
+                    <div class="list-title">
+                        Misc.
+                    </div>
+                    <div class="list-items">
+                        <a href="https://mega.nz/">Mega</a><br>
+                        <a href="https://www.teknik.io/">Teknik</a><br>
+                        <hr>
+                        <a href="https://boards.4channel.org/g/">/g/</a><br>
+                        <a href="https://boards.4chan.org/wg/">/wg/</a><br>
+                        <a href="https://boards.4chan.org/s4s/">/s4s/</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function currentTime() {
+                var date = new Date();
+                var hour = date.getHours();
+                var min = date.getMinutes();
+                var sec = date.getSeconds();
+                hour = updateTime(hour);
+                min = updateTime(min);
+                sec = updateTime(sec);
+                document.getElementById("clock").innerText = hour + " : " + min + " : " + sec;
+                var t = setTimeout(currentTime, 1000);
+            }
+
+            function updateTime(k) {
+                if (k < 10) {
+                    return "0" + k;
+                }
+                else {
+                    return k;
+                }
+            }
+
+            currentTime();
+        </script>
+        <script>
+            const f = document.getElementById("form");
+            const q = document.getElementById("query");
+            const search_engine = "https://www.duckduckgo.com/?q=";
+
+            function submitted(event) {
+                event.preventDefault();
+                const url = search_engine + q.value;
+                window.location.replace(url, "_blank");
+            }
+
+            q.focus()  // Focus the search bar
+            f.addEventListener("submit", submitted);
+        </script>
+    </body>
+</html>
