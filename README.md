@@ -34,3 +34,6 @@ try {
 `PATH_TO_STARTPAGE_REPLACE_ME` should be replaced with the file path to your startpage.
 
 For example `file:///home/user/Documents/startpage/index.html`.
+
+## Screenshots
+![screenshot](screenshots/screenshot1.png)
