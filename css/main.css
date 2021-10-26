@@ -18,7 +18,7 @@ hr {
     background-color: #121212;
     opacity: 95%;
     margin: 70px 32% 10px 32%;
-    padding: 0px 30px 50px 30px;
+    padding: 0px 30px 30px 30px;
     height: inherit;
     border-style: solid;
     border-width: 2px;
@@ -106,15 +106,13 @@ button {
 /* Bookmarks */
 .bookmarks {
     display: flex;
-    height: 240px;
+    height: inherit;
 }
 
 .list-column {
     background-color: #111;
     text-align: center;
-    padding-bottom: 22px;
     width: 100%;
-    /* height: 265px; */
     height: inherit;
     margin-right: 1%;
     margin-left: 1%;
