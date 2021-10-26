@@ -25,6 +25,8 @@
 - Added search engines using [keywords](https://github.com/r4v10l1/browser-homepage/blob/main/js/search-bar.js#L5) in the search bar.
 - JS is now in different files.
 - Fixed background repeat thing. Now it covers all the screen. THE SCREENSHOTS ARE STILL WITH THE REPEATED BACKGROUND.
+- Now it won't capitalize links.
+- Now it will add `<a href="">` to the todo item if it's a link (Makes links clickable). 
 
 ## Firefox guide
 [Click me](https://stpg.tk/guides/firefox-startpage/).
