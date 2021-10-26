@@ -9,8 +9,12 @@ todoForm.addEventListener('submit', function(event) {
 });
 
 function addTodo(item) {
-    if (item.trim() !== '') {
-        item = item.replace(/^\w/, (c) => c.toUpperCase());
+    if ( item.trim() !== '' ) {
+        if ( todoInput.value[0] === "/") {
+            item = item.slice(1);
+        } else if (!(todoInput.value.includes("http"))) {
+            item = item.replace(/^\w/, (c) => c.toUpperCase());
+        }
         const todo = {
             id: Date.now(),
             name: item,
@@ -38,9 +42,15 @@ function renderTodos(todos) {
             li.classList.add('checked');
         }
 
+        if (item.name.includes("http")) {
+            var item_to_add = '<a href="' + item.name.trim() + '">' + item.name + '</a>'
+        } else {
+            var item_to_add = item.name
+        }
+
         li.innerHTML = `
             <input type="checkbox" class="checkbox" ${checked}>
-            ${item.name}
+            ${item_to_add}
             <button class="delete-button"></button>
         `;
         todoItemsList.append(li);
