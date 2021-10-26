@@ -27,6 +27,7 @@
 - Fixed background repeat thing. Now it covers all the screen. THE SCREENSHOTS ARE STILL WITH THE REPEATED BACKGROUND.
 - Now it won't capitalize links.
 - Now it will add `<a href="">` to the todo item if it's a link (Makes links clickable). 
+- Now the size of the bookmarks changes depending on the items. For real now.
 
 ## Firefox guide
 [Click me](https://stpg.tk/guides/firefox-startpage/).
