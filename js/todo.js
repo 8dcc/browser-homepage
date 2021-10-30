@@ -43,7 +43,11 @@ function renderTodos(todos) {
         }
 
         if (item.name.includes("http")) {
-            var item_to_add = '<a href="' + item.name.trim() + '">' + item.name + '</a>'
+            if (item.name.length > 66) {
+                var item_to_add = '<a href="' + item.name.trim() + '">' + item.name.slice(0,40) + "..." + item.name.slice(-23) + '</a>'
+            } else {
+                var item_to_add = '<a href="' + item.name.trim() + '">' + item.name + '</a>'
+            }
         } else {
             var item_to_add = item.name
         }
