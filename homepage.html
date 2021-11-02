@@ -7,6 +7,14 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+        <div id="movablewindow">
+            <div id="movablepart-container">
+                <a class="close-embed" onclick="hideEmbed()">x</a>
+                <div id="movablepart-text">Embed player</div>
+            </div>
+            <div id="embed_video"></div>
+        </div>
+        <!--------------------------------------------------------------------->
         <div class="bitch-main">
             <div id="clock"></div>
             <div class="search-bar">
@@ -45,6 +53,9 @@
                         <a href="https://github.com/r4v10l1">Github</a><br>
                         <a href="https://www.codewars.com/">Codewars</a><br>
                         <hr>
+                        <a href="http://learnyouahaskell.com/chapters">Haskell</a><br>
+                        <a href="https://doc.rust-lang.org/book/">Rust</a><br>
+                        <hr>
                         <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a><br>
                         <a href="https://wiki.archlinux.org">Arch wiki</a><br>
                         <a href="https://wiki.gentoo.org/wiki/Main_Page">Gentoo wiki</a><br>
@@ -65,6 +76,7 @@
                 </div>
             </div>
         </div>
+        <!--------------------------------------------------------------------->
         <div class="todo-container">
             <div class="todo-title">
                 Todo
@@ -91,5 +103,6 @@
         <script type="text/javascript" src="js/clock.js"></script>
         <script type="text/javascript" src="js/search-bar.js"></script>
         <script type="text/javascript" src="js/todo.js"></script>
+        <script type="text/javascript" src="js/embed-window.js"></script>
     </body>
 </html>
