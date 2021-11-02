@@ -16,6 +16,9 @@
   ![Localstorage screenshot](screenshots/screenshot3.png)
 - You can mark items as done or delete them.
 - The container size changes depending on the ammount of todo items.
+- If a youtube video is added to the todo list, adds a `(embed)` button to open the embed video window.
+  ![Embed screenshot](screenshots/embed.png)
+  ![Youtube screenshot](screenshots/screenshot4.png)
 
 ## Changes
 
@@ -28,6 +31,7 @@
 - Now it won't capitalize links.
 - Now it will add `<a href="">` to the todo item if it's a link (Makes links clickable). 
 - Now the size of the bookmarks changes depending on the items. For real now.
+- Added embed styles, window and embed button depending on the todolist.
 
 ## Firefox guide
 [Click me](https://stpg.tk/guides/firefox-startpage/).
