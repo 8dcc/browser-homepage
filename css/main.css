@@ -249,3 +249,69 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: #a1a1a1;
 }
+
+/* ----------------------------------------------------------------- */
+/* MOVABLE WINDOW */
+
+#movablewindow {
+    display: none;
+    position: fixed;
+    left: 70%;
+    top: 10px;
+    z-index: 9;
+    background-color: #121212;
+    opacity: 95%;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+
+#movablepart-container {
+    border-radius: 4px 4px 0px 0px;
+    font-family: 'Titillium Web', sans-serif;
+    text-align: right;
+    line-height: 0px;
+    min-height: 25px;
+    padding-top: 7px;
+}
+
+#movablepart-text {
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    padding-top: 6px;
+}
+
+#embed_video {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    min-width: 500px;
+    min-height: 250px;
+}
+
+/* ----------------------------------------------------------------- */
+/* BUTTONS / LINKS */
+
+.close-embed {
+    padding-right: 5px;
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.close-embed:hover {
+    color: #a1a1a1;
+    cursor: pointer;
+}
+
+.embed-button {
+    font-size: 13px;
+    color: #690000;
+    text-decoration: underline;
+    text-decoration-color: #500000;
+}
+
+.embed-button:hover {
+    cursor: pointer;
+    color: #500000;
+}
