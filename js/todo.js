@@ -1,7 +1,13 @@
 const todoForm = document.querySelector('.todo-form');
 const todoInput = document.querySelector('.todo-input');
 const todoItemsList = document.querySelector('.todo-items');
+const embed_video = document.getElementById('embed_video');
 let todos = [];
+
+// If there is no video
+embed_video.innerHTML = `
+    <br><p>No video to display<p>
+`;
 
 todoForm.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -43,7 +49,19 @@ function renderTodos(todos) {
         }
 
         if (item.name.includes("http")) {
-            if (item.name.length > 66) {
+            if (item.name.includes("youtube.com/watch")) {
+                var item_to_add = '<a href="' + item.name.trim() + '">' + item.name + '</a>' + ' <a class="embed-button" onclick="showEmbed()">(embed)</a>'
+                var embed_video_id = item.name.split("?v=")[1].slice(0,11);
+                console.log(embed_video_id)
+                embed_video.innerHTML = `
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/${embed_video_id}"
+                    title="Embed"
+                    frameborder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+                `;
+            } else if (item.name.length > 66) {
                 var item_to_add = '<a href="' + item.name.trim() + '">' + item.name.slice(0,40) + "..." + item.name.slice(-23) + '</a>'
             } else {
                 var item_to_add = '<a href="' + item.name.trim() + '">' + item.name + '</a>'
