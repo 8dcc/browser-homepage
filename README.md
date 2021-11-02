@@ -18,7 +18,6 @@
 - The container size changes depending on the ammount of todo items.
 - If a youtube video is added to the todo list, adds a `(embed)` button to open the embed video window.
   ![Embed screenshot](screenshots/embed.png)
-  ![Youtube screenshot](screenshots/screenshot4.png)
 
 ## Changes
 
@@ -68,6 +67,8 @@ try {
 For example `file:///home/user/Documents/startpage/index.html`.
 
 ## Screenshots
+![Youtube screenshot](screenshots/screenshot4.png)
 ![screenshot2](screenshots/screenshot2.png)
 (Old)
 ![screenshot1](screenshots/screenshot1.png)
+
