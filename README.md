@@ -2,6 +2,8 @@
   <h1>Browser homepage</h1>
   <b>My browser homepage.</b><br>
   <p>Inspired by <a href="https://boards.4chan.org/wg/thread/7801612">/wg/</a>, <a href="https://boards.4chan.org/wg/thread/7801612#p7822666">anon</a> and <a href="https://boards.4chan.org/wg/thread/7801612#p7827588">anon</a>.</p>
+  <a href="https://github.com/r4v10l1/browser-homepage/network/members"><img src="https://img.shields.io/github/forks/r4v10l1/browser-homepage.svg?style=for-the-badge&logo=html5&color=e34c26&logoColor=e34c26" alt="Forks"></a>
+  <a href="https://github.com/r4v10l1/browser-homepage/stargazers"><img src="https://img.shields.io/github/stars/r4v10l1/browser-homepage.svg?style=for-the-badge&logo=html5&color=e34c26&logoColor=e34c26" alt="Stars"></a>
 </div>
 
 ## Table of contents
