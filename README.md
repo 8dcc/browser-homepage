@@ -18,7 +18,7 @@
   ![Localstorage screenshot](screenshots/screenshot3.png)
 - You can mark items as done or delete them.
 - The container size changes depending on the ammount of todo items.
-- If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window.
+- If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window, which can be moved.
   ![Embed screenshot](screenshots/embed.png)
 
 ## Changes
@@ -70,7 +70,7 @@ For example `file:///home/user/Documents/startpage/index.html`.
 
 ## Screenshots
 ![Youtube screenshot](screenshots/screenshot4.png)
+### Old
 ![screenshot2](screenshots/screenshot2.png)
-(Old)
 ![screenshot1](screenshots/screenshot1.png)
 
