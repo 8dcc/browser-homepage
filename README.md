@@ -11,6 +11,7 @@
 2. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
 3. [Firefox guide](https://github.com/r4v10l1/browser-homepage#Firefox-guide)
 4. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
+5. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
 
 ## Details
 
@@ -74,3 +75,6 @@ For example `file:///home/user/Documents/startpage/index.html`.
 ![screenshot2](screenshots/screenshot2.png)
 ![screenshot1](screenshots/screenshot1.png)
 
+
+## Todo
+- `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
