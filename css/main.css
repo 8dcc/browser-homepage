@@ -4,6 +4,7 @@
 body {
     background: url(../images/background.png) no-repeat center center fixed;
     background-size: cover;
+    padding: 25px 0px;
 }
 
 hr {
@@ -17,7 +18,7 @@ hr {
 .bitch-main {
     background-color: #121212;
     opacity: 95%;
-    margin: 70px 32% 10px 32%;
+    margin: 20px 32% 10px 32%;
     padding: 0px 30px 30px 30px;
     height: inherit;
     border-style: solid;
