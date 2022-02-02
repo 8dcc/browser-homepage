@@ -43,7 +43,7 @@
 The firefox folder is usually:
 - Windows: `C:\Program Files\Mozilla Firefox\`
 - macOS: `/Applications/Firefox.app/Contents/MacOS`
-- Linux: `/opt/firefox/`
+- Linux: `/opt/firefox/` or `/usr/lib/firefox/`
 
 #
 
