@@ -10,8 +10,9 @@
 1. [Details](https://github.com/r4v10l1/browser-homepage#Details)
 2. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
 3. [Firefox guide](https://github.com/r4v10l1/browser-homepage#Firefox-guide)
-4. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
-5. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
+4. [Screenshots](https://github.com/r4v10l1/browser-homepage#Search-engines)
+5. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
+6. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
 
 ## Details
 
@@ -68,6 +69,15 @@ try {
 `PATH_TO_STARTPAGE_REPLACE_ME` should be replaced with the file path to your startpage.
 
 For example `file:///home/user/Documents/startpage/index.html`.
+
+## Search engines
+Keyword       | Search engine
+--------------|-----------------------
+<kbd>d</kbd>  | `https://www.duckduckgo.com/?q=`
+<kbd>dd</kbd> | `https://html.duckduckgo.com/html/?q=`
+<kbd>g</kbd>  | `https://www.google.com/search?q=`
+<kbd>s</kbd>  | `https://searx.gnous.eu/search?q=`
+<kbd>yt</kbd> | `https://www.youtube.com/results?search_query=`
 
 ## Screenshots
 ![Youtube screenshot](screenshots/screenshot4.png)
