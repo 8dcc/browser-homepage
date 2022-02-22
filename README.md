@@ -10,7 +10,7 @@
 1. [Details](https://github.com/r4v10l1/browser-homepage#Details)
 2. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
 3. [Firefox guide](https://github.com/r4v10l1/browser-homepage#Firefox-guide)
-4. [Screenshots](https://github.com/r4v10l1/browser-homepage#Search-engines)
+4. [Search engines](https://github.com/r4v10l1/browser-homepage#Search-engines)
 5. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
 6. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
 
