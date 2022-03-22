@@ -254,8 +254,7 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------- */
-/* MOVABLE WINDOW */
-
+/* Movable window */
 #movablewindow {
     display: none;
     position: fixed;
@@ -294,8 +293,7 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------- */
-/* BUTTONS / LINKS */
-
+/* Buttons and links */
 .close-embed {
     padding-right: 5px;
     font-size: 11px;
