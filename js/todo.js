@@ -31,8 +31,16 @@ function addTodo(item) {
         todoInput.value = '';
     } else {
         todoInput.value = '';
-        todoInput.focus()
+        todoInput.focus();
     }
+}
+
+function check_for_too_long(text, fsize, ssize) {
+	if (text.length > 66) {		// 66 is the max size to not overflow
+		return text.slice(0,fsize) + "..." + text.slice(-ssize);
+	} else {
+		return text;
+	}
 }
 
 function renderTodos(todos) {
@@ -50,9 +58,9 @@ function renderTodos(todos) {
 
         if (item.name.includes("http")) {
             if (item.name.includes("youtube.com/watch")) {
-                var item_to_add = '<a href="' + item.name.trim() + '">' + item.name + '</a>' + ' <a class="embed-button" onclick="showEmbed()">(embed)</a>'
+                var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 35, 23) + '</a>' + ' <a class="embed-button" onclick="showEmbed()">(embed)</a>';
                 var embed_video_id = item.name.split("?v=")[1].slice(0,11);
-                console.log(embed_video_id)
+                console.log(embed_video_id);
                 embed_video.innerHTML = `
                 <iframe width="560" height="315"
                     src="https://www.youtube.com/embed/${embed_video_id}"
@@ -61,13 +69,11 @@ function renderTodos(todos) {
                     allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
                 `;
-            } else if (item.name.length > 66) {
-                var item_to_add = '<a href="' + item.name.trim() + '">' + item.name.slice(0,40) + "..." + item.name.slice(-23) + '</a>'
             } else {
-                var item_to_add = '<a href="' + item.name.trim() + '">' + item.name + '</a>'
+                var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 40, 15) + '</a>';
             }
         } else {
-            var item_to_add = item.name
+            var item_to_add = check_for_too_long(item.name, 40, 15);
         }
 
         li.innerHTML = `
@@ -82,7 +88,7 @@ function renderTodos(todos) {
 function addToLocalStorage(todos) {
     localStorage.setItem('todos', JSON.stringify(todos));
     renderTodos(todos);
-    todoInput.focus()
+    todoInput.focus();
 }
 
 function getFromLocalStorage() {
