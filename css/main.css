@@ -208,7 +208,19 @@ a:hover {
     border-bottom-right-radius: 7px;
 }
 
+.todo-text-container {
+	display: inline;
+}
+
+.todo-text {
+	display: inline-block;
+	width: 500px;
+	overflow: clip;
+}
+
 .checkbox {
+	display:inline;
+	vertical-align: top;
     margin-right: 10px;
     background: url("../images/check.svg") center / contain no-repeat;
 }
@@ -254,7 +266,8 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------- */
-/* Movable window */
+/* MOVABLE WINDOW */
+
 #movablewindow {
     display: none;
     position: fixed;
@@ -293,7 +306,8 @@ a:hover {
 }
 
 /* ----------------------------------------------------------------- */
-/* Buttons and links */
+/* BUTTONS / LINKS */
+
 .close-embed {
     padding-right: 5px;
     font-size: 11px;
