@@ -8,11 +8,11 @@
 
 # Table of contents
 1. [How it works](https://github.com/r4v10l1/browser-homepage#How-it-works)
-2. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
-3. [Making it your home page](https://github.com/r4v10l1/browser-homepage#Making-it-your-home-page)
-4. [Search engines](https://github.com/r4v10l1/browser-homepage#Search-engines)
-5. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
-6. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
+2. [Making it your home page](https://github.com/r4v10l1/browser-homepage#Making-it-your-home-page)
+3. [Search engines](https://github.com/r4v10l1/browser-homepage#Search-engines)
+4. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
+5. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
+6. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
 
 ## How it works
 
@@ -20,19 +20,6 @@
 - You can mark items as done or delete them.
 - The container size changes depending on the ammount of todo items.
 - If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window, which can be moved.
-
-## Changes
-
-- Added a bit of transparency to main container.
-- Added todo list.
-- Changed height, margins and sizes (Very easy to change)
-- Added search engines using [keywords](https://github.com/r4v10l1/browser-homepage/blob/main/js/search-bar.js#L5) in the search bar.
-- JS is now in different files.
-- Fixed background repeat thing. Now it covers all the screen. THE SCREENSHOTS ARE STILL WITH THE REPEATED BACKGROUND.
-- Now it won't capitalize links.
-- Now it will add `<a href="">` to the todo item if it's a link (Makes links clickable). 
-- Now the size of the bookmarks changes depending on the items. For real now.
-- Added embed styles, window and embed button depending on the todolist.
 
 ## Making it your home page
 You can set the [page link](https://r4v10l1.github.io/browser-homepage/homepage.html) as your homepage, but that is probably not pretty and the address bar won't be empty. For firefox at least, there is a [guide](https://stpg.tk/guides/firefox-startpage/) on how to do it on any platform, which I will explain here.
@@ -77,9 +64,28 @@ Keyword       | Search engine
 <kbd>s</kbd>  | `https://searx.gnous.eu/search?q=`
 <kbd>yt</kbd> | `https://www.youtube.com/results?search_query=`
 
-## Screenshots
-![Youtube screenshot](screenshots/screenshot4.png)
+## Changes
+
+- Added a bit of transparency to main container.
+- Added todo list.
+- Changed height, margins and sizes (Very easy to change)
+- Added search engines using [keywords](https://github.com/r4v10l1/browser-homepage/blob/main/js/search-bar.js#L5) in the search bar.
+- JS is now in different files.
+- Fixed background repeat thing. Now it covers all the screen. THE SCREENSHOTS ARE STILL WITH THE REPEATED BACKGROUND.
+- Now it won't capitalize links.
+- Now it will add `<a href="">` to the todo item if it's a link (Makes links clickable). 
+- Now the size of the bookmarks changes depending on the items. For real now.
+- Added embed styles, window and embed button depending on the todolist.
+- Added fixed width to the main and todo containers, so it doesnt resize with the window. Margins are now auto instead of the 23% used before.
+- Changed default position of the embed video window. Now it spawns in the left side, in a fixed position, instead of 70%, which could make the window spawn with half outside of the browser on smaller resolutions.
+- Added [function](https://github.com/r4v10l1/browser-homepage/commit/51d4e2e8c3f6ff98d7942d53aea73008403f047f#diff-69e1955059041300b9d121a61837651363f6e92e23f5683ea9aa8fc62f1a6bf5R38) for shortening links, instead of fixed values depending on the type of link (youtube, etc.). Now they are parameters. It also made the regular text check for possible overflows to prevent the text and the remove button from going outside of the container ([Later removed](https://github.com/r4v10l1/browser-homepage/commit/51d4e2e8c3f6ff98d7942d53aea73008403f047f#diff-69e1955059041300b9d121a61837651363f6e92e23f5683ea9aa8fc62f1a6bf5R38)).
+- Now the text itself of the todo item has it's class and all, but making that change made the `display: block;` mess the todo items. This was fixed by applying [`display: inline;`](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R212) and [`display: inline-block;`](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R216) to different items.
+- Instead of applying the `checked` class to all the list item, now it applies it to this new class (The text only). This is now made [easily](https://github.com/r4v10l1/browser-homepage/commit/66e53ba041a0898983727ebbfa2171a65a22be7b#diff-69e1955059041300b9d121a61837651363f6e92e23f5683ea9aa8fc62f1a6bf5R49) too.
+- Now the todo items also allow big texts (paragraphs) without breaking the other buttons. If it cannot justify the text (when the item is one big word), it will [remove the overflow](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R218).
 
 ## Todo
 - `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
 - The embed youtube window only displays the last youtube video added. Maybe store a list of videos by id?
+ 
+## Screenshots
+![Youtube screenshot](screenshots/screenshot4.png)
