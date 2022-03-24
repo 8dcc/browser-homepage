@@ -46,21 +46,16 @@ function check_for_too_long(text, fsize, ssize) {
 function renderTodos(todos) {
     todoItemsList.innerHTML = '';
     todos.forEach(function(item) {
-        const checked = item.completed ? 'checked' : null;
+        const checked_class = item.completed ? ' checked' : '';
         const li = document.createElement('li');
 
         li.setAttribute('class', 'item');
         li.setAttribute('data-key', item.id);
 
-        if (item.completed === true) {
-            li.classList.add('checked');
-        }
-
         if (item.name.includes("http")) {
             if (item.name.includes("youtube.com/watch")) {
                 var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 35, 23) + '</a>' + ' <a class="embed-button" onclick="showEmbed()">(embed)</a>';
                 var embed_video_id = item.name.split("?v=")[1].slice(0,11);
-                console.log(embed_video_id);
                 embed_video.innerHTML = `
                 <iframe width="560" height="315"
                     src="https://www.youtube.com/embed/${embed_video_id}"
@@ -73,13 +68,15 @@ function renderTodos(todos) {
                 var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 40, 15) + '</a>';
             }
         } else {
-            var item_to_add = check_for_too_long(item.name, 40, 15);
+            var item_to_add = item.name;
         }
 
         li.innerHTML = `
-            <input type="checkbox" class="checkbox" ${checked}>
-            ${item_to_add}
-            <button class="delete-button"></button>
+			<input type="checkbox" class="checkbox">
+			<div class="todo-text-container">
+				<div class="todo-text${checked_class}">${item_to_add}</div>
+			</div>
+			<button class="delete-button"></button>
         `;
         todoItemsList.append(li);
     });
