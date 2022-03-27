@@ -53,7 +53,7 @@ try {
 ```
 `PATH_TO_STARTPAGE_REPLACE_ME` should be replaced with the file path to your startpage.
 
-For example `file:///home/user/Documents/startpage/index.html`. Yes, you need to use the `file://` thing in every platform.
+For example `file:///home/user/Documents/startpage/index.html`. Yes, you need to use the `file:///` thing in every platform.
 
 ## Search engines
 Keyword       | Search engine
