@@ -87,6 +87,7 @@ Keyword       | Search engine
 - [ ] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
 - [ ] The embed youtube window only displays the last youtube video added. Maybe store a list of videos by id?
 - [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
+- [ ] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
 
 ## Screenshots
 ![Youtube screenshot](screenshots/screenshot4.png)
