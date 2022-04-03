@@ -3,6 +3,7 @@ const todoInput = document.querySelector('.todo-input');
 const todoItemsList = document.querySelector('.todo-items');
 const embed_video = document.getElementById('embed_video');
 let todos = [];
+let video_ids = [];
 
 // If there is no video
 embed_video.innerHTML = `
@@ -43,6 +44,18 @@ function check_for_too_long(text, fsize, ssize) {
 	}
 }
 
+function show_embed_id(id) {
+	embed_video.innerHTML = `
+	<iframe width="560" height="315"
+		src="https://www.youtube.com/embed/${id}"
+		title="Embed"
+		frameborder="0"
+		allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+	</iframe>
+	`;
+	showEmbed();
+}
+
 function renderTodos(todos) {
     todoItemsList.innerHTML = '';
     todos.forEach(function(item) {
@@ -54,16 +67,10 @@ function renderTodos(todos) {
 
         if (item.name.includes("http")) {
             if (item.name.includes("youtube.com/watch")) {
-                var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 35, 23) + '</a>' + ' <a class="embed-button" onclick="showEmbed()">(embed)</a>';
                 var embed_video_id = item.name.split("?v=")[1].slice(0,11);
-                embed_video.innerHTML = `
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/${embed_video_id}"
-                    title="Embed"
-                    frameborder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-                `;
+				console.log(embed_video_id)
+				var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 35, 23) + '</a> ' + 
+					`<a class="embed-button" onclick="show_embed_id('${embed_video_id}')">(embed)</a>`;
             } else {
                 var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 40, 15) + '</a>';
             }
