@@ -5,6 +5,7 @@ function showEmbed() {
 }
 
 function hideEmbed() {
+	document.getElementById('embed_video').innerHTML = "<br><p>No video to display<p>";
     document.getElementById('movablewindow').style.display = "none";
 }
 
