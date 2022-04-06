@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron');
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
+/* Fuck depending on other people */
+@import url('fonts/orbitron/orbitron.css');
+@import url('fonts/titillium-web/titillium-web.css');
 
 body {
     background: url(../images/background.png) no-repeat center center fixed;
