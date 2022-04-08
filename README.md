@@ -88,6 +88,8 @@ Keyword       | Search engine
 - [X] The embed youtube window only displays the last youtube video added. ~Maybe store a list of videos by id?~ Added different ids as arguments in the html.
 - [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
 - [ ] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
+- [ ] Add more than one theme with css (light theme based on the /g/ one)
+    - [ ] Add button or something to replace the css ([Link](https://stackoverflow.com/a/19844757)).
 
 ## Screenshots
 ![Youtube screenshot](screenshots/screenshot4.png)
