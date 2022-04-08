@@ -2,8 +2,8 @@ const todoForm = document.querySelector('.todo-form');
 const todoInput = document.querySelector('.todo-input');
 const todoItemsList = document.querySelector('.todo-items');
 const embed_video = document.getElementById('embed_video');
-let todos = [];
-let video_ids = [];
+var todos = [];
+var video_ids = [];
 
 // If there is no video
 embed_video.innerHTML = `
@@ -36,8 +36,8 @@ function addTodo(item) {
     }
 }
 
-function check_for_too_long(text, fsize, ssize) {
-	if (text.length > 66) {		// 66 is the max size to not overflow
+function check_for_too_long(text, fsize, ssize, mlen) {
+	if (text.length > mlen) {		// 66 is the max size to not overflow
 		return text.slice(0,fsize) + "..." + text.slice(-ssize);
 	} else {
 		return text;
@@ -68,11 +68,14 @@ function renderTodos(todos) {
         if (item.name.includes("http")) {
             if (item.name.includes("youtube.com/watch")) {
                 var embed_video_id = item.name.split("?v=")[1].slice(0,11);
-				console.log(embed_video_id)
-				var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 35, 23) + '</a> ' + 
+				var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 35, 23, 66) + '</a> ' + 
 					`<a class="embed-button" onclick="show_embed_id('${embed_video_id}')">(embed)</a>`;
             } else {
-                var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 40, 15) + '</a>';
+                var actual_link = 'http' + item.name.split("http")[1].split(" ")[0].trim();
+                var extra_text = item.name.split(actual_link)[1];
+                var fpart = (extra_text.length > 5) ? 30 : 40;      // The first part that the url will be splitted. If the user has more text, give more priority.
+
+                var item_to_add = '<a href="' + actual_link + '">' + check_for_too_long(actual_link, fpart, 15, 66) + '</a>' + extra_text;
             }
         } else {
             var item_to_add = item.name;
