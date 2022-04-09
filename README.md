@@ -90,6 +90,7 @@ Keyword       | Search engine
 - [ ] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
 - [ ] Add more than one theme with css (light theme based on the /g/ one)
     - [ ] Add button or something to replace the css ([Link](https://stackoverflow.com/a/19844757)).
+    - [ ] Store choice in localstorage.
 
 ## Screenshots
 ![Youtube screenshot](screenshots/screenshot4.png)
