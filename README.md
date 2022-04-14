@@ -82,17 +82,19 @@ Keyword       | Search engine
 - Now the text itself of the todo item has it's class and all, but making that change made the `display: block;` mess the todo items. This was fixed by applying [`display: inline;`](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R212) and [`display: inline-block;`](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R216) to different items.
 - Instead of applying the `checked` class to all the list item, now it applies it to this new class (The text only). This is now made [easily](https://github.com/r4v10l1/browser-homepage/commit/66e53ba041a0898983727ebbfa2171a65a22be7b#diff-69e1955059041300b9d121a61837651363f6e92e23f5683ea9aa8fc62f1a6bf5R49) too.
 - Now the todo items also allow big texts (paragraphs) without breaking the other buttons. If it cannot justify the text (when the item is one big word), it will [remove the overflow](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R218).
+- Now you can see an (ugly) icon when the input updates, containing the search engine. In the future you should be able to change the icons and use text instead. 
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
 - [X] The embed youtube window only displays the last youtube video added. ~Maybe store a list of videos by id?~ Added different ids as arguments in the html.
+- [X] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
 - [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
-- [ ] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
 - [ ] Add more than one theme with css (light theme based on the /g/ one)
     - [ ] Add button or something to replace the css ([Link](https://stackoverflow.com/a/19844757)).
 - [ ] Add settings window/tab
     - [ ] Store choices in localstorage.
     - [ ] Theme
+    - [ ] Background (solid color)
     - [ ] Search engine icons / text
 
 
