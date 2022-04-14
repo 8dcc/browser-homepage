@@ -1,0 +1,113 @@
+
+/* ----------------------------------------------------------------- */
+/* Todo container for "Add item" bar and the todo items */
+.todo-container {
+    background-color: #121212;
+    opacity: 97%;
+    margin: 0px auto 0px auto;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 600px;
+    height: auto;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 7px;
+    border-color: #333333;
+}
+
+/* ----------------------------------------------------------------- */
+/* Todo title and input */
+.todo-title {
+    text-align: center;
+    color: #c1c1c1;
+    padding: 10px;
+    font-size: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.todo-input {
+    padding: 0px 15px;
+}
+
+/* ----------------------------------------------------------------- */
+/* Todo list */
+.todo-items {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 10px 5px 13px 5px;
+}
+
+.todo-items-fill {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 10px 5px 13px 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 7px;
+    border-color: #333;
+}
+
+.item {
+    padding: 5px 2px 5px 10px;
+    color: #f2f2f2;
+    font-size: 15px;
+    font-family: 'Titillium Web', sans-serif;
+
+    border-style: solid;
+    border-bottom-style: none;
+    border-width: 1px;
+    border-color: #333;
+}
+
+.item:first-child {
+    border-style: solid;
+    border-bottom-style: none;
+    border-width: 1px;
+    border-color: #333;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.item:last-child {
+    border-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #333;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.todo-text-container {
+    display: inline;
+}
+
+.todo-text {
+    display: inline-block;
+    width: 500px;
+    overflow: clip;
+}
+
+.checkbox {
+    display:inline;
+    vertical-align: top;
+    margin-right: 10px;
+    background: url("../images/check.svg") center / contain no-repeat;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.delete-button {
+    float: right;
+    height: 24px;   /* Not really centered but 23 gets blurry in firefox */
+    background: url("../images/close.png") center / contain no-repeat;
+    border: none;
+    outline: none;
+}
+
+.checked {
+    text-decoration: line-through;
+}

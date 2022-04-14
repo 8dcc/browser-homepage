@@ -15,7 +15,7 @@ hr {
 }
 
 /* ----------------------------------------------------------------- */
-/* Main holders */
+/* Main container for clock, search bar and bookmarks */
 .bitch-main {
     background-color: #121212;
     opacity: 97%;
@@ -23,22 +23,6 @@ hr {
     padding: 0px 30px 30px 30px;
     width: 600px;
     height: inherit;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 7px;
-    border-color: #333333;
-}
-
-.todo-container {
-    background-color: #121212;
-    opacity: 97%;
-    margin: 0px auto 0px auto;
-    padding-top: 1px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 600px;
-    height: auto;
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
@@ -80,6 +64,11 @@ input {
     padding: 6px 10px;
     color: #f2f2f2;
     caret-color: #fff;
+}
+
+#searchEngineIcon {
+    display: none;
+    padding: 4px 0px 0px 15px;
 }
 
 .search-input {
@@ -156,98 +145,7 @@ a:hover {
     color: #690000;
 }
 
-/* ----------------------------------------------------------------- */
-/* Todo list */
-.todo-title {
-    text-align: center;
-    color: #c1c1c1;
-    padding: 10px;
-    font-size: 25px;
-    font-family: 'Titillium Web', sans-serif;
-}
 
-.todo-input {
-    padding: 0px 15px;
-}
-
-.todo-items {
-    list-style-type: none;
-    margin-top: 10px;
-    padding: 10px 5px 13px 5px;
-}
-
-.todo-items-fill {
-    list-style-type: none;
-    margin-top: 10px;
-    padding: 10px 5px 13px 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 7px;
-    border-color: #333;
-}
-
-.item {
-    padding: 5px 2px 5px 10px;
-    color: #f2f2f2;
-    font-size: 15px;
-    font-family: 'Titillium Web', sans-serif;
-
-    border-style: solid;
-    border-bottom-style: none;
-    border-width: 1px;
-    border-color: #333;
-}
-
-.item:first-child {
-    border-style: solid;
-    border-bottom-style: none;
-    border-width: 1px;
-    border-color: #333;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-}
-
-.item:last-child {
-    border-style: solid;
-    border-bottom-style: solid;
-    border-width: 1px;
-    border-color: #333;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-}
-
-.todo-text-container {
-    display: inline;
-}
-
-.todo-text {
-    display: inline-block;
-    width: 500px;
-    overflow: clip;
-}
-
-.checkbox {
-    display:inline;
-    vertical-align: top;
-    margin-right: 10px;
-    background: url("../images/check.svg") center / contain no-repeat;
-}
-
-.checkbox:hover {
-    cursor: pointer;
-}
-
-.delete-button {
-    float: right;
-    height: 25px;
-    background: url("../images/close.png") center / contain no-repeat;
-    border: none;
-    outline: none;
-}
-
-.checked {
-    text-decoration: line-through;
-}
 
 /* ----------------------------------------------------------------- */
 /* Scroll bar */
@@ -271,45 +169,6 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #a1a1a1;
-}
-
-/* ----------------------------------------------------------------- */
-/* Movable window */
-#movablewindow {
-    display: none;
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    z-index: 9;
-    background-color: #121212;
-    opacity: 95%;
-    border: 1px solid #333333;
-    border-radius: 4px;
-}
-
-#movablepart-container {
-    border-radius: 4px 4px 0px 0px;
-    font-family: 'Titillium Web', sans-serif;
-    text-align: right;
-    line-height: 0px;
-    min-height: 25px;
-    padding-top: 7px;
-}
-
-#movablepart-text {
-    text-align: center;
-    font-size: 15px;
-    color: #ffffff;
-    padding-top: 6px;
-}
-
-#embed_video {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 30px;
-    color: #ffffff;
-    text-align: center;
-    min-width: 500px;
-    min-height: 250px;
 }
 
 /* ----------------------------------------------------------------- */

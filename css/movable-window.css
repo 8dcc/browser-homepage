@@ -1,0 +1,39 @@
+
+/* ----------------------------------------------------------------- */
+/* Movable window */
+#movablewindow {
+    display: none;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    z-index: 9;
+    background-color: #121212;
+    opacity: 95%;
+    border: 1px solid #333333;
+    border-radius: 4px;
+}
+
+#movablepart-container {
+    border-radius: 4px 4px 0px 0px;
+    font-family: 'Titillium Web', sans-serif;
+    text-align: right;
+    line-height: 0px;
+    min-height: 25px;
+    padding-top: 7px;
+}
+
+#movablepart-text {
+    text-align: center;
+    font-size: 15px;
+    color: #ffffff;
+    padding-top: 6px;
+}
+
+#embed_video {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    min-width: 500px;
+    min-height: 250px;
+}
