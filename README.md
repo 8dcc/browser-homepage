@@ -84,13 +84,15 @@ Keyword       | Search engine
 - Now the todo items also allow big texts (paragraphs) without breaking the other buttons. If it cannot justify the text (when the item is one big word), it will [remove the overflow](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R218).
 - Now you can see an (ugly) icon when the input updates, containing the search engine. In the future you should be able to change the icons and use text instead. 
 - If you use a search engine, the value of the search engine (`yt`, `g`, etc.) gets removed from the input value. Added 1 more setting (code for now) that will be checked to decide if after the value is empty with a search engine (You want to delete the search engine), the whole search engine will be deleted or you can "edit" the search engine. A bit hard to explain, but easy to see when changing `delete_whole_se` in the code and trying to delete the search engine.
+- Added text mode for search engines
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
 - [X] The embed youtube window only displays the last youtube video added. ~Maybe store a list of videos by id?~ Added different ids as arguments in the html.
 - [X] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
-- [ ] Add text search engines instead of (ugly) icons.
+- [X] Add text search engines instead of (ugly) icons.
 - [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
+- [ ] When using a text indicator for the search engine the search icon moves a bit to the right (The width changes)
 - [ ] Add more than one theme with css (light theme based on the /g/ one)
     - [ ] Add button or something to replace the css ([Link](https://stackoverflow.com/a/19844757)).
 - [ ] Add settings window/tab
