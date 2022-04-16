@@ -66,11 +66,6 @@ input {
     caret-color: #fff;
 }
 
-#searchEngineIcon {
-    display: none;
-    padding: 4px 0px 0px 15px;
-}
-
 .search-input {
     padding: 6px 15px;
 }
@@ -90,6 +85,12 @@ button {
     width: 44px;
     height: 44px;
 }
+
+/*
+.search-button {
+    width: 44px;
+}
+*/
 
 ::placeholder {
     color: #b2b2b2;
