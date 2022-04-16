@@ -1,0 +1,32 @@
+/*
+ * CSS for the search engines text and icons
+ */
+
+/* Unlike the text mode, this main container has the styles and will be hidden */
+#searchEngineIcon {
+    display: none;
+    padding: 4px 0px 0px 15px;
+}
+
+/* The main container, will be hidden depending on the js */
+#searchEngineText {
+    display: none;
+    padding: 0px 0px 0px 10px;
+    max-width: 150px;
+}
+
+/* Default styles for the search engine text */
+.search-engine-text {
+    width: max-content;
+
+    font-family: 'Titillium Web', sans-serif;
+    padding: 1px 6px;
+    background: #252525;
+    color: #c1c1c1;
+
+    border-style: solid;
+    border-radius: 6px;
+    /* Change these 2 values to add a border */
+    border-width: 0px;
+    border-color: #fff;
+}
