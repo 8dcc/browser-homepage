@@ -1,11 +1,12 @@
 const f  = document.getElementById("form");
 const q  = document.getElementById("query");
-const se = document.getElementById("searchEngineIcon");
+const sei = document.getElementById("searchEngineIcon");
+const setxt = document.getElementById("searchEngineText");
 const default_search_engine = "https://www.duckduckgo.com/?q=";
 var user_search_engine = "";
 
 // TODO: Get these from the settings (localstorage)
-var use_search_engine_icons = true;
+var use_search_engine_icons = false;
 var delete_whole_se = true;
 
 const search_engines = {
@@ -22,18 +23,12 @@ function checkSearchEngine() {
         q.value = q.value.replace(user_search_engine + " ", "");
     }
 
-    if (user_search_engine != "") {
-        if (use_search_engine_icons) {
-            checkSearchEngine_icons()
-        } else {
-            /*
-             * TODO: Add text mode
-             */
-            checkSearchEngine_text()
-        }
-    } else {
-        se.style.display = "none";
-        se.innerHTML = '';
+    if (use_search_engine_icons) {          // Icon mode
+        if (user_search_engine != "") checkSearchEngine_icons();
+        else clearElementContents(sei);
+    } else {                                // Text mode
+        if (user_search_engine != "") checkSearchEngine_text();
+        else clearElementContents(setxt);
     }
 }
 
@@ -52,14 +47,38 @@ function checkSearchEngine_icons() {
         search_engine_icon = "gnu.svg";
     }
 
-    se.style.display = "block";
-    se.innerHTML = `
+    sei.style.display = "block";
+    sei.innerHTML = `
         <img src="images/search-engines/${search_engine_icon}" alt="Icon" height="${search_engine_icon_h}">
+    `;
+}
+
+function checkSearchEngine_text() {
+    var search_engine_text = "DuckDuckGo";
+
+    if (user_search_engine === "g") {
+        search_engine_text = "Google";
+    } else if (user_search_engine === "yt") {
+        search_engine_text = "YouTube";
+    } else if (user_search_engine === "dd") {
+        search_engine_text = "DuckDuckGo HTML";
+    } else if (user_search_engine === "s") {
+        search_engine_text = "Searx";
+    }
+
+    setxt.style.display = "block";
+    setxt.innerHTML = `
+        <div class="search-engine-text">${search_engine_text}</div>
     `;
 }
 
 function hasSearchEngine(text) {
     return (text.split(" ")[0] in search_engines && text.includes(" "));
+}
+
+function clearElementContents(element) {
+    element.style.display = "none";
+    element.innerHTML = '';
 }
 
 function checkDeleteSearchEngine() {

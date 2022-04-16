@@ -5,6 +5,7 @@
         <title>Home</title>
         <link rel="icon" href="./images/icon.png">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/search-engines.css">
         <link rel="stylesheet" href="css/todo.css">
         <link rel="stylesheet" href="css/movable-window.css">
     </head>
@@ -24,8 +25,9 @@
             <div class="search-bar">
                 <form role="search" id="form" oninput="return checkSearchEngine()">
                     <div id="searchEngineIcon"></div>
-                    <input type="search" class="search-input" id="query" name="q" placeholder="Search..." aria-label="Search through site content" />
-                    <button>
+                    <div id="searchEngineText"></div>
+                    <input type="search" class="search-input" id="query" name="q" placeholder="Search..." aria-label="Search"/>
+                    <button class="search-button">
                         <img src="./images/search.svg" style="padding-top: 4px;">
                     </button>
                 </form>
