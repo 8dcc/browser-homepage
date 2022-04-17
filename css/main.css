@@ -5,7 +5,7 @@
 body {
     background: url(../images/background.png) no-repeat center center fixed;
     background-size: cover;
-    padding: 25px 0px;
+    : 25px 0px;
 }
 
 hr {
@@ -19,7 +19,7 @@ hr {
 .bitch-main {
     background-color: #121212;
     opacity: 97%;
-    margin: 20px auto 10px auto;
+    margin: 25px auto 10px auto;
     padding: 0px 30px 30px 30px;
     width: 600px;
     height: inherit;
@@ -195,4 +195,13 @@ a:hover {
 .embed-button:hover {
     cursor: pointer;
     color: #500000;
+}
+
+.undragable {
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
