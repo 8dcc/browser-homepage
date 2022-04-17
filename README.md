@@ -7,12 +7,13 @@
 </div>
 
 # Table of contents
-1. [How it works](https://github.com/r4v10l1/browser-homepage#How-it-works)
-2. [Making it your home page](https://github.com/r4v10l1/browser-homepage#Making-it-your-home-page)
-3. [Search engines](https://github.com/r4v10l1/browser-homepage#Search-engines)
-4. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
-5. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
-6. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
+1. [How it works](#How-it-works)
+2. [Making it your home page](#Making-it-your-home-page)
+3. [Search engines](#Search-engines)
+4. [Contributing](#Contributing)
+5. [Changes](#Changes)
+6. [Todo](#Todo)
+7. [Screenshots](#Screenshots)
 
 ## How it works
 
@@ -64,6 +65,9 @@ Keyword       | Search engine
 <kbd>s</kbd>  | `https://searx.gnous.eu/search?q=`
 <kbd>yt</kbd> | `https://www.youtube.com/results?search_query=`
 
+## Contributing
+Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONTRIBUTE.md).
+
 ## Changes
 
 - Added a bit of transparency to main container.
@@ -91,6 +95,8 @@ Keyword       | Search engine
 - [X] The embed youtube window only displays the last youtube video added. ~Maybe store a list of videos by id?~ Added different ids as arguments in the html.
 - [X] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
 - [X] Add text search engines instead of (ugly) icons.
+- [ ] Change the `X` for closing the embed (ugly af) and add proper svg.
+- [ ] The text added to the TODO items is only recognized **after** the link, the text before the link gets deleted. Also the none of it works with youtube links
 - [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
 - [ ] When using a text indicator for the search engine the search icon moves a bit to the right (The width changes)
 - [ ] Add more than one theme with css (light theme based on the /g/ one)
@@ -103,4 +109,4 @@ Keyword       | Search engine
 
 
 ## Screenshots
-![Youtube screenshot](screenshots/screenshot4.png)
+![Overview screenshot](screenshots/screenshot5.png)
