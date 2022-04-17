@@ -89,6 +89,7 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 - Now you can see an (ugly) icon when the input updates, containing the search engine. In the future you should be able to change the icons and use text instead. 
 - If you use a search engine, the value of the search engine (`yt`, `g`, etc.) gets removed from the input value. Added 1 more setting (code for now) that will be checked to decide if after the value is empty with a search engine (You want to delete the search engine), the whole search engine will be deleted or you can "edit" the search engine. A bit hard to explain, but easy to see when changing `delete_whole_se` in the code and trying to delete the search engine.
 - Added text mode for search engines
+- Added settings window, background, items, css, checkbox, etc. The js works more or less. The settings do not really update on localstorage atm.
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
@@ -101,11 +102,11 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 - [ ] When using a text indicator for the search engine the search icon moves a bit to the right (The width changes)
 - [ ] Add more than one theme with css (light theme based on the /g/ one)
     - [ ] Add button or something to replace the css ([Link](https://stackoverflow.com/a/19844757)).
-- [ ] Add settings window/tab
-    - [ ] Store choices in localstorage.
+- [X] Add settings window/tab
+    - [X] Store choices in localstorage. *More or less...*
     - [ ] Theme
     - [ ] Background (solid color)
-    - [ ] Search engine icons / text
+    - [X] Search engine icons / text. *More or less...*
 
 
 ## Screenshots
