@@ -11,9 +11,9 @@
 2. [Making it your home page](#Making-it-your-home-page)
 3. [Search engines](#Search-engines)
 4. [Contributing](#Contributing)
-4. [Changes](#Changes)
-5. [Todo](#Todo)
-6. [Screenshots](#Screenshots)
+5. [Changes](#Changes)
+6. [Todo](#Todo)
+7. [Screenshots](#Screenshots)
 
 ## How it works
 
