@@ -17,7 +17,7 @@ todoForm.addEventListener('submit', function(event) {
 
 function addTodo(item) {
     if ( item.trim() !== '' ) {
-        if ( todoInput.value[0] === "/") {
+        if ( todoInput.value[0] === "/") {      // ???
             item = item.slice(1);
         } else if (!(todoInput.value.includes("http"))) {
             item = item.replace(/^\w/, (c) => c.toUpperCase());
@@ -82,7 +82,7 @@ function renderTodos(todos) {
         }
 
         li.innerHTML = `
-			<input type="checkbox" class="checkbox">
+			<input type="checkbox" class="custom-input checkbox">
 			<div class="todo-text-container">
 				<div class="todo-text${checked_class}">${item_to_add}</div>
 			</div>
