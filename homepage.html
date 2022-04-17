@@ -27,7 +27,7 @@
                 <form role="search" id="form" oninput="return checkSearchEngine()">
                     <div id="searchEngineIcon"></div>
                     <div id="searchEngineText"></div>
-                    <input type="search" class="search-input" id="query" name="q" placeholder="Search..." aria-label="Search"/>
+                    <input type="search" class="custom-input search-input" id="query" name="q" placeholder="Search..." aria-label="Search"/>
                     <button class="search-button">
                         <img src="./images/search.svg" class="undragable" draggable="false" style="padding-top: 4px;">
                     </button>
@@ -90,7 +90,7 @@
                 Todo
             </div>
             <form class="todo-form">
-                <input type="text" class="todo-input" placeholder="Add item...">
+                <input type="text" class="custom-input todo-input" placeholder="Add item...">
                 <button type="submit" class="add-button" style="padding-top: 4px;">
                     <img src="./images/add-todo.svg" class="undragable" draggable="false">
                 </button>
@@ -99,7 +99,24 @@
             </ul>
         </div>
         <!----------------------- Settings container -------------------------->
-        <div id="settings-background"></div>
+        <div id="settings-main-container">
+            <div id="settings-background"></div>
+            <div id="settings-tab-container">
+                <div class="settings-title">Settings</div>
+                <div class="setting-item">
+                    <div class="setting-item-text">Use icons for search engines.</div>
+                    <input type="checkbox" id="sbutton-seicon" class="setting-checkbox">
+                </div>
+                <div class="setting-item">
+                    <div class="setting-item-text">Use icons for search engines.</div>
+                    <input type="checkbox" id="sbutton-seicon2" class="setting-checkbox">
+                </div>
+                <div class="setting-item">
+                    <div class="setting-item-text">Use icons for search engines.</div>
+                    <input type="checkbox" id="sbutton-seicon3" class="setting-checkbox">
+                </div>
+            </div>
+        </div>
         <!-------------------------- Settings button -------------------------->
         <div class="settings-button-container">
             <button id="settings-button" onclick="toggleShowSettings()">
