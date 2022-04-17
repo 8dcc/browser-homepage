@@ -7,12 +7,13 @@
 </div>
 
 # Table of contents
-1. [How it works](https://github.com/r4v10l1/browser-homepage#How-it-works)
-2. [Making it your home page](https://github.com/r4v10l1/browser-homepage#Making-it-your-home-page)
-3. [Search engines](https://github.com/r4v10l1/browser-homepage#Search-engines)
-4. [Changes](https://github.com/r4v10l1/browser-homepage#Changes)
-5. [Todo](https://github.com/r4v10l1/browser-homepage#Todo)
-6. [Screenshots](https://github.com/r4v10l1/browser-homepage#Screenshots)
+1. [How it works](#How-it-works)
+2. [Making it your home page](#Making-it-your-home-page)
+3. [Search engines](#Search-engines)
+4. [Contributing](#Contributing)
+4. [Changes](#Changes)
+5. [Todo](#Todo)
+6. [Screenshots](#Screenshots)
 
 ## How it works
 
@@ -63,6 +64,9 @@ Keyword       | Search engine
 <kbd>g</kbd>  | `https://www.google.com/search?q=`
 <kbd>s</kbd>  | `https://searx.gnous.eu/search?q=`
 <kbd>yt</kbd> | `https://www.youtube.com/results?search_query=`
+
+## Contributing
+Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONTRIBUTE.md).
 
 ## Changes
 
