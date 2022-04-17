@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/search-engines.css">
         <link rel="stylesheet" href="css/todo.css">
+        <link rel="stylesheet" href="css/settings.css">
         <link rel="stylesheet" href="css/movable-window.css">
     </head>
     <body>
@@ -28,7 +29,7 @@
                     <div id="searchEngineText"></div>
                     <input type="search" class="search-input" id="query" name="q" placeholder="Search..." aria-label="Search"/>
                     <button class="search-button">
-                        <img src="./images/search.svg" style="padding-top: 4px;">
+                        <img src="./images/search.svg" class="undragable" draggable="false" style="padding-top: 4px;">
                     </button>
                 </form>
             </div>
@@ -91,16 +92,25 @@
             <form class="todo-form">
                 <input type="text" class="todo-input" placeholder="Add item...">
                 <button type="submit" class="add-button" style="padding-top: 4px;">
-                    <img src="./images/add-todo.svg">
+                    <img src="./images/add-todo.svg" class="undragable" draggable="false">
                 </button>
             </form>
             <ul class="todo-items">
             </ul>
         </div>
+        <!----------------------- Settings container -------------------------->
+        <div id="settings-background"></div>
+        <!-------------------------- Settings button -------------------------->
+        <div class="settings-button-container">
+            <button id="settings-button" onclick="toggleShowSettings()">
+                <img src="./images/settings.svg" class="undragable" draggable="false">
+            </button>
+        </div>
         <!----------------------------- Scripts ------------------------------->
         <script type="text/javascript" src="js/clock.js"></script>
         <script type="text/javascript" src="js/search-bar.js"></script>
         <script type="text/javascript" src="js/todo.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
         <script type="text/javascript" src="js/embed-window.js"></script>
     </body>
 </html>
