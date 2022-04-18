@@ -58,7 +58,7 @@ try {
 For example `file:///home/user/Documents/startpage/index.html`. Yes, you need to use the `file:///` thing in every platform.
 
 ## Search engines
-Type the keyword in the search bar followed by space. Depending on your settings you should see an icon or a text indicating what search engine you are using.  
+Type the **keyword** in the search bar followed by space. Depending on your settings you should see an icon or a text indicating what search engine you are using.  
 This is the list of available keywords:
 
 Keyword       | Search engine

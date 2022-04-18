@@ -59,7 +59,7 @@ function checkSearchEngine_text() {
     } else if (user_search_engine === "dd") {
         search_engine_text = "DuckDuckGo HTML";
     } else if (user_search_engine === "s") {
-        search_engine_text = "Searx";
+        search_engine_text = "SearX";
     }
 
     setxt.style.display = "block";
