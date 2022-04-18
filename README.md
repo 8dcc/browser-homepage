@@ -7,7 +7,7 @@
 </div>
 
 # Table of contents
-1. [How it works](#How-it-works)
+1. [How it works](#How-it-works-specifications)
 2. [Making it your home page](#Making-it-your-home-page)
 3. [Search engines](#Search-engines)
 4. [Contributing](#Contributing)
@@ -15,12 +15,13 @@
 6. [Todo](#Todo)
 7. [Screenshots](#Screenshots)
 
-## How it works
-
-- The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items.
-- You can mark items as done or delete them.
-- The container size changes depending on the ammount of todo items.
+## How it works (specifications)
+- You can search items with different search engines using [keywords](#search-engines).
+- You can add, delete or mark items as done them with the buttons on the todo list.
+- You can edit a number of settings with the settings icon at the top right.
+- The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items and the user settings.
 - If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window, which can be moved.
+- All the containers are "expandable". For example you can add as many todo items as you want, or easily edit the html to add more bookmarks.
 
 ## Making it your home page
 You can set the [page link](https://r4v10l1.github.io/browser-homepage/homepage.html) as your homepage, but that is probably not pretty and the address bar won't be empty. For firefox at least, there is a [guide](https://stpg.tk/guides/firefox-startpage/) on how to do it on any platform, which I will explain here.
@@ -57,6 +58,9 @@ try {
 For example `file:///home/user/Documents/startpage/index.html`. Yes, you need to use the `file:///` thing in every platform.
 
 ## Search engines
+Type the keyword in the search bar followed by space. Depending on your settings you should see an icon or a text indicating what search engine you are using.  
+This is the list of available keywords:
+
 Keyword       | Search engine
 --------------|-----------------------
 <kbd>d</kbd>  | `https://www.duckduckgo.com/?q=`
@@ -69,7 +73,6 @@ Keyword       | Search engine
 Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONTRIBUTE.md).
 
 ## Changes
-
 - Added a bit of transparency to main container.
 - Added todo list.
 - Changed height, margins and sizes (Very easy to change)
