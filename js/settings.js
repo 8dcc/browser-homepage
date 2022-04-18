@@ -1,54 +1,33 @@
-const settMain = document.getElementById('settings-main-container');
 const settTab = document.getElementById('settings-tab-container');
-var settings_array;
-var settingsw_active = false;       // Toggled by the icon thing
+var settings_global_object;
 
-// TODO: Maybe move some of this file to update_settings.js ?
-// TODO: Settings do not change
 
-function toggleShowSettings() {
-    if (settingsw_active) {
-        settMain.style.display = "none";
-    } else {
-        settMain.style.display = "block";
-    }
-
-    settingsw_active = !settingsw_active;
-}
-
-/* --------------------------------------------------------------- */
-
-function updateLsSettings(updated_settings) {
-    localStorage.setItem('user_settings', JSON.stringify(updated_settings));
-    renderSettings(updated_settings);
+function updateLsSettings() {
+    localStorage.setItem('user_settings', JSON.stringify(settings_global_object));
+    renderSettings();
 }
 
 function getLsSettings() {
     const reference = localStorage.getItem('user_settings');
     if (reference) {
-        settings_array = JSON.parse(reference);
-        renderSettings(settings_array);
+        settings_global_object = JSON.parse(reference);
+        renderSettings(settings_global_object);
     }
 }
 
+/* --------------------------------------------------------------- */
+
 function renderSettings() {
-    updateBoolSetting("sbutton-seicon", settings_array.use_se_icons);
+    updateBoolSetting("use_se_icons", settings_global_object.use_se_icons);
+    updateBoolSetting("delete_whole_se", settings_global_object.delete_whole_se);
 }
 
 function updateBoolSetting(id, setting_state) {
-    document.getElementById(id).checked = setting_state;
-}
-
-function checkEmptyLs() {
-    if (!localStorage.getItem('user_settings')) {
-        console.log("[settings] Detected no settings in localstorage. Generating defaults...")
-        var dso = new Object();
-
-        dso.use_light_theme     = false;
-        dso.use_se_icons        = true;
-
-        var default_settings = JSON.stringify(dso);
-        updateLsSettings(JSON.parse(default_settings));
+    const element = document.getElementById(id);
+    if (element) {
+        element.checked = setting_state;
+    } else {
+        console.log(`[settings] Could not find element with id: ${id}`)
     }
 }
 
@@ -56,23 +35,30 @@ function checkEmptyLs() {
 
 settTab.addEventListener('click', function(event) {
     if (event.target.type === 'checkbox') {
-        toggle(event.target.parentElement.getAttribute('data-key'));
+        toggleSetting(event.target.getAttribute('id'));
     }
 });
 
-function toggle(changeme) {
-    Object.entries(settings_array).forEach(([key, value]) => {
-        if (key == changeme) {
-            item.setting_enabled = !item.setting_enabled;
-        }
-    })
+function toggleSetting(changeme) {
+    settings_global_object[changeme] = !settings_global_object[changeme];
+    updateLsSettings();
+}
 
-    // settings_array.forEach(function(item) {
-    //     if (item.id == id) {
-    //         item.setting_enabled = !item.setting_enabled;
-    //     }
-    // });
-    updateLsSettings(settings_array);
+/* --------------------------------------------------------------- */
+
+function checkEmptyLs() {
+    if (!localStorage.getItem('user_settings')) {
+        console.log("[settings] Detected no settings in localstorage. Generating defaults...")
+        var dso = new Object();
+
+        dso.use_light_theme         = false;    // Not used atm
+        dso.use_se_icons            = false;
+        dso.delete_whole_se         = true;
+
+        var default_settings = JSON.stringify(dso);
+        settings_global_object = JSON.parse(default_settings);
+        updateLsSettings();
+    }
 }
 
 checkEmptyLs();
