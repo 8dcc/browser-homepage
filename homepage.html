@@ -27,7 +27,7 @@
                 <form role="search" id="form" oninput="return checkSearchEngine()">
                     <div id="searchEngineIcon"></div>
                     <div id="searchEngineText"></div>
-                    <input type="search" class="search-input" id="query" name="q" placeholder="Search..." aria-label="Search"/>
+                    <input type="search" class="custom-input search-input" id="query" name="q" placeholder="Search..." aria-label="Search"/>
                     <button class="search-button">
                         <img src="./images/search.svg" class="undragable" draggable="false" style="padding-top: 4px;">
                     </button>
@@ -95,7 +95,7 @@
                 Todo
             </div>
             <form class="todo-form">
-                <input type="text" class="todo-input" placeholder="Add item...">
+                <input type="text" class="custom-input todo-input" placeholder="Add item...">
                 <button type="submit" class="add-button" style="padding-top: 4px;">
                     <img src="./images/add-todo.svg" class="undragable" draggable="false">
                 </button>
@@ -104,7 +104,25 @@
             </ul>
         </div>
         <!----------------------- Settings container -------------------------->
-        <div id="settings-background"></div>
+        <div id="settings-main-container">
+            <div id="settings-background"></div>
+            <div id="settings-tab-container">
+                <div class="settings-title">Settings</div>
+                <div class="setting-item">
+                    <div id="light-theme-text" class="setting-item-text">Light theme</div>
+                    <input id="use_light_theme" class="setting-checkbox" type="checkbox">
+                </div>
+                <hr>
+                <div class="setting-item">
+                    <div id="icon-se-text" class="setting-item-text">Use icons for search engines</div>
+                    <input id="use_se_icons" class="setting-checkbox" type="checkbox">
+                </div>
+                <div class="setting-item">
+                    <div id="whole-se-text" class="setting-item-text">Delete whole search engine</div>
+                    <input id="delete_whole_se" class="setting-checkbox" type="checkbox">
+                </div>
+            </div>
+        </div>
         <!-------------------------- Settings button -------------------------->
         <div class="settings-button-container">
             <button id="settings-button" onclick="toggleShowSettings()">
@@ -116,6 +134,7 @@
         <script type="text/javascript" src="js/search-bar.js"></script>
         <script type="text/javascript" src="js/todo.js"></script>
         <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/settings-window.js"></script>
         <script type="text/javascript" src="js/embed-window.js"></script>
     </body>
 </html>

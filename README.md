@@ -7,7 +7,7 @@
 </div>
 
 # Table of contents
-1. [How it works](#How-it-works)
+1. [How it works](#How-it-works-specifications)
 2. [Making it your home page](#Making-it-your-home-page)
 3. [Search engines](#Search-engines)
 4. [Contributing](#Contributing)
@@ -15,12 +15,13 @@
 6. [Todo](#Todo)
 7. [Screenshots](#Screenshots)
 
-## How it works
-
-- The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items.
-- You can mark items as done or delete them.
-- The container size changes depending on the ammount of todo items.
+## How it works (specifications)
+- You can search items with different search engines using [keywords](#search-engines).
+- You can add, delete or mark items as done them with the buttons on the todo list.
+- You can edit a number of settings with the settings icon at the top right.
+- The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items and the user settings.
 - If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window, which can be moved.
+- All the containers are "expandable". For example you can add as many todo items as you want, or easily edit the html to add more bookmarks.
 
 ## Making it your home page
 You can set the [page link](https://r4v10l1.github.io/browser-homepage/homepage.html) as your homepage, but that is probably not pretty and the address bar won't be empty. For firefox at least, there is a [guide](https://stpg.tk/guides/firefox-startpage/) on how to do it on any platform, which I will explain here.
@@ -57,6 +58,9 @@ try {
 For example `file:///home/user/Documents/startpage/index.html`. Yes, you need to use the `file:///` thing in every platform.
 
 ## Search engines
+Type the **keyword** in the search bar followed by space. Depending on your settings you should see an icon or a text indicating what search engine you are using.  
+This is the list of available keywords:
+
 Keyword       | Search engine
 --------------|-----------------------
 <kbd>d</kbd>  | `https://www.duckduckgo.com/?q=`
@@ -69,7 +73,6 @@ Keyword       | Search engine
 Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONTRIBUTE.md).
 
 ## Changes
-
 - Added a bit of transparency to main container.
 - Added todo list.
 - Changed height, margins and sizes (Very easy to change)
@@ -89,24 +92,23 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 - Now you can see an (ugly) icon when the input updates, containing the search engine. In the future you should be able to change the icons and use text instead. 
 - If you use a search engine, the value of the search engine (`yt`, `g`, etc.) gets removed from the input value. Added 1 more setting (code for now) that will be checked to decide if after the value is empty with a search engine (You want to delete the search engine), the whole search engine will be deleted or you can "edit" the search engine. A bit hard to explain, but easy to see when changing `delete_whole_se` in the code and trying to delete the search engine.
 - Added text mode for search engines
+- Added settings window, background, items, css, checkbox, etc. The js works more or less. The settings do not really update on localstorage atm.
+- Fixed localstorage settings and some todo stuff that was messed up with the new changes.
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
 - [X] The embed youtube window only displays the last youtube video added. ~Maybe store a list of videos by id?~ Added different ids as arguments in the html.
 - [X] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
 - [X] Add text search engines instead of (ugly) icons.
+- [X] Add settings window/tab
+    - [X] Store choices in localstorage.
+    - [X] Search engine icons / text.
+    - [ ] Background (solid color)
+    - [ ] Add setting to replace the theme (css) ([Link](https://stackoverflow.com/a/19844757)).
 - [ ] Change the `X` for closing the embed (ugly af) and add proper svg.
 - [ ] The text added to the TODO items is only recognized **after** the link, the text before the link gets deleted. Also the none of it works with youtube links
 - [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
 - [ ] When using a text indicator for the search engine the search icon moves a bit to the right (The width changes)
-- [ ] Add more than one theme with css (light theme based on the /g/ one)
-    - [ ] Add button or something to replace the css ([Link](https://stackoverflow.com/a/19844757)).
-- [ ] Add settings window/tab
-    - [ ] Store choices in localstorage.
-    - [ ] Theme
-    - [ ] Background (solid color)
-    - [ ] Search engine icons / text
-
 
 ## Screenshots
 ![Overview screenshot](screenshots/screenshot5.png)

@@ -1,6 +1,6 @@
 const todoForm = document.querySelector('.todo-form');
 const todoInput = document.querySelector('.todo-input');
-const todoItemsList = document.querySelector('.todo-items');
+const todoItemsList = document.getElementsByClassName('todo-items')[0];
 const embed_video = document.getElementById('embed_video');
 var todos = [];
 var video_ids = [];
@@ -17,7 +17,7 @@ todoForm.addEventListener('submit', function(event) {
 
 function addTodo(item) {
     if ( item.trim() !== '' ) {
-        if ( todoInput.value[0] === "/") {
+        if ( todoInput.value[0] === "/") {      // ???
             item = item.slice(1);
         } else if (!(todoInput.value.includes("http"))) {
             item = item.replace(/^\w/, (c) => c.toUpperCase());
@@ -82,7 +82,7 @@ function renderTodos(todos) {
         }
 
         li.innerHTML = `
-			<input type="checkbox" class="checkbox">
+			<input type="checkbox" class="custom-input checkbox">
 			<div class="todo-text-container">
 				<div class="todo-text${checked_class}">${item_to_add}</div>
 			</div>
@@ -110,14 +110,14 @@ getFromLocalStorage();
 
 todoItemsList.addEventListener('click', function(event) {
     if (event.target.type === 'checkbox') {
-        toggle(event.target.parentElement.getAttribute('data-key'));
+        toggleTodo(event.target.parentElement.getAttribute('data-key'));
     }
     if (event.target.classList.contains('delete-button')) {
         deleteTodo(event.target.parentElement.getAttribute('data-key'));
     }
 });
 
-function toggle(id) {
+function toggleTodo(id) {
     todos.forEach(function(item) {
         if (item.id == id) {
             item.completed = !item.completed;

@@ -5,16 +5,12 @@ const setxt = document.getElementById("searchEngineText");
 const default_search_engine = "https://www.duckduckgo.com/?q=";
 var user_search_engine = "";
 
-// TODO: Get these from the settings (localstorage)
-var use_search_engine_icons = false;
-var delete_whole_se = true;
-
 const search_engines = {
-    d:  "https://www.duckduckgo.com/?q=",
-    dd: "https://html.duckduckgo.com/html/?q=",
-    g:  "https://www.google.com/search?q=",
-    s:  "https://searx.gnous.eu/search?q=",
-    yt: "https://www.youtube.com/results?search_query="
+    d:      "https://www.duckduckgo.com/?q=",
+    dd:     "https://html.duckduckgo.com/html/?q=",
+    g:      "https://www.google.com/search?q=",
+    s:      "https://searx.gnous.eu/search?q=",
+    yt:     "https://www.youtube.com/results?search_query="
 };
 
 function checkSearchEngine() {
@@ -23,7 +19,7 @@ function checkSearchEngine() {
         q.value = q.value.replace(user_search_engine + " ", "");
     }
 
-    if (use_search_engine_icons) {          // Icon mode
+    if (settings_global_object["use_se_icons"]) {          // Icon mode
         if (user_search_engine != "") checkSearchEngine_icons();
         else clearElementContents(sei);
     } else {                                // Text mode
@@ -63,7 +59,7 @@ function checkSearchEngine_text() {
     } else if (user_search_engine === "dd") {
         search_engine_text = "DuckDuckGo HTML";
     } else if (user_search_engine === "s") {
-        search_engine_text = "Searx";
+        search_engine_text = "SearX";
     }
 
     setxt.style.display = "block";
@@ -86,7 +82,7 @@ function checkDeleteSearchEngine() {
     if (user_search_engine != "" && q.value === "") {
         switch (event.key) {
             case "Backspace":
-                if (!delete_whole_se) {
+                if (!settings_global_object["delete_whole_se"]) {
                     // Need to put a character to delete, not space because of the function call
                     q.value = user_search_engine + "-";
                 }
