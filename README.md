@@ -90,24 +90,22 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 - If you use a search engine, the value of the search engine (`yt`, `g`, etc.) gets removed from the input value. Added 1 more setting (code for now) that will be checked to decide if after the value is empty with a search engine (You want to delete the search engine), the whole search engine will be deleted or you can "edit" the search engine. A bit hard to explain, but easy to see when changing `delete_whole_se` in the code and trying to delete the search engine.
 - Added text mode for search engines
 - Added settings window, background, items, css, checkbox, etc. The js works more or less. The settings do not really update on localstorage atm.
+- Fixed localstorage settings and some todo stuff that was messed up with the new changes.
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
 - [X] The embed youtube window only displays the last youtube video added. ~Maybe store a list of videos by id?~ Added different ids as arguments in the html.
 - [X] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
 - [X] Add text search engines instead of (ugly) icons.
+- [X] Add settings window/tab
+    - [X] Store choices in localstorage.
+    - [X] Search engine icons / text.
+    - [ ] Background (solid color)
+    - [ ] Add setting to replace the theme (css) ([Link](https://stackoverflow.com/a/19844757)).
 - [ ] Change the `X` for closing the embed (ugly af) and add proper svg.
 - [ ] The text added to the TODO items is only recognized **after** the link, the text before the link gets deleted. Also the none of it works with youtube links
 - [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
 - [ ] When using a text indicator for the search engine the search icon moves a bit to the right (The width changes)
-- [ ] Add more than one theme with css (light theme based on the /g/ one)
-    - [ ] Add button or something to replace the css ([Link](https://stackoverflow.com/a/19844757)).
-- [X] Add settings window/tab
-    - [X] Store choices in localstorage. *More or less...*
-    - [ ] Theme
-    - [ ] Background (solid color)
-    - [X] Search engine icons / text. *More or less...*
-
 
 ## Screenshots
 ![Overview screenshot](screenshots/screenshot5.png)
