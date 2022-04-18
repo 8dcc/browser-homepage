@@ -1,6 +1,6 @@
 const todoForm = document.querySelector('.todo-form');
 const todoInput = document.querySelector('.todo-input');
-const todoItemsList = document.querySelector('.todo-items');
+const todoItemsList = document.getElementsByClassName('todo-items')[0];
 const embed_video = document.getElementById('embed_video');
 var todos = [];
 var video_ids = [];
@@ -110,14 +110,14 @@ getFromLocalStorage();
 
 todoItemsList.addEventListener('click', function(event) {
     if (event.target.type === 'checkbox') {
-        toggle(event.target.parentElement.getAttribute('data-key'));
+        toggleTodo(event.target.parentElement.getAttribute('data-key'));
     }
     if (event.target.classList.contains('delete-button')) {
         deleteTodo(event.target.parentElement.getAttribute('data-key'));
     }
 });
 
-function toggle(id) {
+function toggleTodo(id) {
     todos.forEach(function(item) {
         if (item.id == id) {
             item.completed = !item.completed;
