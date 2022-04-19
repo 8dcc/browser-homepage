@@ -4,6 +4,7 @@ var settings_global_object;
 // TODO: Make a checkbox setting to change the css text color with the backgound
 //       Inside updateBackgroundFromSettings
 // TODO: Change webkit scrollbar background with the background update
+// TODO: Make the default settings checker check for each setting instead of all or nothing
 
 /* --------------------------------------------------------------- */
 /* Push and pull settings from localstorage */

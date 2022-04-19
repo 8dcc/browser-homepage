@@ -81,12 +81,13 @@
 }
 
 .setting-button {
+    height: 22px;
     display: inline-block;
     float: right;
     margin-left: 3px;   /* Only left so its as right as possible */
     padding: 1px 4px;
     border: none;
     border-radius: 1px;
-    font-size: 13px;
+    font-size: 13px;    /* TODO: Increase font size a bit? */
     font-family: 'Titillium Web', sans-serif;
 }
