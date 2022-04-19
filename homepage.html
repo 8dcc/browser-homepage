@@ -28,7 +28,7 @@
                     <div id="searchEngineIcon"></div>
                     <div id="searchEngineText"></div>
                     <input type="search" class="custom-input search-input" id="query" name="q" placeholder="Search..." aria-label="Search"/>
-                    <button class="search-button">
+                    <button class="default-button search-button">
                         <img src="./images/search.svg" class="undragable" draggable="false" style="padding-top: 4px;">
                     </button>
                 </form>
@@ -91,7 +91,7 @@
             </div>
             <form class="todo-form">
                 <input type="text" class="custom-input todo-input" placeholder="Add item...">
-                <button type="submit" class="add-button" style="padding-top: 4px;">
+                <button type="submit" class="default-button add-button" style="padding-top: 4px;">
                     <img src="./images/add-todo.svg" class="undragable" draggable="false">
                 </button>
             </form>
@@ -104,23 +104,29 @@
             <div id="settings-tab-container">
                 <div class="settings-title">Settings</div>
                 <div class="setting-item">
-                    <div id="light-theme-text" class="setting-item-text">Light theme</div>
-                    <input id="use_light_theme" class="setting-checkbox" type="checkbox">
-                </div>
-                <hr>
-                <div class="setting-item">
                     <div id="icon-se-text" class="setting-item-text">Use icons for search engines</div>
-                    <input id="use_se_icons" class="setting-checkbox" type="checkbox">
+                    <input id="use-se-icons" class="setting-checkbox" type="checkbox">
                 </div>
                 <div class="setting-item">
                     <div id="whole-se-text" class="setting-item-text">Delete whole search engine</div>
-                    <input id="delete_whole_se" class="setting-checkbox" type="checkbox">
+                    <input id="delete-whole-se" class="setting-checkbox" type="checkbox">
+                </div>
+                <hr>
+                <div class="setting-item">
+                    <div id="light-theme-text" class="setting-item-text">Light theme</div>
+                    <input id="use-light-theme" class="setting-checkbox" type="checkbox">
+                </div>
+                <div class="setting-item">
+                    <div id="custom-background-text" class="setting-item-text">Change the background</div>
+                    <button id="apply-cbackground" class="setting-button" onclick="changeCustomBackground(true)">Apply</button>
+                    <button id="reset-cbackground" class="setting-button" onclick="changeCustomBackground(false)">Reset</button>
+                    <input id="cbackground-color" class="setting-color" type="color">
                 </div>
             </div>
         </div>
         <!-------------------------- Settings button -------------------------->
         <div class="settings-button-container">
-            <button id="settings-button" onclick="toggleShowSettings()">
+            <button id="settings-button" class="default-button" onclick="toggleShowSettings()">
                 <img src="./images/settings.svg" class="undragable" draggable="false">
             </button>
         </div>
