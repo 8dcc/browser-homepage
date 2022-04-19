@@ -86,7 +86,7 @@ function renderTodos(todos) {
 			<div class="todo-text-container">
 				<div class="todo-text${checked_class}">${item_to_add}</div>
 			</div>
-			<button class="delete-button"></button>
+			<button class="default-button delete-button"></button>
         `;
         todoItemsList.append(li);
     });

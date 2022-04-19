@@ -94,6 +94,7 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 - Added text mode for search engines
 - Added settings window, background, items, css, checkbox, etc. The js works more or less. The settings do not really update on localstorage atm.
 - Fixed localstorage settings and some todo stuff that was messed up with the new changes.
+- Added localstorage settings for background (custom color and reset default image)
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
@@ -103,7 +104,7 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 - [X] Add settings window/tab
     - [X] Store choices in localstorage.
     - [X] Search engine icons / text.
-    - [ ] Background (solid color)
+    - [X] Background (solid color)
     - [ ] Add setting to replace the theme (css) ([Link](https://stackoverflow.com/a/19844757)).
 - [ ] Change the `X` for closing the embed (ugly af) and add proper svg.
 - [ ] The text added to the TODO items is only recognized **after** the link, the text before the link gets deleted. Also the none of it works with youtube links

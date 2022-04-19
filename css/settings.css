@@ -69,3 +69,24 @@
     display: inline-block;
     float: right;
 }
+
+.setting-color {
+    display: inline-block;
+    float: right;
+    width: 30px;
+    height: 22px;
+    border: none;
+    background:none;
+    padding:0;
+}
+
+.setting-button {
+    display: inline-block;
+    float: right;
+    margin-left: 3px;   /* Only left so its as right as possible */
+    padding: 1px 4px;
+    border: none;
+    border-radius: 1px;
+    font-size: 13px;
+    font-family: 'Titillium Web', sans-serif;
+}
