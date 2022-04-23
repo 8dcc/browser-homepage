@@ -14,7 +14,9 @@
         <!-------------------------- Movable window --------------------------->
         <div id="movablewindow">
             <div id="movablepart-container">
-                <a class="close-embed" onclick="hideEmbed()">x</a>
+                <a class="close-embed" onclick="hideEmbed()">
+                    <img src="images/close-embed.svg" height="20px">
+                </a>
                 <div id="movablepart-text">Embed player</div>
             </div>
             <div id="embed_video"></div>
@@ -120,6 +122,10 @@
                 <div class="setting-item">
                     <div id="light-theme-text" class="setting-item-text">Light theme</div>
                     <input id="use-light-theme" class="setting-checkbox" type="checkbox">
+                </div>
+                <div class="setting-item">
+                    <div id="cbc-for-items-text" class="setting-item-text">Use background color for text</div>
+                    <input id="use-cbc-for-items" class="setting-checkbox" type="checkbox">
                 </div>
                 <div class="setting-item">
                     <div id="custom-background-text" class="setting-item-text">Change the background</div>

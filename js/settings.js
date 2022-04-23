@@ -3,8 +3,6 @@ var settings_global_object;
 
 // TODO: Make a checkbox setting to change the css text color with the backgound
 //       Inside updateBackgroundFromSettings
-// TODO: Change webkit scrollbar background with the background update
-// TODO: Make the default settings checker check for each setting instead of all or nothing
 
 /* --------------------------------------------------------------- */
 /* Push and pull settings from localstorage */
@@ -29,6 +27,7 @@ function getLsSettings() {
 function renderSettings() {
     updateBoolSetting("use-se-icons", settings_global_object.use_se_icons);
     updateBoolSetting("delete-whole-se", settings_global_object.delete_whole_se);
+    updateBoolSetting("use-cbc-for-items", settings_global_object.use_cbc_for_items);
     updateStringSetting("cbackground-color", settings_global_object.cbackground_color);
 }
 
@@ -51,7 +50,8 @@ settTab.addEventListener('click', function(event) {
 });
 
 function toggleSetting(changeme) {
-    settings_global_object[changeme] = !settings_global_object[changeme];
+    const replaced_changeme = changeme.replace(new RegExp("-", "g"), "_");
+    settings_global_object[replaced_changeme] = !settings_global_object[replaced_changeme];
     updateLsSettings();
 }
 
@@ -93,13 +93,15 @@ function resetCustomBackground() {                  // Change the actual backgro
 /* --------------------------------------------------------------- */
 /* Default settings */
 function checkEmptyLs() {
-    if (!localStorage.getItem('user_settings')) {
-        console.log("[settings] Detected no settings in localstorage. Generating defaults...")
+    const user_settings_len = 6;
+    if (!localStorage.getItem('user_settings') || Object.keys(JSON.parse(localStorage.getItem('user_settings'))).length < user_settings_len) {
+        console.log("[settings] Detected invalid settings in localstorage. Generating defaults...")
         var dso = new Object();
 
         dso.use_se_icons            = false;
         dso.delete_whole_se         = true;
         dso.use_light_theme         = false;    // Not used atm
+        dso.use_cbc_for_items       = true;
         dso.use_cbackground_color   = false;
         dso.cbackground_color       = "#690000";
 

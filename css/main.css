@@ -171,16 +171,6 @@ a:hover {
 
 /* ----------------------------------------------------------------- */
 /* Buttons and links */
-.close-embed {
-    padding-right: 5px;
-    font-size: 11px;
-    color: #ffffff;
-}
-
-.close-embed:hover {
-    color: #a1a1a1;
-    cursor: pointer;
-}
 
 .embed-button {
     font-size: 13px;
