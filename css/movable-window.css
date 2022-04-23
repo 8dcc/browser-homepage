@@ -26,7 +26,7 @@
     text-align: center;
     font-size: 15px;
     color: #ffffff;
-    padding-top: 6px;
+    padding-top: 8px;
 }
 
 #embed_video {
@@ -36,4 +36,16 @@
     text-align: center;
     min-width: 500px;
     min-height: 250px;
+}
+
+.close-embed {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    /* color: #ffffff; */
+}
+
+.close-embed:hover {
+    cursor: pointer;
+    /* color: #a1a1a1; */
 }
