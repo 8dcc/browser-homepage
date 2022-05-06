@@ -1,0 +1,45 @@
+/*
+ * My userChrome.css for firefox. Make sure you follow the github guide on how to install.
+ * https://github.com/r4v10l1/browser-homepage/tree/main/firefox
+ */
+
+/*------------------------------ INCLUDES ------------------------------*/
+/* Here you can place your includes to use external css files*/
+
+/*-------------------------------- TABS --------------------------------*/
+/* All tab backgrounds */
+.tab-background {
+    border-radius: 0px 0px !important;
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
+
+/* Active tab */
+.tabbrowser-tab[selected=true] .tab-background ,
+.tabbrowser-tab[multiselected=true] .tab-background {
+    /* Use the same background as the address bar to make it smooth */
+    background-color: var(--toolbar-bgcolor) !important;
+    background: var(--toolbar-bgcolor) !important;
+    border-top: 2px solid #bf0000 !important;
+    border-style: solid none none none !important;
+}
+
+/* Inactive tabs */
+/*
+.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
+background-color: color-mix(in srgb, currentColor 7%, transparent);
+}
+ */
+
+/*-------------------------------- MENUS -------------------------------*/
+/* Right click. Less padding */
+menupopup>menu,
+menupopup>menuitem {
+    padding-block: 2px !important;
+}
+
+/*
+:root {
+--arrowpanel-menuitem-padding: 1px !important;
+}
+ */
