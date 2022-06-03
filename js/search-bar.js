@@ -47,6 +47,7 @@ function checkSearchEngine_icons() {
     sei.innerHTML = `
         <img src="images/search-engines/${search_engine_icon}" alt="Icon" height="${search_engine_icon_h}">
     `;
+    q.style.paddingLeft = "10px";   // Remove some margin from actual search input
 }
 
 function checkSearchEngine_text() {
@@ -66,6 +67,7 @@ function checkSearchEngine_text() {
     setxt.innerHTML = `
         <div class="search-engine-text">${search_engine_text}</div>
     `;
+    q.style.paddingLeft = "10px";   // Remove some margin from actual search input
 }
 
 function hasSearchEngine(text) {
@@ -88,6 +90,7 @@ function checkDeleteSearchEngine() {
                 }
                 user_search_engine = "";
                 checkSearchEngine();
+                q.style.removeProperty("padding-left");     // Remove reduced padding that is added when using search engine
                 break;
             default:
                 break;
