@@ -10,7 +10,8 @@ const search_engines = {
     dd:     "https://html.duckduckgo.com/html/?q=",
     g:      "https://www.google.com/search?q=",
     s:      "https://searx.gnous.eu/search?q=",
-    yt:     "https://www.youtube.com/results?search_query="
+    yt:     "https://www.youtube.com/results?search_query=",
+    w:      "https://en.wikipedia.org/wiki/Special:Search?search="
 };
 
 function checkSearchEngine() {
@@ -41,12 +42,15 @@ function checkSearchEngine_icons() {
         search_engine_icon = "youtube.svg";
     } else if (user_search_engine === "s") {
         search_engine_icon = "gnu.svg";
+    } else if (user_search_engine === "w") {
+        search_engine_icon = "wikipedia.png";
     }
 
     sei.style.display = "block";
     sei.innerHTML = `
         <img src="images/search-engines/${search_engine_icon}" alt="Icon" height="${search_engine_icon_h}">
     `;
+    q.style.paddingLeft = "10px";   // Remove some margin from actual search input
 }
 
 function checkSearchEngine_text() {
@@ -60,12 +64,15 @@ function checkSearchEngine_text() {
         search_engine_text = "DuckDuckGo HTML";
     } else if (user_search_engine === "s") {
         search_engine_text = "SearX";
+    } else if (user_search_engine === "w") {
+        search_engine_text = "Wikipedia";
     }
 
     setxt.style.display = "block";
     setxt.innerHTML = `
         <div class="search-engine-text">${search_engine_text}</div>
     `;
+    q.style.paddingLeft = "10px";   // Remove some margin from actual search input
 }
 
 function hasSearchEngine(text) {
@@ -88,6 +95,7 @@ function checkDeleteSearchEngine() {
                 }
                 user_search_engine = "";
                 checkSearchEngine();
+                q.style.removeProperty("padding-left");     // Remove reduced padding that is added when using search engine
                 break;
             default:
                 break;

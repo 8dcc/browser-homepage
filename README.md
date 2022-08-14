@@ -73,6 +73,10 @@ Keyword       | Search engine
 <kbd>g</kbd>  | `https://www.google.com/search?q=`
 <kbd>s</kbd>  | `https://searx.gnous.eu/search?q=`
 <kbd>yt</kbd> | `https://www.youtube.com/results?search_query=`
+<kbd>w</kbd>  | `https://en.wikipedia.org/wiki/Special:Search?search=`
+
+For adding custom search engines see [this](https://github.com/r4v10l1/browser-homepage/commit/eb7527c3a777472c7a0208919a742efff0129283#diff-ea1c1de5ab8cb543a3597ba84a6308ab4227b0419fdc81b56bd52950a1c00f6e) example.  
+You can PR your search engine if you want, and I will add it if I find it useful.
 
 ## Contributing
 Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONTRIBUTE.md).
