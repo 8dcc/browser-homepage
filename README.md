@@ -12,9 +12,8 @@
 3. [Firefox configuration](#Firefox-configuration)
 4. [Search engines](#Search-engines)
 5. [Contributing](#Contributing)
-6. [Changes](#Changes)
-7. [Todo](#Todo)
-8. [Screenshots](#Screenshots)
+6. [Todo](#Todo)
+7. [Screenshots](#Screenshots)
 
 ## How it works (specifications)
 - You can search items with different search engines using [keywords](#search-engines).
@@ -80,30 +79,6 @@ You can PR your search engine if you want, and I will add it if I find it useful
 
 ## Contributing
 Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONTRIBUTE.md).
-
-## Changes
-- Added a bit of transparency to main container.
-- Added todo list.
-- Changed height, margins and sizes (Very easy to change)
-- Added search engines using [keywords](https://github.com/r4v10l1/browser-homepage/blob/main/js/search-bar.js#L5) in the search bar.
-- JS is now in different files.
-- Fixed background repeat thing. Now it covers all the screen. THE SCREENSHOTS ARE STILL WITH THE REPEATED BACKGROUND.
-- Now it won't capitalize links.
-- Now it will add `<a href="">` to the todo item if it's a link (Makes links clickable). 
-- Now the size of the bookmarks changes depending on the items. For real now.
-- Added embed styles, window and embed button depending on the todolist.
-- Added fixed width to the main and todo containers, so it doesnt resize with the window. Margins are now auto instead of the 23% used before.
-- Changed default position of the embed video window. Now it spawns in the left side, in a fixed position, instead of 70%, which could make the window spawn with half outside of the browser on smaller resolutions.
-- Added [function](https://github.com/r4v10l1/browser-homepage/commit/51d4e2e8c3f6ff98d7942d53aea73008403f047f#diff-69e1955059041300b9d121a61837651363f6e92e23f5683ea9aa8fc62f1a6bf5R38) for shortening links, instead of fixed values depending on the type of link (youtube, etc.). Now they are parameters. It also made the regular text check for possible overflows to prevent the text and the remove button from going outside of the container ([Later removed](https://github.com/r4v10l1/browser-homepage/commit/51d4e2e8c3f6ff98d7942d53aea73008403f047f#diff-69e1955059041300b9d121a61837651363f6e92e23f5683ea9aa8fc62f1a6bf5R38)).
-- Now the text itself of the todo item has it's class and all, but making that change made the `display: block;` mess the todo items. This was fixed by applying [`display: inline;`](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R212) and [`display: inline-block;`](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R216) to different items.
-- Instead of applying the `checked` class to all the list item, now it applies it to this new class (The text only). This is now made [easily](https://github.com/r4v10l1/browser-homepage/commit/66e53ba041a0898983727ebbfa2171a65a22be7b#diff-69e1955059041300b9d121a61837651363f6e92e23f5683ea9aa8fc62f1a6bf5R49) too.
-- Now the todo items also allow big texts (paragraphs) without breaking the other buttons. If it cannot justify the text (when the item is one big word), it will [remove the overflow](https://github.com/r4v10l1/browser-homepage/commit/a8d469ea8a46040d93810149e859fbee90667d8a#diff-f131fc9dca7d0116bd2258c95e127905bb0db3b922c83db9c7648b32770fc532R218).
-- Now you can see an (ugly) icon when the input updates, containing the search engine. In the future you should be able to change the icons and use text instead. 
-- If you use a search engine, the value of the search engine (`yt`, `g`, etc.) gets removed from the input value. Added 1 more setting (code for now) that will be checked to decide if after the value is empty with a search engine (You want to delete the search engine), the whole search engine will be deleted or you can "edit" the search engine. A bit hard to explain, but easy to see when changing `delete_whole_se` in the code and trying to delete the search engine.
-- Added text mode for search engines
-- Added settings window, background, items, css, checkbox, etc. The js works more or less. The settings do not really update on localstorage atm.
-- Fixed localstorage settings and some todo stuff that was messed up with the new changes.
-- Added localstorage settings for background (custom color and reset default image)
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
