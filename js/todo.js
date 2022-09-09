@@ -66,16 +66,18 @@ function renderTodos(todos) {
         li.setAttribute('data-key', item.id);
 
         if (item.name.includes("http")) {
+            var pre_link = item.name.split("http")[0];
+            var actual_link = 'http' + item.name.split("http")[1].split(" ")[0].trim();
+            var extra_text = item.name.split(actual_link)[1];
+
             if (item.name.includes("youtube.com/watch")) {
                 var embed_video_id = item.name.split("?v=")[1].slice(0,11);
-				var item_to_add = '<a href="' + item.name.trim() + '">' + check_for_too_long(item.name, 35, 23, 66) + '</a> ' + 
-					`<a class="embed-button" onclick="show_embed_id('${embed_video_id}')">(embed)</a>`;
+				var item_to_add = pre_link + '<a href="' + actual_link + '">' + check_for_too_long(actual_link, 35, 23, 66) + '</a> ' + 
+					`<a class="embed-button" onclick="show_embed_id('${embed_video_id}')">(embed)</a>` + extra_text;
             } else {
-                var actual_link = 'http' + item.name.split("http")[1].split(" ")[0].trim();
-                var extra_text = item.name.split(actual_link)[1];
-                var fpart = (extra_text.length > 5) ? 30 : 40;      // The first part that the url will be splitted. If the user has more text, give more priority.
-
-                var item_to_add = '<a href="' + actual_link + '">' + check_for_too_long(actual_link, fpart, 15, 66) + '</a>' + extra_text;
+                // The first part that the url will be splitted. If the user has more text, give more priority.
+                var fpart = (extra_text.length > 5) ? 30 : 40;
+                var item_to_add = pre_link + '<a href="' + actual_link + '">' + check_for_too_long(actual_link, fpart, 15, 66) + '</a>' + extra_text;
             }
         } else {
             var item_to_add = item.name;
