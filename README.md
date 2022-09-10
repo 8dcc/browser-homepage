@@ -21,7 +21,7 @@
 - You can edit a number of settings with the settings icon at the top right.
 - The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items and the user settings. Because of this, you might have to remove your settings if some setting has been added to the repo (`Developer tools > Storage > Local Storage > User settings > Delete "user_settings"`).
 - If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window, which can be moved.
-- Todo items are capitalized by default, to disable this, you can disable the setting, or start the todo item with '/' or ' '.
+- Todo items are capitalized by default, to disable this, you can disable the setting, or start the todo item with `'/'` or `' '`.
 - URLs added to the todo list are slightly "shortened" to fit the space. If you want to completely shorten the URL, you can enable the setting, or start it like this: `!link`.
 - All the containers are "expandable". For example you can add as many todo items as you want, or easily edit the html to add more bookmarks.
 
