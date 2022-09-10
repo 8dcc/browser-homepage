@@ -27,6 +27,8 @@ function getLsSettings() {
 function renderSettings() {
     updateBoolSetting("use-se-icons", settings_global_object.use_se_icons);
     updateBoolSetting("delete-whole-se", settings_global_object.delete_whole_se);
+    updateBoolSetting("capitalize-todos", settings_global_object.capitalize_todos);
+    updateBoolSetting("shorten-links", settings_global_object.shorten_links);
     updateBoolSetting("use-cbc-for-items", settings_global_object.use_cbc_for_items);
     updateStringSetting("cbackground-color", settings_global_object.cbackground_color);
 }
@@ -98,12 +100,14 @@ function checkEmptyLs() {
         console.log("[settings] Detected invalid settings in localstorage. Generating defaults...")
         var dso = new Object();
 
-        dso.use_se_icons            = false;
-        dso.delete_whole_se         = true;
-        dso.use_light_theme         = false;    // Not used atm
-        dso.use_cbc_for_items       = true;
-        dso.use_cbackground_color   = false;
-        dso.cbackground_color       = "#690000";
+        dso.use_se_icons          = false;
+        dso.delete_whole_se       = true;
+        dso.capitalize_todos      = true;     // Same as starting items with ' '
+        dso.shorten_links         = false;    // Same as starting links with '!'
+        dso.use_light_theme       = false;    // Not used atm
+        dso.use_cbc_for_items     = true;
+        dso.use_cbackground_color = false;
+        dso.cbackground_color     = "#690000";
 
         var default_settings = JSON.stringify(dso);
         settings_global_object = JSON.parse(default_settings);

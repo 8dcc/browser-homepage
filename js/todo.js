@@ -17,16 +17,20 @@ todoForm.addEventListener('submit', function(event) {
 
 function addTodo(item) {
     if ( item.trim() !== '' ) {
-        if ( todoInput.value[0] === "/") {      // ???
+        // If todo item starts with '/', don't capitalize
+        if ( todoInput.value[0] === "/") {
             item = item.slice(1);
-        } else if (!(todoInput.value.includes("http"))) {
+        // If we are not starting the todo item with a link and we have the capitalize_todos setting enabled, capitalize
+        } else if (todoInput.value.slice(0,4) != "http" && settings_global_object["capitalize_todos"]) {
             item = item.replace(/^\w/, (c) => c.toUpperCase());
         }
+
         const todo = {
             id: Date.now(),
             name: item,
             completed: false
         };
+
         todos.push(todo);
         addToLocalStorage(todos);
         todoInput.value = '';
@@ -77,7 +81,7 @@ function renderTodos(todos) {
             var extra_text = item.name.split(actual_link)[1];
             // The first part that the url will be splitted. If the user has more text, give more priority.
             var fpart = (extra_text.length > 5) ? 30 : 40;
-            var link_text = (pre_link_char == '!') ? "Link" : check_for_too_long(actual_link, fpart, 15, 66);
+            var link_text = (settings_global_object["shorten_links"] || pre_link_char == '!') ? "Link" : check_for_too_long(actual_link, fpart, 15, 66);
 
             if (item.name.includes("youtube.com/watch")) {
                 var embed_video_id = item.name.split("?v=")[1].slice(0,11);
