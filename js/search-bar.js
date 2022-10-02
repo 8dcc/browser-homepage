@@ -10,6 +10,7 @@ const search_engines = {
     dd:     "https://html.duckduckgo.com/html/?q=",
     g:      "https://www.google.com/search?q=",
     s:      "https://searx.gnous.eu/search?q=",
+    l:      "https://librex.extravi.dev/search.php?q=",
     yt:     "https://www.youtube.com/results?search_query=",
     w:      "https://en.wikipedia.org/wiki/Special:Search?search="
 };
@@ -42,6 +43,8 @@ function checkSearchEngine_icons() {
         search_engine_icon = "youtube.svg";
     } else if (user_search_engine === "s") {
         search_engine_icon = "gnu.svg";
+    } else if (user_search_engine === "l") {
+        search_engine_icon = "librex.png";
     } else if (user_search_engine === "w") {
         search_engine_icon = "wikipedia.png";
     }
@@ -64,6 +67,8 @@ function checkSearchEngine_text() {
         search_engine_text = "DuckDuckGo HTML";
     } else if (user_search_engine === "s") {
         search_engine_text = "SearX";
+    } else if (user_search_engine === "l") {
+        search_engine_text = "LibreX";
     } else if (user_search_engine === "w") {
         search_engine_text = "Wikipedia";
     }
