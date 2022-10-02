@@ -16,3 +16,6 @@ Main source: [Link](https://superuser.com/questions/1653533/how-to-switch-back-t
 ### `userContent.css`
 This file is currently commented because the use case is very specific.  
 It makes image zooming "not smooth" (crispy).
+
+### Screenshots
+![image](https://user-images.githubusercontent.com/29655971/193450406-4749bb2b-249a-4d1e-b65c-3360cbc39b91.png)
