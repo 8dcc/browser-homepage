@@ -2,6 +2,7 @@
 Folder containing some of my firefox configuration.
 
 ### How to install
+1. Go to `about:config` and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
 1. Go to [`about:support`](about:support) on your browser.
 2. Click on `Profile Folder` > `Open Folder`
 3. If there is no directory named `chrome`, create it and enter it.
