@@ -3,11 +3,11 @@ Folder containing some of my firefox configuration.
 
 ### How to install
 1. Go to `about:config` and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
-1. Go to [`about:support`](about:support) on your browser.
-2. Click on `Profile Folder` > `Open Folder`
-3. If there is no directory named `chrome`, create it and enter it.
-4. Copy the files `userChrome.css` and `userContent.css` to that folder.
-5. Restart firefox to apply.
+2. Go to [`about:support`](about:support) on your browser.
+3. Click on `Profile Folder` > `Open Folder`
+4. If there is no directory named `chrome`, create it and enter it.
+5. Copy the files `userChrome.css` and `userContent.css` to that folder.
+6. Restart firefox to apply.
 
 ### `userChrome.css`
 Main source: [Link](https://superuser.com/questions/1653533/how-to-switch-back-to-firefox-old-style-of-tabs)
