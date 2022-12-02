@@ -1,0 +1,24 @@
+:root {
+    --highlight: #980000;
+    --highlight-dark: #690000;
+    --highlight-darker: #500000;
+    --border: #333333;
+    --input-text: #f2f2f2;
+    --input-placeholder: #b2b2b2;
+
+    /* Text color for column and todo titles */
+    --title-text: #c1c1c1;
+
+    /* Section titles, search bar, todo bar, etc. */
+    --title-background: var(--border);
+
+    /* Main container background */
+    --main-background: #121212;
+
+    /* Bookmark column background */
+    --column-background: #111111;
+
+    /* Search engine text */
+    --se-text: var(--title-text);
+    --se-background: #252525;
+}

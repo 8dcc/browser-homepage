@@ -10,13 +10,13 @@ body {
 hr {
     border: 1.5px solid;
     border-radius: 1px;
-    border-color: #333;
+    border-color: var(--border);
 }
 
 /* ----------------------------------------------------------------- */
 /* Main container for clock, search bar and bookmarks */
 .bitch-main {
-    background-color: #121212;
+    background-color: var(--main-background);
     opacity: 97%;
     margin: 50px auto 10px auto;
     padding: 0px 30px 30px 30px;
@@ -25,14 +25,14 @@ hr {
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
-    border-color: #333333;
+    border-color: var(--border);
 }
 
 /* ----------------------------------------------------------------- */
 /* Clock */
 #clock {
     font-family: 'Orbitron', sans-serif;
-    color: #980000;
+    color: var(--highlight);
     font-size: 50px;
     text-align: center;
     padding-top: 15px;
@@ -46,7 +46,7 @@ hr {
 }
 
 form {
-    background-color: #333333;
+    background-color: var(--title-background);
     width: 100%;
     height: 44px;
     border-radius: 5px;
@@ -61,7 +61,7 @@ form {
     height: 100%;
     width: 100%;
     padding: 6px 10px;
-    color: #f2f2f2;
+    color: var(--input-text);
     caret-color: #fff;
 }
 
@@ -92,7 +92,7 @@ svg {
 */
 
 ::placeholder {
-    color: #b2b2b2;
+    color: var(--input-placeholder);
     font-family: 'Titillium Web', sans-serif;
     opacity: 0.7;
 }
@@ -105,7 +105,7 @@ svg {
 }
 
 .list-column {
-    background-color: #111;
+    background-color: var(--column-background);
     text-align: center;
     width: 500px;
     width: -moz-available;
@@ -116,12 +116,12 @@ svg {
     border-style: solid;
     border-width: 1px;
     border-radius: 7px;
-    border-color: #333;
+    border-color: var(--border);
 }
 
 .list-title {
-    background-color: #333;
-    color: #c1c1c1;
+    background-color: var(--title-background);
+    color: var(--title-text);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     padding: 4px;
@@ -137,18 +137,18 @@ svg {
 }
 
 a {
-    color: #980000;
+    color: var(--highlight);
     text-decoration: none;
 }
 
 a:hover {
-    color: #690000;
+    color: var(--highlight-dark);
 }
 
 /* ----------------------------------------------------------------- */
 /* Scroll bar */
 :root {
-    scrollbar-color: #868686 #690000;
+    scrollbar-color: #868686 var(--highlight-dark);
     scrollbar-width: thin;
 }
 
@@ -157,7 +157,7 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-    background: #690000;
+    background: var(--highlight-dark);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -174,14 +174,14 @@ a:hover {
 
 .embed-button {
     font-size: 13px;
-    color: #690000;
+    color: var(--highlight-dark);
     text-decoration: underline;
-    text-decoration-color: #500000;
+    text-decoration-color: var(--highlight-darker);
 }
 
 .embed-button:hover {
     cursor: pointer;
-    color: #500000;
+    color: var(--highlight-darker);
 }
 
 .undragable {
