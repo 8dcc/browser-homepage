@@ -24,13 +24,6 @@
     border-style: solid none none none !important;
 }
 
-/* Inactive tabs */
-/*
-.tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
-background-color: color-mix(in srgb, currentColor 7%, transparent);
-}
- */
-
 /*-------------------------------- MENUS -------------------------------*/
 /* Right click. Less padding */
 menupopup>menu,
@@ -38,8 +31,7 @@ menupopup>menuitem {
     padding-block: 2px !important;
 }
 
-/*
-:root {
---arrowpanel-menuitem-padding: 1px !important;
+/* For mic popup on linux */
+#webrtcIndicator {
+    display: none;
 }
- */

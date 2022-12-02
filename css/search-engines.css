@@ -21,8 +21,8 @@
 
     font-family: 'Titillium Web', sans-serif;
     padding: 1px 6px;
-    background: #252525;
-    color: #c1c1c1;
+    color: var(--se-text);
+    background: var(--se-background);
 
     border-style: solid;
     border-radius: 6px;

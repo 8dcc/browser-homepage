@@ -7,10 +7,15 @@
     left: 10px;
     top: 10px;
     z-index: 9;
-    background-color: #121212;
+    background-color: var(--main-background);
     opacity: 95%;
-    border: 1px solid #333333;
+    border: 1px solid var(--border);
     border-radius: 4px;
+}
+
+/* TODO: Use grab and grabbing for :active */
+#movablewindow:hover {
+    cursor: all-scroll;
 }
 
 #movablepart-container {
