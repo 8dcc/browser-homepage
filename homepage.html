@@ -125,18 +125,70 @@
                 </div>
                 <hr>
                 <div class="setting-item">
-                    <div id="light-theme-text" class="setting-item-text">Light theme</div>
-                    <input id="use-light-theme" class="setting-checkbox" type="checkbox">
-                </div>
-                <div class="setting-item">
-                    <div id="cbc-for-items-text" class="setting-item-text">Use background color for text</div>
-                    <input id="use-cbc-for-items" class="setting-checkbox" type="checkbox">
-                </div>
-                <div class="setting-item">
                     <div id="custom-background-text" class="setting-item-text">Change the background</div>
                     <button id="apply-cbackground" class="setting-button" onclick="changeCustomBackground(true)">Apply</button>
                     <button id="reset-cbackground" class="setting-button" onclick="changeCustomBackground(false)">Reset</button>
                     <input id="cbackground-color" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-highlight-text" class="setting-item-text">Change the highlight color</div>
+                    <button id="apply-css-highlight" class="setting-button" onclick="applyCustomCss(1)">Apply</button>
+                    <button id="reset-css-highlight" class="setting-button" onclick="resetCustomCss(1)">Reset</button>
+                    <input id="ccss-highlight" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-highlight-dark-text" class="setting-item-text">Change the highlight hover color</div>
+                    <button id="apply-css-highlight-dark" class="setting-button" onclick="applyCustomCss(2)">Apply</button>
+                    <button id="reset-css-highlight-dark" class="setting-button" onclick="resetCustomCss(2)">Reset</button>
+                    <input id="ccss-highlight-dark" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-highlight-darker-text" class="setting-item-text">Change the highlight darker color</div>
+                    <button id="apply-css-highlight-darker" class="setting-button" onclick="applyCustomCss(3)">Apply</button>
+                    <button id="reset-css-highlight-darker" class="setting-button" onclick="resetCustomCss(3)">Reset</button>
+                    <input id="ccss-highlight-darker" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-border-text" class="setting-item-text">Change the border color</div>
+                    <button id="apply-css-border" class="setting-button" onclick="applyCustomCss(4)">Apply</button>
+                    <button id="reset-css-border" class="setting-button" onclick="resetCustomCss(4)">Reset</button>
+                    <input id="ccss-border" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-input-text-text" class="setting-item-text">Change the input text color</div>
+                    <button id="apply-css-input-text" class="setting-button" onclick="applyCustomCss(5)">Apply</button>
+                    <button id="reset-css-input-text" class="setting-button" onclick="resetCustomCss(5)">Reset</button>
+                    <input id="ccss-input-text" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-placeholder-text" class="setting-item-text">Change the placeholder color</div>
+                    <button id="apply-css-placeholder" class="setting-button" onclick="applyCustomCss(6)">Apply</button>
+                    <button id="reset-css-placeholder" class="setting-button" onclick="resetCustomCss(6)">Reset</button>
+                    <input id="ccss-placeholder" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-title-text-text" class="setting-item-text">Change the title color</div>
+                    <button id="apply-css-title-text" class="setting-button" onclick="applyCustomCss(7)">Apply</button>
+                    <button id="reset-css-title-text" class="setting-button" onclick="resetCustomCss(7)">Reset</button>
+                    <input id="ccss-title-text" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-background-text" class="setting-item-text">Change the main section background</div>
+                    <button id="apply-css-background" class="setting-button" onclick="applyCustomCss(8)">Apply</button>
+                    <button id="reset-css-background" class="setting-button" onclick="resetCustomCss(8)">Reset</button>
+                    <input id="ccss-background" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-col-background-text" class="setting-item-text">Change the column background</div>
+                    <button id="apply-css-col-background" class="setting-button" onclick="applyCustomCss(9)">Apply</button>
+                    <button id="reset-css-col-background" class="setting-button" onclick="resetCustomCss(9)">Reset</button>
+                    <input id="ccss-col-background" class="setting-color" type="color">
+                </div>
+                <div class="setting-item">
+                    <div id="css-se-background-text" class="setting-item-text">Change the search engine background color</div>
+                    <button id="apply-css-se-background" class="setting-button" onclick="applyCustomCss(10)">Apply</button>
+                    <button id="reset-css-se-background" class="setting-button" onclick="resetCustomCss(10)">Reset</button>
+                    <input id="ccss-se-background" class="setting-color" type="color">
                 </div>
             </div>
         </div>
