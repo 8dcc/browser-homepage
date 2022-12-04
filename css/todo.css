@@ -21,7 +21,7 @@
 /* Todo title and input */
 .todo-title {
     text-align: center;
-    color: #c1c1c1;
+    color: var(--title-text);
     padding: 10px;
     font-size: 25px;
     font-family: 'Titillium Web', sans-serif;
