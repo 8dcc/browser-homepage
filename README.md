@@ -18,7 +18,7 @@
 ## How it works (specifications)
 - You can search items with different search engines using [keywords](#search-engines).
 - You can add, delete or mark items as done them with the buttons on the todo list.
-- You can edit a number of settings with the settings icon at the top right.
+- You can edit a number of settings with the settings icon at the top right (Including most css rules from the webpage itself).
 - The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items and the user settings. Because of this, you might have to remove your settings if some setting has been added to the repo (`Developer tools > Storage > Local Storage > User settings > Delete "user_settings"`).
 - If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window, which can be moved.
 - Todo items are capitalized by default, to disable this, you can disable the setting, or start the todo item with `'/'` or `' '`.
@@ -91,12 +91,12 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
     - [X] Store choices in localstorage.
     - [X] Search engine icons / text.
     - [X] Background (solid color)
-    - [ ] Add setting to replace the theme (css) ([Link](https://stackoverflow.com/a/19844757)).
+    - [X] Add setting ~~to replace the theme~~ for changing each css color.
 - [X] Change the `X` for closing the embed (ugly af) and add proper svg.
 - [X] Add settings for automatic link shortening and for disabling capitalization.
-- [ ] The text added to the TODO items is only recognized **after** the link, the text before the link gets deleted. Also the none of it works with youtube links
-- [ ] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
-- [ ] When using a text indicator for the search engine the search icon moves a bit to the right (The width changes)
+- [X] The todo text (container) seems a bit down on browsers like chrome (yikes) or similar. Most likely due to some default margin or padding for some value? Not on firefox. If that's the case, overwrite it.
+- [X] When using a text indicator for the search engine the search icon moves a bit to the right (The width changes)
+- [ ] The text added to the TODO items is only recognized **after** the link, the text before the link gets deleted. Also the none of it works with youtube links.
 
 ## Screenshots
 ![Overview screenshot](screenshots/screenshot5.png)
