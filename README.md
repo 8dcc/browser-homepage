@@ -85,7 +85,7 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
 - [X] The embed youtube window only displays the last youtube video added. ~Maybe store a list of videos by id?~ Added different ids as arguments in the html.
-- [X] Detect search engine before actually searching and display it in the search bar. ([example](screenshots/search-engines-example.png))
+- [X] Detect search engine before actually searching and display it in the search bar. ([example](https://user-images.githubusercontent.com/29655971/205471203-57321112-905b-49fb-8773-5887a07866ea.png))
 - [X] Add text search engines instead of (ugly) icons.
 - [X] Add settings window/tab
     - [X] Store choices in localstorage.
@@ -99,4 +99,11 @@ Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONT
 - [ ] The text added to the TODO items is only recognized **after** the link, the text before the link gets deleted. Also the none of it works with youtube links.
 
 ## Screenshots
-![Overview screenshot](screenshots/screenshot5.png)
+*Note: Some screenshots might be a bit outdated.*
+
+![s1](https://user-images.githubusercontent.com/29655971/205471192-314c6e58-ebd6-4bc6-af83-2088d49f8287.png)
+
+*With custom colors changed from the page's settings:*
+
+![s2](https://user-images.githubusercontent.com/29655971/205471146-39a451f6-6113-43dc-a1ac-1faee6117eba.png)
+![s3](https://user-images.githubusercontent.com/29655971/205471177-5fc8c92c-0b7e-42df-8674-b375decdc3cb.png)
