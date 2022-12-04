@@ -277,7 +277,7 @@ function updateCssFromSettings() {
 /* --------------------------------------------------------------- */
 /* Default settings */
 function checkEmptyLs() {
-    const user_settings_len = 6;
+    const user_settings_len = 26;
     if (!localStorage.getItem('user_settings') || Object.keys(JSON.parse(localStorage.getItem('user_settings'))).length < user_settings_len) {
         console.log("[settings] Detected invalid settings in localstorage. Generating defaults...");
         var dso = new Object();
