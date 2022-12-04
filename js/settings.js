@@ -72,7 +72,7 @@ function toggleSetting(changeme) {
 /* --------------------------------------------------------------- */
 /* Backgrounnd */
 function changeCustomBackground(use_color) {                 // Change the background settings. Called by the html buttons
-    const cb_c = document.getElementById('cbackground-color')
+    const cb_c = document.getElementById('cbackground-color');
 
     if (use_color) {
         settings_global_object.use_cbackground_color = true;
@@ -87,10 +87,10 @@ function changeCustomBackground(use_color) {                 // Change the backg
 
 function updateBackgroundFromSettings() {           // Apply one thing or another depending on settings
     if (settings_global_object.use_cbackground_color) {
-        console.log("[settings] Applying custom background color...")
+        console.log("[settings] Applying custom background color...");
         applyCustomBackground(settings_global_object.cbackground_color);
     } else {
-        console.log("[settings] Resetting background to the default image...")
+        console.log("[settings] Resetting background to the default image...");
         resetCustomBackground();
     }
 }
@@ -173,7 +173,7 @@ function applyCustomCss(idx) {
 
 function changeCssVar(name, elem_id) {
     var r = document.querySelector(':root');
-    const element = document.getElementById(elem_id)
+    const element = document.getElementById(elem_id);
 
     // Set var (--highlight) to the value of it's color input
     r.style.setProperty(name, element.value);
@@ -279,7 +279,7 @@ function updateCssFromSettings() {
 function checkEmptyLs() {
     const user_settings_len = 6;
     if (!localStorage.getItem('user_settings') || Object.keys(JSON.parse(localStorage.getItem('user_settings'))).length < user_settings_len) {
-        console.log("[settings] Detected invalid settings in localstorage. Generating defaults...")
+        console.log("[settings] Detected invalid settings in localstorage. Generating defaults...");
         var dso = new Object();
 
         dso.use_se_icons          = false;
