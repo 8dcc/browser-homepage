@@ -1,5 +1,5 @@
 <!-- https://gitlab.com/90cos/cyv/eval-systems/knowledge-test-bank-system/-/raw/master/CONTRIBUTE.md -->
-<!-- Edited by https://github.com/r4v10l1 -->
+<!-- Edited by https://github.com/8dcc -->
 # Contributing
 ## Submitting contributions
   - [Create a fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of the repository.

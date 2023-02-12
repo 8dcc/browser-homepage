@@ -1,9 +1,9 @@
 <div align="center">
   <h1>Browser homepage</h1>
-  <b>My browser homepage.</b> You can try it <a href="https://r4v10l1.github.io/browser-homepage/homepage.html">here</a>.<br>
+  <b>My browser homepage.</b> You can try it <a href="https://8dcc.github.io/browser-homepage/homepage.html">here</a>.<br>
   <p>Inspired by <a href="https://boards.4chan.org/wg/thread/7801612">/wg/</a>, <a href="https://boards.4chan.org/wg/thread/7801612#p7822666">anon</a> and <a href="https://boards.4chan.org/wg/thread/7801612#p7827588">anon</a>.</p>
-  <a href="https://github.com/r4v10l1/browser-homepage/network/members"><img src="https://img.shields.io/github/forks/r4v10l1/browser-homepage.svg?style=for-the-badge&logo=javascript&color=ead54e&logoColor=ead54e" alt="Forks"></a>
-  <a href="https://github.com/r4v10l1/browser-homepage/stargazers"><img src="https://img.shields.io/github/stars/r4v10l1/browser-homepage.svg?style=for-the-badge&logo=javascript&color=ead54e&logoColor=ead54e" alt="Stars"></a>
+  <a href="https://github.com/8dcc/browser-homepage/network/members"><img src="https://img.shields.io/github/forks/8dcc/browser-homepage.svg?style=for-the-badge&logo=javascript&color=ead54e&logoColor=ead54e" alt="Forks"></a>
+  <a href="https://github.com/8dcc/browser-homepage/stargazers"><img src="https://img.shields.io/github/stars/8dcc/browser-homepage.svg?style=for-the-badge&logo=javascript&color=ead54e&logoColor=ead54e" alt="Stars"></a>
 </div>
 
 # Table of contents
@@ -20,13 +20,13 @@
 - You can add, delete or mark items as done them with the buttons on the todo list.
 - You can edit a number of settings with the settings icon at the top right (Including most css rules from the webpage itself).
 - The todo list uses [localstorage](https://blog.logrocket.com/localstorage-javascript-complete-guide/) to store the todo items and the user settings. Because of this, you might have to remove your settings if some setting has been added to the repo (`Developer tools > Storage > Local Storage > User settings > Delete "user_settings"`).
-- If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/r4v10l1/youtube-embed-window) button to open the embed video window, which can be moved.
+- If a youtube video is added to the todo list, adds a [`(embed)`](https://github.com/8dcc/youtube-embed-window) button to open the embed video window, which can be moved.
 - Todo items are capitalized by default, to disable this, you can disable the setting, or start the todo item with `'/'` or `' '`.
 - URLs added to the todo list are slightly "shortened" to fit the space. If you want to completely shorten the URL, you can enable the setting, or start it like this: `!link`.
 - All the containers are "expandable". For example you can add as many todo items as you want, or easily edit the html to add more bookmarks.
 
 ## Making it your homepage
-You can set the [page link](https://r4v10l1.github.io/browser-homepage/homepage.html) as your homepage, but that is probably not pretty and the address bar won't be empty. For firefox at least, there is a [guide](https://stpg.tk/guides/firefox-startpage/) on how to do it on any platform, which I will explain here.
+You can set the [page link](https://8dcc.github.io/browser-homepage/homepage.html) as your homepage, but that is probably not pretty and the address bar won't be empty. For firefox at least, there is a [guide](https://stpg.tk/guides/firefox-startpage/) on how to do it on any platform, which I will explain here.
 
 #
 
@@ -60,7 +60,7 @@ try {
 For example `file:///home/user/Documents/startpage/index.html`. Yes, you need to use the `file:///` thing in every platform.
 
 ## Firefox configuration
-You can read the [README.md](https://github.com/r4v10l1/browser-homepage/tree/main/firefox) in the firefox folder for more information.  
+You can read the [README.md](https://github.com/8dcc/browser-homepage/tree/main/firefox) in the firefox folder for more information.  
 The css files change the tabs for the *firefox 88* style and makes the right click menu padding a bit smaller.
 
 ## Search engines
@@ -76,11 +76,11 @@ Keyword       | Search engine
 <kbd>yt</kbd> | `https://www.youtube.com/results?search_query=`
 <kbd>w</kbd>  | `https://en.wikipedia.org/wiki/Special:Search?search=`
 
-For adding custom search engines see [this](https://github.com/r4v10l1/browser-homepage/commit/eb7527c3a777472c7a0208919a742efff0129283#diff-ea1c1de5ab8cb543a3597ba84a6308ab4227b0419fdc81b56bd52950a1c00f6e) example.  
+For adding custom search engines see [this](https://github.com/8dcc/browser-homepage/commit/eb7527c3a777472c7a0208919a742efff0129283#diff-ea1c1de5ab8cb543a3597ba84a6308ab4227b0419fdc81b56bd52950a1c00f6e) example.  
 You can PR your search engine if you want, and I will add it if I find it useful.
 
 ## Contributing
-Check [CONTRIBUTE.md](https://github.com/r4v10l1/browser-homepage/blob/main/CONTRIBUTE.md).
+Check [CONTRIBUTE.md](https://github.com/8dcc/browser-homepage/blob/main/CONTRIBUTE.md).
 
 ## Todo
 - [X] `todo.js` applies the `<a>` tag to the whole todo element instead of the link only. (Now it works only if the link is the only content of the todo element)
