@@ -85,16 +85,20 @@ svg {
     height: 44px;
 }
 
-/*
-.search-button {
-    width: 44px;
-}
-*/
-
 ::placeholder {
     color: var(--input-placeholder);
     font-family: 'Titillium Web', sans-serif;
     opacity: 0.7;
+}
+
+/* Center vertically and set fixed width for the image inside it */
+.prompt-button {
+    display: flex;
+    align-content: center;
+}
+
+.prompt-button img {
+    width: 24px;
 }
 
 /* ----------------------------------------------------------------- */
