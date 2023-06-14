@@ -2,17 +2,18 @@ const f  = document.getElementById("form");
 const q  = document.getElementById("query");
 const sei = document.getElementById("searchEngineIcon");
 const setxt = document.getElementById("searchEngineText");
-const default_search_engine = "https://www.duckduckgo.com/?q=";
+const default_search_engine = "https://www.startpage.com/do/dsearch?query=";
 var user_search_engine = "";
 
 const search_engines = {
     d:      "https://www.duckduckgo.com/?q=",
     dd:     "https://html.duckduckgo.com/html/?q=",
     g:      "https://www.google.com/search?q=",
-    s:      "https://searx.gnous.eu/search?q=",
+    sx:     "https://searx.gnous.eu/search?q=",
     l:      "https://librex.extravi.dev/search.php?q=",
     yt:     "https://www.youtube.com/results?search_query=",
-    w:      "https://en.wikipedia.org/wiki/Special:Search?search="
+    w:      "https://en.wikipedia.org/wiki/Special:Search?search=",
+    s:      "https://www.startpage.com/do/dsearch?query="
 };
 
 function checkSearchEngine() {
@@ -31,7 +32,7 @@ function checkSearchEngine() {
 }
 
 function checkSearchEngine_icons() {
-    var search_engine_icon = "duckduckgo.svg";
+    var search_engine_icon = "startpage.png";
     var search_engine_icon_h = "25px";
 
     if (user_search_engine === "g") {
@@ -41,12 +42,14 @@ function checkSearchEngine_icons() {
         search_engine_icon = "duckduckgo.svg";
     } else if (user_search_engine === "yt") {
         search_engine_icon = "youtube.svg";
-    } else if (user_search_engine === "s") {
+    } else if (user_search_engine === "sx") {
         search_engine_icon = "gnu.svg";
     } else if (user_search_engine === "l") {
         search_engine_icon = "librex.png";
     } else if (user_search_engine === "w") {
         search_engine_icon = "wikipedia.png";
+    } else if (user_search_engine === "s") {
+        search_engine_icon = "startpage.png";
     }
 
     sei.style.display = "block";
@@ -65,12 +68,14 @@ function checkSearchEngine_text() {
         search_engine_text = "YouTube";
     } else if (user_search_engine === "dd") {
         search_engine_text = "DuckDuckGo HTML";
-    } else if (user_search_engine === "s") {
+    } else if (user_search_engine === "sx") {
         search_engine_text = "SearX";
     } else if (user_search_engine === "l") {
         search_engine_text = "LibreX";
     } else if (user_search_engine === "w") {
         search_engine_text = "Wikipedia";
+    } else if (user_search_engine === "s") {
+        search_engine_text = "Startpage";
     }
 
     setxt.style.display = "block";
