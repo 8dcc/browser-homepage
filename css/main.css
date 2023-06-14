@@ -91,10 +91,13 @@ svg {
     opacity: 0.7;
 }
 
-/* Center vertically and set fixed width for the image inside it */
+/* Center vertically and set fixed width for the image inside it.
+ * Justify image to the right + padding so it stays in a fixed position */
 .prompt-button {
     display: flex;
     align-content: center;
+    justify-content: right;
+    padding-right: 15px;
 }
 
 .prompt-button img {
