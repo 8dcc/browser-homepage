@@ -2,10 +2,13 @@
  * CSS for the search engines text and icons
  */
 
-/* Unlike the text mode, this main container has the styles and will be hidden */
+/* Unlike the text mode, this main container has the styles and will be hidden.
+ * We use align-content because the display will be changed to flex */
 #searchEngineIcon {
     display: none;
-    padding: 4px 0px 0px 15px;
+    align-content: center;
+
+    padding-left: 15px;
     filter: grayscale(100%);
 }
 

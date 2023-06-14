@@ -52,7 +52,7 @@ function checkSearchEngine_icons() {
         search_engine_icon = "startpage.png";
     }
 
-    sei.style.display = "block";
+    sei.style.display = "flex";     // We need flex instead of block to center the image vertically
     sei.innerHTML = `
         <img src="images/search-engines/${search_engine_icon}" alt="Icon" height="${search_engine_icon_h}">
     `;
