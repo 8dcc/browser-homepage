@@ -6,6 +6,7 @@
 #searchEngineIcon {
     display: none;
     padding: 4px 0px 0px 15px;
+    filter: grayscale(100%);
 }
 
 /* The main container, will be hidden depending on the js */
