@@ -14,6 +14,7 @@ const search_engines = {
     yt:     "https://www.youtube.com/results?search_query=",
     w:      "https://en.wikipedia.org/wiki/Special:Search?search=",
     s:      "https://www.startpage.com/do/dsearch?query=",
+    m:      "https://man.cx/",
 };
 
 function checkSearchEngine() {
@@ -50,6 +51,8 @@ function checkSearchEngine_icons() {
         search_engine_icon = "wikipedia.png";
     } else if (user_search_engine === "s") {
         search_engine_icon = "startpage.png";
+    } else if (user_search_engine === "m") {
+        search_engine_icon = "man.png";
     }
 
     sei.style.display = "flex";     // We need flex instead of block to center the image vertically
@@ -76,6 +79,8 @@ function checkSearchEngine_text() {
         search_engine_text = "Wikipedia";
     } else if (user_search_engine === "s") {
         search_engine_text = "Startpage";
+    } else if (user_search_engine === "m") {
+        search_engine_text = "Man";
     }
 
     setxt.style.display = "block";
