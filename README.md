@@ -7,13 +7,13 @@
 </div>
 
 # Table of contents
-1. [How it works](#How-it-works-specifications)
-2. [Making it your home page](#Making-it-your-homepage)
-3. [Firefox configuration](#Firefox-configuration)
-4. [Search engines](#Search-engines)
-5. [Contributing](#Contributing)
-6. [Todo](#Todo)
-7. [Screenshots](#Screenshots)
+1. [How it works](#how-it-works-specifications)
+2. [Making it your home page](#making-it-your-homepage)
+3. [Firefox configuration](#firefox-configuration)
+4. [Search engines](#search-engines)
+5. [Contributing](#contributing)
+6. [Todo](#todo)
+7. [Screenshots](#screenshots)
 
 ## How it works (specifications)
 - You can search items with different search engines using [keywords](#search-engines).
