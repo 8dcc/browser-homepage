@@ -13,7 +13,7 @@ const search_engines = {
     l:      "https://librex.extravi.dev/search.php?q=",
     yt:     "https://www.youtube.com/results?search_query=",
     w:      "https://en.wikipedia.org/wiki/Special:Search?search=",
-    s:      "https://www.startpage.com/do/dsearch?query="
+    s:      "https://www.startpage.com/do/dsearch?query=",
 };
 
 function checkSearchEngine() {
