@@ -1,17 +1,15 @@
 /*
- * My userChrome.css for firefox. Make sure you follow the github guide on how to install.
- * https://github.com/8dcc/browser-homepage/tree/main/firefox
+ * My userChrome.css for firefox. Make sure you follow the github guide on how
+ * to install: https://github.com/8dcc/browser-homepage/tree/main/firefox
  */
 
-/*------------------------------ INCLUDES ------------------------------*/
-/* Here you can place your includes to use external css files*/
-
 /*-------------------------------- TABS --------------------------------*/
+
 /* All tab backgrounds */
 .tab-background {
     border-radius: 0px 0px !important;
     margin-bottom: 0px !important;
-    margin-top: 0px !important;
+    margin-top: 5px !important;
 }
 
 /* Active tab */
@@ -25,6 +23,7 @@
 }
 
 /*-------------------------------- MENUS -------------------------------*/
+
 /* Right click. Less padding */
 menupopup>menu,
 menupopup>menuitem {
