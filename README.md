@@ -68,13 +68,16 @@ Type the **keyword** in the search bar followed by space. Depending on your sett
 This is the list of available keywords:
 
 Keyword       | Search engine
---------------|-----------------------
+--------------|--------------------------------------------------------
 <kbd>d</kbd>  | `https://www.duckduckgo.com/?q=`
 <kbd>dd</kbd> | `https://html.duckduckgo.com/html/?q=`
 <kbd>g</kbd>  | `https://www.google.com/search?q=`
-<kbd>s</kbd>  | `https://searx.gnous.eu/search?q=`
+<kbd>sx</kbd> | `https://searx.gnous.eu/search?q=`
+<kbd>l</kbd>  | `https://librex.me/search.php?q=`
 <kbd>yt</kbd> | `https://www.youtube.com/results?search_query=`
 <kbd>w</kbd>  | `https://en.wikipedia.org/wiki/Special:Search?search=`
+<kbd>s</kbd>  | `https://www.startpage.com/do/dsearch?query=`
+<kbd>m</kbd>  | `https://man.cx/`
 
 For adding custom search engines see [this](https://github.com/8dcc/browser-homepage/commit/eb7527c3a777472c7a0208919a742efff0129283#diff-ea1c1de5ab8cb543a3597ba84a6308ab4227b0419fdc81b56bd52950a1c00f6e) example.  
 You can PR your search engine if you want, and I will add it if I find it useful.
