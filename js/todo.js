@@ -84,7 +84,7 @@ function renderTodos(todos) {
             var link_text = (settings_global_object["shorten_links"] || pre_link_char == '!') ? "Link" : check_for_too_long(actual_link, fpart, 15, 66);
 
             if (item.name.includes("youtube.com/watch")) {
-                var embed_video_id = item.name.split("?v=")[1].slice(0,11);
+                var embed_video_id = item.name.split("v=")[1].slice(0,11);
 				var item_to_add = pre_link + '<a href="' + actual_link + '">' + link_text + '</a> ' + 
 					`<a class="embed-button" onclick="show_embed_id('${embed_video_id}')">(embed)</a>` + extra_text;
             } else {
