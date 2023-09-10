@@ -66,7 +66,7 @@ function renderTodos(todos) {
         const checked_class = item.completed ? ' checked' : '';
         const li = document.createElement('li');
 
-        li.setAttribute('class', 'item');
+        li.setAttribute('class', 'todo-item');
         li.setAttribute('data-key', item.id);
 
         if (item.name.includes("http")) {
