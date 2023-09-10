@@ -95,7 +95,7 @@ function renderTodos(todos) {
         }
 
         li.innerHTML = `
-			<input type="checkbox" class="custom-input checkbox">
+			<button class="custom-input checkbox"></button>
 			<div class="todo-text-container">
 				<div class="todo-text${checked_class}">${item_to_add}</div>
 			</div>
@@ -122,10 +122,9 @@ function getFromLocalStorage() {
 getFromLocalStorage();
 
 todoItemsList.addEventListener('click', function(event) {
-    if (event.target.type === 'checkbox') {
+    if (event.target.classList.contains('checkbox')) {
         toggleTodo(event.target.parentElement.getAttribute('data-key'));
-    }
-    if (event.target.classList.contains('delete-button')) {
+    } else if (event.target.classList.contains('delete-button')) {
         deleteTodo(event.target.parentElement.getAttribute('data-key'));
     }
 });
