@@ -88,7 +88,6 @@
 }
 
 .todo-text {
-    display: inline-block;
     width: 500px;
     overflow: clip;
 }
