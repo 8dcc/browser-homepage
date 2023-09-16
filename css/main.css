@@ -1,4 +1,5 @@
-/* Fuck depending on other people */
+
+/* Use local fonts instead of remote URLs */
 @import url('fonts/orbitron/orbitron.css');
 @import url('fonts/titillium-web/titillium-web.css');
 
@@ -13,10 +14,10 @@ hr {
     border-color: var(--border);
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Main container for clock, search bar and bookmarks */
 
-.bitch-main {
+.main-container {
     background-color: var(--main-background);
     opacity: 97%;
     margin: 50px auto 10px auto;
@@ -29,7 +30,7 @@ hr {
     border-color: var(--border);
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Clock */
 
 #clock {
@@ -39,7 +40,7 @@ hr {
     text-align: center;
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Search bar */
 
 .search-bar {
@@ -106,8 +107,9 @@ svg {
     width: 24px;
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Bookmarks */
+
 .bookmarks {
     display: flex;
     height: inherit;
@@ -154,8 +156,9 @@ a:hover {
     color: var(--highlight-dark);
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Scroll bar */
+
 :root {
     scrollbar-color: #868686 var(--highlight-dark);
     scrollbar-width: thin;
@@ -178,7 +181,7 @@ a:hover {
     background: #a1a1a1;
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Buttons and links */
 
 .embed-button {
