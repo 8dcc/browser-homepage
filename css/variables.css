@@ -1,9 +1,11 @@
+
+/* Changed by the settings */
 :root {
-    --highlight: #980000;
-    --highlight-dark: #690000;
-    --highlight-darker: #500000;
-    --border: #333333;
-    --input-text: #f2f2f2;
+    --highlight:         #980000;
+    --highlight-dark:    #690000;
+    --highlight-darker:  #500000;
+    --border:            #333333;
+    --input-text:        #f2f2f2;
     --input-placeholder: #b2b2b2;
 
     /* Text color for column and todo titles */

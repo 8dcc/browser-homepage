@@ -1,4 +1,5 @@
-/* Fuck depending on other people */
+
+/* Use local fonts instead of remote URLs */
 @import url('fonts/orbitron/orbitron.css');
 @import url('fonts/titillium-web/titillium-web.css');
 
@@ -13,13 +14,14 @@ hr {
     border-color: var(--border);
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Main container for clock, search bar and bookmarks */
-.bitch-main {
+
+.main-container {
     background-color: var(--main-background);
     opacity: 97%;
     margin: 50px auto 10px auto;
-    padding: 0px 30px 30px 30px;
+    padding: 20px 30px 30px 30px;
     width: 600px;
     height: inherit;
     border-style: solid;
@@ -28,18 +30,19 @@ hr {
     border-color: var(--border);
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Clock */
+
 #clock {
     font-family: 'Orbitron', sans-serif;
     color: var(--highlight);
     font-size: 50px;
     text-align: center;
-    padding-top: 15px;
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Search bar */
+
 .search-bar {
     margin-top: 3%;
     margin-bottom: 3%;
@@ -104,8 +107,9 @@ svg {
     width: 24px;
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Bookmarks */
+
 .bookmarks {
     display: flex;
     height: inherit;
@@ -152,8 +156,9 @@ a:hover {
     color: var(--highlight-dark);
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Scroll bar */
+
 :root {
     scrollbar-color: #868686 var(--highlight-dark);
     scrollbar-width: thin;
@@ -176,7 +181,7 @@ a:hover {
     background: #a1a1a1;
 }
 
-/* ----------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Buttons and links */
 
 .embed-button {

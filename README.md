@@ -2,8 +2,6 @@
   <h1>Browser homepage</h1>
   <b>My browser homepage.</b> You can try it <a href="https://8dcc.github.io/browser-homepage/homepage.html">here</a>.<br>
   <p>Inspired by <a href="https://boards.4chan.org/wg/thread/7801612">/wg/</a>, <a href="https://boards.4chan.org/wg/thread/7801612#p7822666">anon</a> and <a href="https://boards.4chan.org/wg/thread/7801612#p7827588">anon</a>.</p>
-  <a href="https://github.com/8dcc/browser-homepage/network/members"><img src="https://img.shields.io/github/forks/8dcc/browser-homepage.svg?style=for-the-badge&logo=javascript&color=ead54e&logoColor=ead54e" alt="Forks"></a>
-  <a href="https://github.com/8dcc/browser-homepage/stargazers"><img src="https://img.shields.io/github/stars/8dcc/browser-homepage.svg?style=for-the-badge&logo=javascript&color=ead54e&logoColor=ead54e" alt="Stars"></a>
 </div>
 
 # Table of contents

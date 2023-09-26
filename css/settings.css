@@ -1,5 +1,7 @@
 
-/* ------------- Settings button ------------- */
+/*----------------------------------------------------------------------------*/
+/* Settings button */
+
 .settings-button-container {
     position: fixed;
     top: 5px;
@@ -13,7 +15,9 @@
     width: 32px;
 }
 
-/* ------------- Settings containers ------------- */
+/*----------------------------------------------------------------------------*/
+/* Settings containers */
+
 #settings-main-container {
     display: none;
     position: fixed;
