@@ -1,7 +1,7 @@
 const f  = document.getElementById("form");
 const q  = document.getElementById("query");
-const sei = document.getElementById("searchEngineIcon");
-const setxt = document.getElementById("searchEngineText");
+const se_icon = document.getElementById("search-engine-icon");
+const se_text = document.getElementById("search-engine-container");
 const default_search_engine = "https://www.startpage.com/do/dsearch?query=";
 var user_search_engine = "";
 
@@ -25,10 +25,10 @@ function checkSearchEngine() {
 
     if (settings_global_object["use_se_icons"]) {          // Icon mode
         if (user_search_engine != "") checkSearchEngine_icons();
-        else clearElementContents(sei);
+        else clearElementContents(se_icon);
     } else {                                // Text mode
         if (user_search_engine != "") checkSearchEngine_text();
-        else clearElementContents(setxt);
+        else clearElementContents(se_text);
     }
 }
 
@@ -55,8 +55,8 @@ function checkSearchEngine_icons() {
         search_engine_icon = "man.png";
     }
 
-    sei.style.display = "flex";     // We need flex instead of block to center the image vertically
-    sei.innerHTML = `
+    se_icon.style.display = "flex";     // We need flex instead of block to center the image vertically
+    se_icon.innerHTML = `
         <img src="images/search-engines/${search_engine_icon}" alt="Icon" height="${search_engine_icon_h}">
     `;
     q.style.paddingLeft = "10px";   // Remove some margin from actual search input
@@ -83,8 +83,8 @@ function checkSearchEngine_text() {
         search_engine_text = "Man";
     }
 
-    setxt.style.display = "block";
-    setxt.innerHTML = `
+    se_text.style.display = "block";
+    se_text.innerHTML = `
         <div class="search-engine-text">${search_engine_text}</div>
     `;
     q.style.paddingLeft = "10px";   // Remove some margin from actual search input

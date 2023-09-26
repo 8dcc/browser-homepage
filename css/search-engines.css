@@ -1,10 +1,8 @@
-/*
- * CSS for the search engines text and icons
- */
+/* CSS for the search engines text and icons */
 
 /* Unlike the text mode, this main container has the styles and will be hidden.
  * We use align-content because the display will be changed to flex */
-#searchEngineIcon {
+#search-engine-icon {
     display: none;
     align-content: center;
 
@@ -13,9 +11,9 @@
 }
 
 /* The main container, will be hidden depending on the js */
-#searchEngineText {
+#search-engine-container {
     display: none;
-    padding: 0px 0px 0px 10px;
+    padding-left: 10px;
     max-width: 150px;
 }
 
@@ -24,12 +22,15 @@
     width: max-content;
 
     font-family: 'Titillium Web', sans-serif;
+    font-size: 15px;
+
     padding: 1px 6px;
     color: var(--se-text);
     background: var(--se-background);
 
     border-style: solid;
     border-radius: 6px;
+
     /* Change these 2 values to add a border */
     border-width: 0px;
     border-color: #fff;
