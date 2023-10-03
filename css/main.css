@@ -2,6 +2,7 @@
 /* Use local fonts instead of remote URLs */
 @import url('fonts/orbitron/orbitron.css');
 @import url('fonts/titillium-web/titillium-web.css');
+@import url('fonts/ibm-plex-mono/ibm-plex-mono.css');
 
 body {
     background: url(../images/background.png) no-repeat center center fixed;
@@ -34,9 +35,9 @@ hr {
 /* Clock */
 
 #clock {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--highlight);
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 50px;
+    color: var(--highlight);
     text-align: center;
 }
 
