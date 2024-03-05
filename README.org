@@ -16,7 +16,7 @@ You can try the website [[https://8dcc.github.io/browser-homepage/homepage.html]
 
 Features:
 - Search bar with custom search engines. Easily modified from
-  [[https://github.com/8dcc/browser-homepage/blob/main/js/search-bar.js][js/search-bar.js]]. See bellow.
+  [[file:js/search-bar.js][js/search-bar.js]]. See bellow.
 - Bookmarks. Easily modified from [[https://github.com/8dcc/browser-homepage/blob/main/homepage.html][homepage.html]].
 - Todo list. It allows you to add, delete and mark items as completed.
 - Todo list supports URLs, and embeds YouTube videos in a movable window.
@@ -48,7 +48,7 @@ This is the list of available keywords:
 | =m=       | =https://man.cx/=                                      |
 
 For adding a new search engine, just upload an icon into =img/search-engines= and
-add a new entry to the =search_engines= object inside [[https://github.com/8dcc/browser-homepage/blob/main/js/search-bar.js][js/search-bar.js]].
+add a new entry to the =search_engines= object inside [[file:js/search-bar.js][js/search-bar.js]].
 
 You can PR your search engine if you want, and I will add it if I find it
 useful.
@@ -96,6 +96,10 @@ need to use the =file:///= prefix in all platforms).
 
 * Firefox configuration
 
-You can read the [[https://github.com/8dcc/browser-homepage/tree/main/firefox][README.md]] in the firefox folder for more information.  The css
+You can read the [[file:firefox/README.md][README.md]] in the firefox folder for more information.  The css
 files change the tabs for the *firefox 88* style and makes the right click menu
 padding a bit smaller.
+
+* TODO
+
+Refactor [[file:js/settings.js][js/settings.js]] and [[file:js/todo.js][js/todo.js]].
