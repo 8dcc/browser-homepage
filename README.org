@@ -21,7 +21,7 @@ Features:
 - Todo list. It allows you to add, delete and mark items as completed.
 - Todo list supports URLs, and embeds YouTube videos in a movable window.
 - Todo items are capitalized by default, to disable this, you can disable the
-  setting, or start the todo item with ='/'= or =' '=.
+  setting, or start the todo item with ="/"= or =" "=.
 - URLs added to the todo list are slightly "shortened" to fit the space. If you
   want to completely shorten the URL, you can enable the setting, or prefix the
   URL like this: =!link=.
