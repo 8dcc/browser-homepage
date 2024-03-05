@@ -1,0 +1,101 @@
+#+title: Browser homepage
+#+options: toc:nil
+#+startup: showeverything
+#+author: 8dcc
+
+*My personal browser homepage.*
+
+#+TOC: headlines 2
+
+* Description and features
+
+I made this simple homepage to include some features I like to use, but it might
+be useful for someone who wants to make their own.
+
+You can try the website [[https://8dcc.github.io/browser-homepage/homepage.html][here]].
+
+Features:
+- Search bar with custom search engines. Easily modified from
+  [[https://github.com/8dcc/browser-homepage/blob/main/js/search-bar.js][js/search-bar.js]]. See bellow.
+- Bookmarks. Easily modified from [[https://github.com/8dcc/browser-homepage/blob/main/homepage.html][homepage.html]].
+- Todo list. It allows you to add, delete and mark items as completed.
+- Todo list supports URLs, and embeds YouTube videos in a movable window.
+- Todo items are capitalized by default, to disable this, you can disable the
+  setting, or start the todo item with ='/'= or =' '=.
+- URLs added to the todo list are slightly "shortened" to fit the space. If you
+  want to completely shorten the URL, you can enable the setting, or prefix the
+  URL like this: =!link=.
+- Settings system that allows the user to change most colors.
+- The todo list and the settings use [[https://blog.logrocket.com/localstorage-javascript-complete-guide/][localstorage]] for persistence.
+
+** Search engines
+
+Type the /keyword/ in the search bar followed by space. Depending on your settings
+you should see an icon or a text indicating what search engine you are using.
+
+This is the list of available keywords:
+
+| Keyword | Search engine                                        |
+|---------+------------------------------------------------------|
+| =d=       | =https://www.duckduckgo.com/?q==                       |
+| =dd=      | =https://html.duckduckgo.com/html/?q==                 |
+| =g=       | =https://www.google.com/search?q==                     |
+| =sx=      | =https://searx.gnous.eu/search?q==                     |
+| =l=       | =https://librex.me/search.php?q==                      |
+| =yt=      | =https://www.youtube.com/results?search_query==        |
+| =w=       | =https://en.wikipedia.org/wiki/Special:Search?search== |
+| =s=       | =https://www.startpage.com/do/dsearch?query==          |
+| =m=       | =https://man.cx/=                                      |
+
+For adding a new search engine, just upload an icon into =img/search-engines= and
+add a new entry to the =search_engines= object inside [[https://github.com/8dcc/browser-homepage/blob/main/js/search-bar.js][js/search-bar.js]].
+
+You can PR your search engine if you want, and I will add it if I find it
+useful.
+
+* Setting it as your homepage
+
+You can set the [[https://8dcc.github.io/browser-homepage/homepage.html][GitHub URL]] as your homepage, but that is probably not pretty and
+the address bar won't be empty. For firefox at least, there is a [[https://stpg.tk/guides/firefox-startpage/][guide]] on how to
+do it on any platform, which I will explain here.
+
+First, note that the firefox folder is usually located at:
+
+| Platform | Path                                     |
+|----------+------------------------------------------|
+| Windows  | =C:\Program Files\Mozilla Firefox\=        |
+| macOS    | =/Applications/Firefox.app/Contents/MacOS= |
+| Linux    | =/opt/firefox/= or =/usr/lib/firefox/=       |
+
+Add this to =autoconfig.js= located in =<FIREFOX-FOLDER>/defaults/pref/= (Create it
+if it does not exist):
+
+#+begin_src js
+pref("general.config.filename", "mozilla.cfg");
+pref("general.config.obscure_value", 0);
+pref("general.config.sandbox_enabled", false);
+#+end_src
+
+Edit the =mozilla.cfg= file in your firefox folder (=<FIREFOX-FOLDER>/mozilla.cfg=).
+
+#+begin_src js
+// Any comment. You must start the file with a single-line comment!
+
+let { classes:Cc, interfaces:Ci, utils:Cu } = Components;
+
+try {
+  Cu.import("resource:///modules/AboutNewTab.jsm");
+  let newTabURL = "<PATH_TO_HOMEPAGE>";
+  AboutNewTab.newTabURL = newTabURL;
+} catch(e) { Cu.reportError(e); }
+#+end_src
+
+Note that =<PATH_TO_HOMEPAGE>= should be replaced with the file path to your home
+page, for example =file:///home/user/Documents/startpage/index.html= (Yes, you
+need to use the =file:///= prefix in all platforms).
+
+* Firefox configuration
+
+You can read the [[https://github.com/8dcc/browser-homepage/tree/main/firefox][README.md]] in the firefox folder for more information.  The css
+files change the tabs for the *firefox 88* style and makes the right click menu
+padding a bit smaller.
