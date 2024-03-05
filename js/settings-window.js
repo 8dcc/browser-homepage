@@ -1,17 +1,11 @@
-const settBack = document.getElementById('settings-background');
-const settMain = document.getElementById('settings-main-container');
-var settingsw_active = false;       // Toggled by the icon thing
-
 function toggleShowSettings() {
-    if (settingsw_active) {
-        settMain.style.display = "none";
-    } else {
-        settMain.style.display = "block";
-    }
+    const main_container = document.getElementById("settings-main-container");
 
-    settingsw_active = !settingsw_active;
+    if (main_container.style.display == "block") 
+        main_container.style.display = "none";
+    else 
+        main_container.style.display = "block";
 }
 
-settBack.addEventListener('click', function(event) {
-    if (event.type === 'click') toggleShowSettings();
-});
+document.getElementById("settings-background").addEventListener("click", toggleShowSettings);
+document.getElementById("settings-button").addEventListener("click", toggleShowSettings);

@@ -1,4 +1,3 @@
-dragElement(document.getElementById("movablewindow"));
 
 function showEmbed() {
     document.getElementById('movablewindow').style.display = "block";
@@ -9,14 +8,9 @@ function hideEmbed() {
     document.getElementById('movablewindow').style.display = "none";
 }
 
-function dragElement(elmnt) {
-    // Check if 'movablepart' exists, then use that to drag
+function dragElement(element) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById("movablewindow")) {
-        document.getElementById("movablewindow").onmousedown = dragMouseDown;
-    } else {
-        elmnt.onmousedown = dragMouseDown;
-    }
+    element.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
         e = e || window.event;
@@ -34,8 +28,8 @@ function dragElement(elmnt) {
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
         pos4 = e.clientY;
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
     }
 
     function closeDragElement() {
@@ -43,3 +37,5 @@ function dragElement(elmnt) {
         document.onmousemove = null;
     }
 }
+
+dragElement(document.getElementById("movablewindow"));
