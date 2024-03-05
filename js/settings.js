@@ -28,7 +28,6 @@ function getLsSettings() {
 /* Rendering the settings (checkboxes, color, etc.) */
 function renderSettings() {
     updateBoolSetting("use-se-icons", settings_global_object.use_se_icons);
-    updateBoolSetting("delete-whole-se", settings_global_object.delete_whole_se);
     updateBoolSetting("capitalize-todos", settings_global_object.capitalize_todos);
     updateBoolSetting("shorten-links", settings_global_object.shorten_links);
     updateStringSetting("cbackground-color", settings_global_object.cbackground_color);
@@ -283,7 +282,6 @@ function checkEmptyLs() {
         var dso = new Object();
 
         dso.use_se_icons          = false;
-        dso.delete_whole_se       = true;
         dso.capitalize_todos      = true;     // Same as starting items with ' '
         dso.shorten_links         = false;    // Same as starting links with '!'
         dso.use_cbackground_color = false;
