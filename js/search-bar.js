@@ -57,7 +57,7 @@ function checkSearchEngine_icons() {
 
     se_icon.style.display = "flex";     // We need flex instead of block to center the image vertically
     se_icon.innerHTML = `
-        <img src="images/search-engines/${search_engine_icon}" alt="Icon" height="${search_engine_icon_h}">
+        <img src="img/search-engines/${search_engine_icon}" alt="Icon" height="${search_engine_icon_h}">
     `;
     q.style.paddingLeft = "10px";   // Remove some margin from actual search input
 }

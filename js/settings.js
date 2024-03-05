@@ -100,7 +100,7 @@ function applyCustomBackground(custom_color) {      // Change the actual backgro
 }
 
 function resetCustomBackground() {                  // Change the actual background to the image
-    document.body.style.background = "url('./images/background.png') no-repeat center center fixed";
+    document.body.style.background = "url('./img/background.png') no-repeat center center fixed";
     document.body.style.backgroundSize = "cover";
 }
 

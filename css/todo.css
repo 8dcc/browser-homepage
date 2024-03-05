@@ -102,7 +102,7 @@
     height: 6px;
     max-width: 10px;
 
-    background: url("../images/check.svg") center / contain no-repeat;
+    background: url("../img/check.svg") center / contain no-repeat;
 }
 
 .checkbox:hover {
@@ -118,7 +118,7 @@
 
     border: none;
     outline: none;
-    background: url("../images/close.png") center / contain no-repeat;
+    background: url("../img/close.png") center / contain no-repeat;
 }
 
 .checked {

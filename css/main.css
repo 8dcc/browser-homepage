@@ -5,7 +5,7 @@
 @import url('fonts/ibm-plex-mono/ibm-plex-mono.css');
 
 body {
-    background: url(../images/background.png) no-repeat center center fixed;
+    background: url(../img/background.png) no-repeat center center fixed;
     background-size: cover;
 }
 
