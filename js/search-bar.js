@@ -90,22 +90,23 @@ function checkSearchEngine() {
     const se_icon = document.getElementById("search-engine-icon");
     const se_text = document.getElementById("search-engine-container");
 
-    if (!user_search_engine)
+    if (!user_search_engine) {
         user_search_engine = getSearchEngineObject(search_query.value);
 
-    if (!user_search_engine) {
-        // We haven't found a valid search engine in the loop, clear icon and text
-        clearElementContents(se_icon);
-        clearElementContents(se_text);
+        if (!user_search_engine) {
+            // We haven't found a valid search engine in the loop, clear icon and text
+            clearElementContents(se_icon);
+            clearElementContents(se_text);
 
-        // Remove reduced padding that is added when using search engine
-        search_query.style.removeProperty("padding-left");
-        return;
+            // Remove reduced padding that is added when using search engine
+            search_query.style.removeProperty("padding-left");
+            return;
+        }
+
+        // Remove search engine text ("d ") and add padding
+        search_query.value = search_query.value.replace(search_query.value.split(" ")[0] + " ", "");
+        search_query.style.paddingLeft = "10px";
     }
-
-    // Remove search engine text ("d ") and add padding
-    search_query.value = search_query.value.replace(search_query.value.split(" ")[0] + " ", "");
-    search_query.style.paddingLeft = "10px";
 
     // Check if the user wants to use icons or text
     if (settings_global_object["use_se_icons"]) {
@@ -124,13 +125,13 @@ document.getElementById("search-form").addEventListener("keydown", function(e) {
     // Will check if the user pressed backspace with no value and with search engine (so he can delete it)
     if (user_search_engine && search_query.value === "") {
         switch (event.key) {
-            case "Backspace":
-                // Call this function again to re-check if we have a search engine. At this point we don't.
-                user_search_engine = null;
-                checkSearchEngine();
-                break;
-            default:
-                break;
+        case "Backspace":
+            // Call this function again to re-check if we have a search engine. At this point we don't.
+            user_search_engine = null;
+            checkSearchEngine();
+            break;
+        default:
+            break;
         }
     }
 });
