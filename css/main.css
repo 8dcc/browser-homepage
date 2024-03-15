@@ -19,16 +19,18 @@ hr {
 /* Main container for clock, search bar and bookmarks */
 
 .main-container {
-    background-color: var(--main-background);
-    opacity: 97%;
-    margin: 50px auto 10px auto;
-    padding: 20px 30px 30px 30px;
     width: 600px;
     height: inherit;
+    margin: 50px auto 10px auto;
+    padding: 20px 30px 30px 30px;
+
     border-style: solid;
     border-width: 2px;
     border-radius: 7px;
     border-color: var(--border);
+
+    background-color: var(--main-background);
+    opacity: 97%;
 }
 
 /*----------------------------------------------------------------------------*/
