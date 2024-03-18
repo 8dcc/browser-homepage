@@ -1,322 +1,250 @@
-const settTab = document.getElementById('settings-tab-container');
-var settings_global_object;
 
-// TODO: Make a checkbox setting to change the css text color with the backgound
-//       Inside updateBackgroundFromSettings
-// TODO: /)$/
+/* TODO: Aren't boolean css_* properties useless? */
+const default_settings = {
+    use_se_icons : false,
+    capitalize_todos : true,
+    shorten_links : false,
+    use_background_color : false,
+    background_col : "#690000",
 
-/* --------------------------------------------------------------- */
-/* Push and pull settings from localstorage */
-function updateLsSettings() {
-    localStorage.setItem('user_settings', JSON.stringify(settings_global_object));
-    renderSettings();
+    /* CSS variables */
+    css_highlight : false,
+    css_highlight_col : "#980000",
+    css_highlight_dark : false,
+    css_highlight_dark_col : "#690000",
+    css_highlight_darker : false,
+    css_highlight_darker_col : "#500000",
+    css_border : false,
+    css_border_col : "#333333",
+    css_input_text : false,
+    css_input_text_col : "#f2f2f2",
+    css_placeholder : false,
+    css_placeholder_col : "#b2b2b2",
+    css_title_text : false,
+    css_title_text_col : "#c1c1c1",
+
+    /* Title background is the same as border */
+    css_background : false,
+    css_background_col : "#121212",
+    css_column_background : false,
+    css_column_background_col : "#111111",
+
+    /* Search engine text is the same as title, see css/variables.css */
+    css_se_background : false,
+    css_se_background_col : "#252525",
+};
+
+/* Initialize object to default settings */
+var settings_object = default_settings;
+
+/*----------------------------------------------------------------------------*/
+/* Read and write settings from localstorage */
+
+function writeStorageSettings() {
+    localStorage.setItem('user_settings', JSON.stringify(settings_object));
+    updateSettingsElements();
 }
 
-function getLsSettings() {
+function readStorageSettings() {
+    /* Get JSON string from localStorage */
     const reference = localStorage.getItem('user_settings');
-    if (reference) {
-        settings_global_object = JSON.parse(reference);
-        renderSettings(settings_global_object);
-        updateBackgroundFromSettings();
-        updateCssFromSettings();        // Update vars from css/variables.css
-    } else {
-        checkEmptyLs();
-    }
+    if (!reference)
+        return;
+
+    /* Parse localStorage JSON into object */
+    const parsed = JSON.parse(reference);
+
+    /* Iterate properties of parsed object */
+    for (const [key, value] of Object.entries(parsed))
+        /* If the property name is valid, save it */
+        if (settings_object.hasOwnProperty(key))
+            settings_object[key] = value;
+
+    /* Update the checkboxes and color pickers of the settings section */
+    updateSettingsElements();
+
+    /* Update the webpage's background depending on settings_object */
+    updateBackgroundFromSettings();
+
+    /* Update CSS variables. See css/variables.css */
+    applyAllCssFromSettings();
 }
 
-/* --------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* Rendering the settings (checkboxes, color, etc.) */
-function renderSettings() {
-    updateBoolSetting("use-se-icons", settings_global_object.use_se_icons);
-    updateBoolSetting("capitalize-todos", settings_global_object.capitalize_todos);
-    updateBoolSetting("shorten-links", settings_global_object.shorten_links);
-    updateStringSetting("cbackground-color", settings_global_object.cbackground_color);
 
-    updateStringSetting("ccss-highlight",        settings_global_object.ccss_highlight);
-    updateStringSetting("ccss-highlight-dark",   settings_global_object.ccss_highlight_dark);
-    updateStringSetting("ccss-highlight-darker", settings_global_object.ccss_highlight_darker);
-    updateStringSetting("ccss-border",           settings_global_object.ccss_border);
-    updateStringSetting("ccss-input-text",       settings_global_object.ccss_input_text);
-    updateStringSetting("ccss-placeholder",      settings_global_object.ccss_placeholder);
-    updateStringSetting("ccss-title-text",       settings_global_object.ccss_title_text);
-    updateStringSetting("ccss-background",       settings_global_object.ccss_background);
-    updateStringSetting("ccss-col-background",   settings_global_object.ccss_col_background);
-    updateStringSetting("ccss-se-background",    settings_global_object.ccss_se_background);
-}
+function updateSettingsElements() {
+    function updateBool(id, val) {
+        const element = document.getElementById(id);
+        if (!element) {
+            console.log(`[settings] Could not find element with id: ${id}`);
+            return;
+        }
 
-function updateBoolSetting(id, setting_state) {
-    const element = document.getElementById(id);
-    if (element) element.checked = setting_state;
-    else console.log(`[settings] Could not find element with id: ${id}`);
-}
-
-function updateStringSetting(id, setting_state) {
-    const element = document.getElementById(id);
-    if (element) element.value = setting_state;
-    else console.log(`[settings] Could not find element with id: ${id}`);
-}
-
-/* --------------------------------------------------------------- */
-/* Checkbox events*/
-settTab.addEventListener('click', function(event) {
-    if (event.target.type === 'checkbox') toggleSetting(event.target.getAttribute('id'));
-});
-
-function toggleSetting(changeme) {
-    const replaced_changeme = changeme.replace(new RegExp("-", "g"), "_");
-    settings_global_object[replaced_changeme] = !settings_global_object[replaced_changeme];
-    updateLsSettings();
-}
-
-/* --------------------------------------------------------------- */
-/* Backgrounnd */
-function changeCustomBackground(use_color) {                 // Change the background settings. Called by the html buttons
-    const cb_c = document.getElementById('cbackground-color');
-
-    if (use_color) {
-        settings_global_object.use_cbackground_color = true;
-        settings_global_object.cbackground_color = cb_c.value;     // Color input
-    } else {
-        settings_global_object.use_cbackground_color = false;
+        element.checked = val;
     }
 
-    updateLsSettings();
+    function updateStr(id, val) {
+        const element = document.getElementById(id);
+        if (!element) {
+            console.log(`[settings] Could not find element with id: ${id}`);
+            return;
+        }
+
+        element.value = val;
+    }
+
+    updateBool("use-se-icons", settings_object.use_se_icons);
+    updateBool("capitalize-todos", settings_object.capitalize_todos);
+    updateBool("shorten-links", settings_object.shorten_links);
+    updateStr("col-background", settings_object.background_col);
+
+    updateStr("css-col-highlight", settings_object.css_highlight_col);
+    updateStr("css-col-highlight-dark", settings_object.css_highlight_dark_col);
+    updateStr("css-col-highlight-darker",
+              settings_object.css_highlight_darker_col);
+    updateStr("css-col-border", settings_object.css_col_border_col);
+    updateStr("css-col-input-text", settings_object.css_input_text_col);
+    updateStr("css-col-placeholder", settings_object.css_placeholder_col);
+    updateStr("css-col-title-text", settings_object.css_title_text_col);
+    updateStr("css-col-background", settings_object.css_background_col);
+    updateStr("css-col-column-background",
+              settings_object.css_column_background_col);
+    updateStr("css-col-se-background", settings_object.css_se_background_col);
+}
+
+/*----------------------------------------------------------------------------*/
+/* Background */
+
+function updateBackgroundFromSettings() {
+    if (settings_object.use_background_color) {
+        console.log("[settings] Applying custom background color...");
+        document.body.style.background = settings_object.background_col;
+    } else {
+        console.log("[settings] Resetting background to the default image...");
+        document.body.style.background =
+          "url('./img/background.png') no-repeat center center fixed";
+        document.body.style.backgroundSize = "cover";
+    }
+}
+
+/* NOTE: Called by the HTML buttons. */
+function changeCustomBackground(wants_color) {
+    settings_object.use_background_color = wants_color;
+
+    /* We want to use plain background, update color itself */
+    if (settings_object.use_background_color) {
+        const color_picker = document.getElementById('col-background');
+        settings_object.background_col = color_picker.value;
+    }
+
+    /* Write updated settings into localStorage */
+    writeStorageSettings();
+
+    /* Update the actual background of the page, to color or image */
     updateBackgroundFromSettings();
 }
 
-function updateBackgroundFromSettings() {           // Apply one thing or another depending on settings
-    if (settings_global_object.use_cbackground_color) {
-        console.log("[settings] Applying custom background color...");
-        applyCustomBackground(settings_global_object.cbackground_color);
-    } else {
-        console.log("[settings] Resetting background to the default image...");
-        resetCustomBackground();
-    }
-}
-
-function applyCustomBackground(custom_color) {      // Change the actual background color
-    document.body.style.background = custom_color;
-}
-
-function resetCustomBackground() {                  // Change the actual background to the image
-    document.body.style.background = "url('./img/background.png') no-repeat center center fixed";
-    document.body.style.backgroundSize = "cover";
-}
-
-/* --------------------------------------------------------------- */
+/*----------------------------------------------------------------------------*/
 /* CSS variables */
 
-// Called by the button's onclick
-function applyCustomCss(idx) {
-    switch (idx) {
-        case 1:
-            changeCssVar("--highlight", "ccss-highlight");
+function applyCssFromSettings(setting_name) {
+    const css_root = document.querySelector(":root");
 
-            // Update localstorage
-            settings_global_object.bcss_highlight = true;
-            settings_global_object.ccss_highlight = document.getElementById("ccss-highlight").value;
+    /* "css_highlight" -> "--highlight" */
+    const css_var_name = setting_name.replace("css_", "--");
 
-            break;
-        case 2:
-            changeCssVar("--highlight-dark", "ccss-highlight-dark");
-            settings_global_object.bcss_highlight_dark = true;
-            settings_global_object.ccss_highlight_dark = document.getElementById("ccss-highlight-dark").value;
-            break;
-        case 3:
-            changeCssVar("--highlight-darker", "ccss-highlight-darker");
-            settings_global_object.bcss_highlight_darker = true;
-            settings_global_object.ccss_highlight_darker = document.getElementById("ccss-highlight-darker").value;
-            break;
-        case 4:
-            changeCssVar("--border", "ccss-border");
-            settings_global_object.bcss_border = true;
-            settings_global_object.ccss_border = document.getElementById("ccss-border").value;
-            break;
-        case 5:
-            changeCssVar("--input-text", "ccss-input-text");
-            settings_global_object.bcss_input_text = true;
-            settings_global_object.ccss_input_text = document.getElementById("ccss-input-text").value;
-            break;
-        case 6:
-            changeCssVar("--input-placeholder", "ccss-placeholder");
-            settings_global_object.bcss_placeholder = true;
-            settings_global_object.ccss_placeholder = document.getElementById("ccss-placeholder").value;
-            break;
-        case 7:
-            changeCssVar("--title-text", "ccss-title-text");
-            settings_global_object.bcss_title_text = true;
-            settings_global_object.ccss_title_text = document.getElementById("ccss-title-text").value;
-            break;
-        case 8:
-            changeCssVar("--main-background", "ccss-background");
-            settings_global_object.bcss_background = true;
-            settings_global_object.ccss_background = document.getElementById("ccss-background").value;
-            break;
-        case 9:
-            changeCssVar("--column-background", "ccss-col-background");
-            settings_global_object.bcss_col_background = true;
-            settings_global_object.ccss_col_background = document.getElementById("ccss-col-background").value;
-            break;
-        case 10:
-            changeCssVar("--se-background", "ccss-se-background");
-            settings_global_object.bcss_se_background = true;
-            settings_global_object.ccss_se_background = document.getElementById("ccss-se-background").value;
-            break;
-        default:
-            console.log("[settings] applyCustomCss got an invalid idx: " + idx);
-            break;
+    const is_enabled = settings_object[setting_name];
+    if (!is_enabled) {
+        /* Remove CSS property */
+        css_root.style.removeProperty(css_var_name);
+        return;
     }
 
-    updateLsSettings();     // Write to localstorage
+    /* Get "css_highlight_col" */
+    const color = settings_object[setting_name + "_col"];
+
+    /* Set CSS variable to the color from the settings */
+    css_root.style.setProperty(css_var_name, color);
 }
 
-function changeCssVar(name, elem_id) {
-    var r = document.querySelector(':root');
-    const element = document.getElementById(elem_id);
-
-    // Set var (--highlight) to the value of it's color input
-    r.style.setProperty(name, element.value);
-}
-
-// Called by the button's onclick
-// applyCustomCss to resetCustomCss vim macro: '<,'>s/changeCssVar(\(".*"\),.*/removeCssVar(\1);
-function resetCustomCss(idx) {
-    switch (idx) {
-        case 1:
-            removeCssVar("--highlight");
-
-            // Update localstorage
-            settings_global_object.bcss_highlight = false;
-
-            break;
-        case 2:
-            removeCssVar("--highlight-dark");
-            settings_global_object.bcss_highlight_dark = false;
-            break;
-        case 3:
-            removeCssVar("--highlight-darker");
-            settings_global_object.bcss_highlight_darker = false;
-            break;
-        case 4:
-            removeCssVar("--border");
-            settings_global_object.bcss_border = false;
-            break;
-        case 5:
-            removeCssVar("--input-text");
-            settings_global_object.bcss_input_text = false;
-            break;
-        case 6:
-            removeCssVar("--input-placeholder");
-            settings_global_object.bcss_placeholder = false;
-            break;
-        case 7:
-            removeCssVar("--title-text");
-            settings_global_object.bcss_title_text = false;
-            break;
-        case 8:
-            removeCssVar("--main-background");
-            settings_global_object.bcss_background = false;
-            break;
-        case 9:
-            removeCssVar("--column-background");
-            settings_global_object.bcss_col_background = false;
-            break;
-        case 10:
-            removeCssVar("--se-background");
-            settings_global_object.bcss_se_background = false;
-            break;
-        default:
-            console.log("[settings] resetCustomCss got an invalid idx: " + idx);
-            break;
-    }
-
-    updateLsSettings();     // Write to localstorage
-}
-
-function removeCssVar(name) {
-    var r = document.querySelector(':root');
-    r.style.removeProperty(name);
-}
-
-function updateCssFromSettings() {
+function applyAllCssFromSettings() {
     console.log("[settings] Applying custom css...");
 
-    // Haters gonna hate
-    if (settings_global_object.bcss_highlight)        applyCustomCss(1);
-    else                                              resetCustomCss(1);
-
-    if (settings_global_object.bcss_highlight_dark)   applyCustomCss(2);
-    else                                              resetCustomCss(2);
-
-    if (settings_global_object.bcss_highlight_darker) applyCustomCss(3);
-    else                                              resetCustomCss(3);
-
-    if (settings_global_object.bcss_border)           applyCustomCss(4);
-    else                                              resetCustomCss(4);
-
-    if (settings_global_object.bcss_input_text)       applyCustomCss(5);
-    else                                              resetCustomCss(5);
-
-    if (settings_global_object.bcss_placeholder)      applyCustomCss(6);
-    else                                              resetCustomCss(6);
-
-    if (settings_global_object.bcss_title_text)       applyCustomCss(7);
-    else                                              resetCustomCss(7);
-
-    if (settings_global_object.bcss_background)       applyCustomCss(8);
-    else                                              resetCustomCss(8);
-
-    if (settings_global_object.bcss_col_background)   applyCustomCss(9);
-    else                                              resetCustomCss(9);
-
-    if (settings_global_object.bcss_se_background)    applyCustomCss(10);
-    else                                              resetCustomCss(10);
+    /* Apply CSS for all "css_*" settings */
+    for (const [key, value] of Object.entries(settings_object))
+        if (key.startsWith("css_") && !key.endsWith("_col"))
+            applyCssFromSettings("key");
 }
 
-/* --------------------------------------------------------------- */
-/* Default settings */
-function checkEmptyLs() {
-    const user_settings_len = 26;
-    if (!localStorage.getItem('user_settings') || Object.keys(JSON.parse(localStorage.getItem('user_settings'))).length < user_settings_len) {
-        console.log("[settings] Detected invalid settings in localstorage. Generating defaults...");
-        var dso = new Object();
+/*----------------------------------------------------------------------------*/
+/* Event listeners for settings */
 
-        dso.use_se_icons          = false;
-        dso.capitalize_todos      = true;     // Same as starting items with ' '
-        dso.shorten_links         = false;    // Same as starting links with '!'
-        dso.use_cbackground_color = false;
-        dso.cbackground_color     = "#690000";
+/* Event listeners for the "Apply" buttons of CSS settings */
+for (const element of document.getElementsByClassName("setting-apply-css")) {
+    element.addEventListener("click", function(e) {
+        /* Get first input at the same level as the current button */
+        const input_element =
+          e.target.parentElement.getElementsByTagName("input")[0];
 
-        /* CSS variables */
-        dso.bcss_highlight        = false;
-        dso.ccss_highlight        = "#980000";
-        dso.bcss_highlight_dark   = false;
-        dso.ccss_highlight_dark   = "#690000";
-        dso.bcss_highlight_darker = false;
-        dso.ccss_highlight_darker = "#500000";
-        dso.bcss_border           = false;
-        dso.ccss_border           = "#333333";
-        dso.bcss_input_text       = false;
-        dso.ccss_input_text       = "#f2f2f2";
-        dso.bcss_placeholder      = false;
-        dso.ccss_placeholder      = "#b2b2b2";
-        dso.bcss_title_text       = false;
-        dso.ccss_title_text       = "#c1c1c1";
-        /* title back is the same as border */
-        dso.bcss_background       = false;
-        dso.ccss_background       = "#121212";
-        dso.bcss_col_background   = false;
-        dso.ccss_col_background   = "#111111";
-        /* search engine text is the same as titles */
-        dso.bcss_se_background    = false;
-        dso.ccss_se_background    = "#252525";
+        /* "css-col-highlight" -> "css_highlight" */
+        const setting_name =
+          input_element.id.replace("css-col", "css").replace("-", "_");
 
-        var default_settings = JSON.stringify(dso);
-        settings_global_object = JSON.parse(default_settings);
-        updateLsSettings();
-    }
+        /* First, we update the settings_object */
+        settings_object[setting_name]          = true;
+        settings_object[setting_name + "_col"] = input_element.value;
+
+        /* Then, write updated settings into localStorage */
+        writeStorageSettings();
+
+        /* Finally, apply the CSS with the settings_object value */
+        applyCssFromSettings(setting_name);
+    });
 }
 
-/* Startup */
-checkEmptyLs();
-getLsSettings();
+/* Event listeners for the "Reset" buttons of CSS settings */
+for (const element of document.getElementsByClassName("setting-reset-css")) {
+    element.addEventListener("click", function(e) {
+        /* Get first input at the same level as the current button */
+        const input_element =
+          e.target.parentElement.getElementsByTagName("input")[0];
+
+        /* "css-col-highlight" -> "css_highlight" */
+        const setting_name =
+          input_element.id.replace("css-col", "css").replace("-", "_");
+
+        /* First, we update the settings_object */
+        settings_object[setting_name] = false;
+
+        /* Then, write updated settings into localStorage */
+        writeStorageSettings();
+
+        /* Finally, apply the CSS with the settings_object value */
+        applyCssFromSettings(setting_name);
+    });
+}
+
+/* Event listeners for the checkboxes */
+for (const element of document.getElementsByClassName("setting-checkbox")) {
+    element.addEventListener("click", function(e) {
+        /* "use-se-icons" -> "use_se_icons" */
+        const replaced_id = e.target.id.replace("-", "_");
+
+        /* Set to true/false depending on checkbox state */
+        settings_object[replaced_id] = e.target.checked;
+
+        /* Write updated settings into localStorage */
+        writeStorageSettings();
+    });
+}
+
+/*----------------------------------------------------------------------------*/
+
+/* If there is no user settings in localStorage, write default one */
+const reference = localStorage.getItem('user_settings');
+if (!reference)
+    writeStorageSettings();
+
+/* Read settings from localStorage and update what's needed */
+readStorageSettings();
