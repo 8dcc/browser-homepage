@@ -189,7 +189,7 @@ for (const element of document.getElementsByClassName("setting-apply-css")) {
 
         /* "css-col-highlight" -> "css_highlight" */
         const setting_name =
-          input_element.id.replace("css-col", "css").replace("-", "_");
+          input_element.id.replace("css-col", "css").replace(/-/g, "_");
 
         /* First, we update the settings_object */
         settings_object[setting_name]          = true;
@@ -212,7 +212,7 @@ for (const element of document.getElementsByClassName("setting-reset-css")) {
 
         /* "css-col-highlight" -> "css_highlight" */
         const setting_name =
-          input_element.id.replace("css-col", "css").replace("-", "_");
+          input_element.id.replace("css-col", "css").replace(/-/g, "_");
 
         /* First, we update the settings_object */
         settings_object[setting_name] = false;
@@ -229,7 +229,7 @@ for (const element of document.getElementsByClassName("setting-reset-css")) {
 for (const element of document.getElementsByClassName("setting-checkbox")) {
     element.addEventListener("click", function(e) {
         /* "use-se-icons" -> "use_se_icons" */
-        const replaced_id = e.target.id.replace("-", "_");
+        const replaced_id = e.target.id.replace(/-/g, "_");
 
         /* Set to true/false depending on checkbox state */
         settings_object[replaced_id] = e.target.checked;

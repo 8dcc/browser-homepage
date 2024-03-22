@@ -104,9 +104,8 @@ function checkSearchEngine() {
         }
 
         /* Remove search engine text ("d ") and add padding */
-        search_query.value =
-          search_query.value.replace(search_query.value.split(" ")[0] + " ",
-                                     "");
+        const search_engine_text = search_query.value.split(" ")[0] + " ";
+        search_query.value = search_query.value.replace(search_engine_text, "");
         search_query.style.paddingLeft = "10px";
     }
 
