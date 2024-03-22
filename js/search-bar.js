@@ -69,7 +69,7 @@ const search_engines = {
 
 function getSearchEngineObject(text) {
     if (!text.includes(" "))
-        return;
+        return null;
 
     /* Iterate search_engines object */
     for (const [key, value] of Object.entries(search_engines))
@@ -110,7 +110,7 @@ function checkSearchEngine() {
     }
 
     /* Check if the user wants to use icons or text */
-    if (settings_global_object["use_se_icons"]) {
+    if (settings_object.use_se_icons) {
         /* We need flex instead of block to center the image vertically */
         se_icon.style.display = "flex";
         se_icon.innerHTML     = `<img src="img/search-engines/${
