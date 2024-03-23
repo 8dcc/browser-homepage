@@ -5,11 +5,6 @@ const embed_video = document.getElementById('embed_video');
 var todos = [];
 var video_ids = [];
 
-// If there is no video
-embed_video.innerHTML = `
-    <br><p>No video to display<p>
-`;
-
 todoForm.addEventListener('submit', function(event) {
     event.preventDefault();
     addTodo(todoInput.value);
