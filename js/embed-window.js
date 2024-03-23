@@ -4,36 +4,49 @@ function showEmbed() {
 }
 
 function hideEmbed() {
-	document.getElementById('embed_video').innerHTML = "<br><p>No video to display<p>";
     document.getElementById('movablewindow').style.display = "none";
+    document.getElementById('embed-video').innerHTML =
+      "<p>No video to display</p>";
 }
 
 function dragElement(element) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    var old_x = 0, old_y = 0;
     element.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
+        element.classList.add("active");
+
+        /* Save cursor position when starting the drag */
+        old_x = e.clientX;
+        old_y = e.clientY;
+
+        document.onmouseup   = stopDraggingElement;
         document.onmousemove = elementDrag;
     }
 
     function elementDrag(e) {
         e = e || window.event;
         e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        element.style.top = (element.offsetTop - pos2) + "px";
-        element.style.left = (element.offsetLeft - pos1) + "px";
+
+        /* Calculate position from last drag difference, save new cursor
+         * position. */
+        const delta_x = e.clientX - old_x;
+        const delta_y = e.clientY - old_y;
+        old_x         = e.clientX;
+        old_y         = e.clientY;
+
+        /* Add deltas */
+        element.style.left = (element.offsetLeft + delta_x) + "px";
+        element.style.top  = (element.offsetTop + delta_y) + "px";
     }
 
-    function closeDragElement() {
-        document.onmouseup = null;
+    function stopDraggingElement() {
+        element.classList.remove("active");
+
+        /* Remove listeners */
+        document.onmouseup   = null;
         document.onmousemove = null;
     }
 }
