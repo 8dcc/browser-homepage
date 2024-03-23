@@ -17,7 +17,7 @@ function show_embed_id(id) {
 		allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 	</iframe>
 	`;
-	showEmbed();
+	showMovableWindow();
 }
 
 /*----------------------------------------------------------------------------*/

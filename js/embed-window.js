@@ -1,15 +1,15 @@
 
-function showEmbed() {
-    document.getElementById('movablewindow').style.display = "block";
+function showMovableWindow() {
+    document.getElementById('movable-window').style.display = "block";
 }
 
-function hideEmbed() {
-    document.getElementById('movablewindow').style.display = "none";
+function hideMovableWindow() {
+    document.getElementById('movable-window').style.display = "none";
     document.getElementById('embed-video').innerHTML =
       "<p>No video to display</p>";
 }
 
-function dragElement(element) {
+function makeDraggable(element) {
     var old_x = 0, old_y = 0;
     element.onmousedown = dragMouseDown;
 
@@ -51,4 +51,4 @@ function dragElement(element) {
     }
 }
 
-dragElement(document.getElementById("movablewindow"));
+makeDraggable(document.getElementById("movable-window"));

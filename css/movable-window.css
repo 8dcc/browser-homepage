@@ -1,5 +1,5 @@
 
-#movablewindow {
+#movable-window {
     display: none;
     position: fixed;
     left: 10px;
@@ -13,17 +13,17 @@
     background-color: var(--main-background);
 }
 
-#movablewindow:hover {
+#movable-window:hover {
     cursor: grab;
 }
 
-#movablewindow.active {
+#movable-window.active {
     cursor: grabbing;
 }
 
 /*----------------------------------------------------------------------------*/
 
-#movablepart-container {
+#movable-window-drag-region {
     display: flex;
     align-items: center;
 
@@ -35,7 +35,7 @@
     font-family: 'Titillium Web', sans-serif;
 }
 
-#movablepart-text {
+#movable-window-title {
     flex: 1;
     align-self: center;
     margin: 0px;
@@ -45,11 +45,11 @@
     color: #ffffff;
 }
 
-#close-embed {
+#movable-window-close {
     margin-right: 5px;
 }
 
-#close-embed:hover {
+#movable-window-close:hover {
     cursor: pointer;
 }
 
