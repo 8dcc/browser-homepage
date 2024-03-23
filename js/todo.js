@@ -1,14 +1,27 @@
 const todoForm = document.querySelector('.todo-form');
 const todoInput = document.querySelector('.todo-input');
 const todoItemsList = document.getElementsByClassName('todo-items')[0];
-const embed_video = document.getElementById('embed_video');
+const embed_video = document.getElementById('embed-video');
 var todos = [];
 var video_ids = [];
 
-todoForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    addTodo(todoInput.value);
-});
+/*----------------------------------------------------------------------------*/
+/* Embed video window */
+
+function show_embed_id(id) {
+	embed_video.innerHTML = `
+	<iframe width="560" height="315"
+		src="https://www.youtube.com/embed/${id}"
+		title="Embed"
+		frameborder="0"
+		allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+	</iframe>
+	`;
+	showEmbed();
+}
+
+/*----------------------------------------------------------------------------*/
+/* TODO */
 
 function addTodo(item) {
     if ( item.trim() !== '' ) {
@@ -41,18 +54,6 @@ function check_for_too_long(text, fsize, ssize, mlen) {
 	} else {
 		return text;
 	}
-}
-
-function show_embed_id(id) {
-	embed_video.innerHTML = `
-	<iframe width="560" height="315"
-		src="https://www.youtube.com/embed/${id}"
-		title="Embed"
-		frameborder="0"
-		allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-	</iframe>
-	`;
-	showEmbed();
 }
 
 function renderTodos(todos) {
@@ -114,15 +115,7 @@ function getFromLocalStorage() {
     }
 }
 
-getFromLocalStorage();
 
-todoItemsList.addEventListener('click', function(event) {
-    if (event.target.classList.contains('checkbox')) {
-        toggleTodo(event.target.parentElement.getAttribute('data-key'));
-    } else if (event.target.classList.contains('delete-button')) {
-        deleteTodo(event.target.parentElement.getAttribute('data-key'));
-    }
-});
 
 function toggleTodo(id) {
     todos.forEach(function(item) {
@@ -139,3 +132,18 @@ function deleteTodo(id) {
     });
     addToLocalStorage(todos);
 }
+
+todoForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    addTodo(todoInput.value);
+});
+
+todoItemsList.addEventListener('click', function(event) {
+    if (event.target.classList.contains('checkbox')) {
+        toggleTodo(event.target.parentElement.getAttribute('data-key'));
+    } else if (event.target.classList.contains('delete-button')) {
+        deleteTodo(event.target.parentElement.getAttribute('data-key'));
+    }
+});
+
+getFromLocalStorage();
