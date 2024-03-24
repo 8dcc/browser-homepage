@@ -2,7 +2,7 @@
 /*----------------------------------------------------------------------------*/
 /* Todo container for "Add item" bar and the todo items */
 
-.todo-container {
+#todo-container {
     width: 600px;
     height: auto;
 
@@ -21,7 +21,7 @@
 /*----------------------------------------------------------------------------*/
 /* Todo title and input */
 
-.todo-title {
+#todo-title {
     padding: 5px;
 
     font-size: 25px;
@@ -30,19 +30,19 @@
     color: var(--title-text);
 }
 
-.todo-form {
+#todo-form {
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.todo-input {
+#todo-input {
     padding: 0px 15px;
 }
 
 /*----------------------------------------------------------------------------*/
 /* Todo list */
 
-.todo-items {
+#todo-items {
     padding: 15px 5px;
     margin: 0px;
     list-style-type: none;

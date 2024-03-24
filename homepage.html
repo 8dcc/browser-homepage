@@ -27,6 +27,7 @@
 
         <!-------------------------- Main container --------------------------->
         <div class="main-container">
+
             <!-- Clock and search bar -->
             <div id="clock"></div>
             <div class="search-bar">
@@ -39,6 +40,7 @@
                     </button>
                 </form>
             </div>
+
             <!-- Bookmarks -->
             <div class="bookmarks">
                 <div class="list-column">
@@ -84,18 +86,15 @@
         </div>
 
         <!-------------------------- Todo container --------------------------->
-        <div class="todo-container">
-            <div class="todo-title">
-                Todo
-            </div>
-            <form class="todo-form">
-                <input type="text" class="custom-input todo-input" placeholder="Add item..."/>
+        <div id="todo-container">
+            <div id="todo-title">Todo</div>
+            <form id="todo-form">
+                <input type="text" id="todo-input" class="custom-input" placeholder="Add item..."/>
                 <button type="submit" class="default-button prompt-button">
                     <img src="./img/add-todo.svg" class="undragable" draggable="false">
                 </button>
             </form>
-            <ul class="todo-items">
-            </ul>
+            <ul id="todo-items"></ul>
         </div>
 
         <!----------------------- Settings container -------------------------->

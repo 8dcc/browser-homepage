@@ -1,149 +1,193 @@
-const todoForm = document.querySelector('.todo-form');
-const todoInput = document.querySelector('.todo-input');
-const todoItemsList = document.getElementsByClassName('todo-items')[0];
-const embed_video = document.getElementById('embed-video');
-var todos = [];
-var video_ids = [];
+const todoForm      = document.getElementById("todo-form");
+const todoInput     = document.getElementById("todo-input");
+const todoItemsList = document.getElementById("todo-items");
+const embed_video   = document.getElementById("embed-video");
+var todos           = [];
 
 /*----------------------------------------------------------------------------*/
 /* Embed video window */
 
-function show_embed_id(id) {
-	embed_video.innerHTML = `
+function showEmbededVideo(id) {
+    embed_video.innerHTML = `
 	<iframe width="560" height="315"
 		src="https://www.youtube.com/embed/${id}"
 		title="Embed"
 		frameborder="0"
-		allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+		allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
 	</iframe>
 	`;
-	showMovableWindow();
+    showMovableWindow();
 }
 
 /*----------------------------------------------------------------------------*/
-/* TODO */
+/* Rendering the todo list */
 
-function addTodo(item) {
-    if ( item.trim() !== '' ) {
-        // If todo item starts with '/', don't capitalize
-        if ( todoInput.value[0] === "/") {
-            item = item.slice(1);
-        // If we are not starting the todo item with a link and we have the capitalize_todos setting enabled, capitalize
-        } else if (todoInput.value.slice(0,4) != "http" && settings_object.capitalize_todos) {
-            item = item.replace(/^\w/, (c) => c.toUpperCase());
-        }
-
-        const todo = {
-            id: Date.now(),
-            name: item,
-            completed: false
-        };
-
-        todos.push(todo);
-        addToLocalStorage(todos);
-        todoInput.value = '';
-    } else {
-        todoInput.value = '';
-        todoInput.focus();
+function shortenText(text, max_len) {
+    if (text.length > max_len) {
+        const start_sz = max_len / 2;
+        const end_sz   = max_len - (start_sz - 3); /* Minus 3 dots */
+        return text.slice(0, start_sz) + "..." + text.slice(-end_sz);
     }
+
+    return text;
 }
 
-function check_for_too_long(text, fsize, ssize, mlen) {
-	if (text.length > mlen) {		// 66 is the max size to not overflow
-		return text.slice(0,fsize) + "..." + text.slice(-ssize);
-	} else {
-		return text;
-	}
+function replaceLinks(text) {
+    /* Might start with '!' to explicitly disable shortening */
+    const url_regex = /(!?)(https?:\/\/[^\s]+)/gi
+
+    /* Used for embedding videos */
+    const youtube_regex = /.*youtube.[a-z]{2,}\/watch\?v=([^\s]+)/i
+
+    return text.replace(url_regex, function(match, exclamation, url) {
+        const inner_text = (settings_object.shorten_links || exclamation != "")
+                             ? "Link"
+                             : shortenText(url, 65);
+
+        /* Convert link to <a> tag */
+        var ret = '<a href="' + url + '">' + inner_text + '</a>';
+
+        /* If the link is a YouTube video, add "embed" button */
+        const youtube_match = url.match(youtube_regex);
+        if (youtube_match != null)
+            ret += ` <a class="embed-button" onclick="showEmbededVideo('${
+              youtube_match[1]}')">(embed)</a>`;
+
+        /* And finally, replace it */
+        return ret;
+    })
 }
 
 function renderTodos(todos) {
     todoItemsList.innerHTML = '';
+
     todos.forEach(function(item) {
-        const checked_class = item.completed ? ' checked' : '';
-        const li = document.createElement('li');
+        var item_content = replaceLinks(item.name);
 
-        li.setAttribute('class', 'todo-item');
-        li.setAttribute('data-key', item.id);
+        /* Create element tree */
+        const li = document.createElement("li");
+        li.classList.add("todo-item");
+        li.dataset.key = item.id;
 
-        if (item.name.includes("http")) {
-            var pre_link = item.name.split("http")[0];
+        const checkbox = document.createElement("button");
+        checkbox.classList.add("custom-input", "checkbox");
 
-            // Used to check if the char before the link is '!'
-            var pre_link_char = pre_link[pre_link.length - 1];
-            // If the char before the link is !, remove it from the pre_link str
-            if (pre_link_char == '!') pre_link = pre_link.slice(0,-1);
+        const text_container = document.createElement("div");
+        text_container.classList.add("todo-text-container");
 
-            var actual_link = 'http' + item.name.split("http")[1].split(" ")[0].trim();
-            var extra_text = item.name.split(actual_link)[1];
-            // The first part that the url will be splitted. If the user has more text, give more priority.
-            var fpart = (extra_text.length > 5) ? 30 : 40;
-            var link_text = (settings_object.shorten_links || pre_link_char == '!') ? "Link" : check_for_too_long(actual_link, fpart, 15, 66);
+        const todo_text = document.createElement("div");
+        todo_text.classList.add("todo-text");
+        todo_text.innerHTML = item_content;
 
-            if (item.name.includes("youtube.com/watch")) {
-                var embed_video_id = item.name.split("v=")[1].slice(0,11);
-				var item_to_add = pre_link + '<a href="' + actual_link + '">' + link_text + '</a> ' +
-					`<a class="embed-button" onclick="show_embed_id('${embed_video_id}')">(embed)</a>` + extra_text;
-            } else {
-                var item_to_add = pre_link + '<a href="' + actual_link + '">' + link_text + '</a>' + extra_text;
-            }
-        } else {
-            var item_to_add = item.name;
-        }
+        if (item.completed)
+            todo_text.classList.add("checked");
 
-        li.innerHTML = `
-			<button class="custom-input checkbox"></button>
-			<div class="todo-text-container">
-				<div class="todo-text${checked_class}">${item_to_add}</div>
-			</div>
-			<button class="default-button delete-button"></button>
-        `;
-        todoItemsList.append(li);
+        const delete_button = document.createElement("button");
+        delete_button.classList.add("default-button", "delete-button");
+
+        /*
+         * <ul>
+         *     ...
+         *
+         *     <li class="..." data-key="...">
+         *         <button class="..."/>
+         *         <div class="...">
+         *             <div class="...">Content</div>
+         *         </div>
+         *         <button class="..."/>
+         *     </li>
+         * </ul>
+         */
+        text_container.appendChild(todo_text);
+        li.appendChild(checkbox);
+        li.appendChild(text_container);
+        li.appendChild(delete_button);
+        todoItemsList.appendChild(li);
     });
 }
 
-function addToLocalStorage(todos) {
+/*----------------------------------------------------------------------------*/
+/* Managing the items */
+
+function addTodo(item) {
+    if (item.trim() == "") {
+        todoInput.value = '';
+        return;
+    }
+
+    if (todoInput.value[0] === "/") {
+        /* If todo item starts with '/', don't capitalize */
+        item = item.slice(1);
+    } else if (todoInput.value.startsWith("http") &&
+               settings_object.capitalize_todos) {
+        /* If we are not starting the todo item with a link and we have the
+         * capitalize_todos setting enabled, capitalize */
+        item = item.replace(/^\w/, (c) => c.toUpperCase());
+    }
+
+    const todo = {
+        id : Date.now(),
+        name : item,
+        completed : false,
+    };
+
+    todos.push(todo);
+    writeLocalStorage();
+
+    todoInput.value = '';
+}
+
+function writeLocalStorage() {
     localStorage.setItem('todos', JSON.stringify(todos));
     renderTodos(todos);
-    todoInput.focus();
 }
 
-function getFromLocalStorage() {
+function readLocalStorage() {
     const reference = localStorage.getItem('todos');
-    if (reference) {
-        todos = JSON.parse(reference);
-        renderTodos(todos);
-    }
+    if (!reference)
+        return;
+
+    todos = JSON.parse(reference);
+    renderTodos(todos);
 }
-
-
 
 function toggleTodo(id) {
     todos.forEach(function(item) {
-        if (item.id == id) {
+        if (item.id == id)
             item.completed = !item.completed;
-        }
     });
-    addToLocalStorage(todos);
+
+    writeLocalStorage();
 }
 
 function deleteTodo(id) {
     todos = todos.filter(function(item) {
         return item.id != id;
     });
-    addToLocalStorage(todos);
+
+    writeLocalStorage();
 }
+
+/*----------------------------------------------------------------------------*/
+/* Event listeners */
 
 todoForm.addEventListener('submit', function(event) {
     event.preventDefault();
     addTodo(todoInput.value);
+    todoInput.focus();
 });
 
 todoItemsList.addEventListener('click', function(event) {
-    if (event.target.classList.contains('checkbox')) {
-        toggleTodo(event.target.parentElement.getAttribute('data-key'));
-    } else if (event.target.classList.contains('delete-button')) {
-        deleteTodo(event.target.parentElement.getAttribute('data-key'));
-    }
+    if (event.target.classList.contains('checkbox'))
+        /* We are marking it as completed */
+        toggleTodo(event.target.parentElement.dataset.key);
+    else if (event.target.classList.contains('delete-button'))
+        /* We are deleting */
+        deleteTodo(event.target.parentElement.dataset.key);
 });
 
-getFromLocalStorage();
+/*----------------------------------------------------------------------------*/
+/* Startup */
+
+readLocalStorage();
