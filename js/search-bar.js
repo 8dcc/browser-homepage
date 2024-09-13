@@ -65,6 +65,13 @@ const search_engines = {
         icon_h : "25px",
         text : "Man",
     },
+
+    D : {
+        url : "https://dle.rae.es/",
+        icon : "dle.png",
+        icon_h : "25px",
+        text : "DLE",
+    },
 };
 
 function getSearchEngineObject(text) {
