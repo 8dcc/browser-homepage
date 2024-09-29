@@ -16,7 +16,7 @@ You can try the website [[https://8dcc.github.io/browser-homepage/homepage.html]
 
 Features:
 - Search bar with custom search engines. Easily modified from
-  [[file:js/search-bar.js][js/search-bar.js]]. See bellow.
+  [[file:js/search-bar.js][js/search-bar.js]]. See below.
 - Bookmarks. Easily modified from [[https://github.com/8dcc/browser-homepage/blob/main/homepage.html][homepage.html]].
 - Todo list. It allows you to add, delete and mark items as completed.
 - Todo list supports URLs, and embeds YouTube videos in a movable window.
