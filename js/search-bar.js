@@ -1,5 +1,5 @@
 const search_query          = document.getElementById("search-query");
-const default_search_engine = "s";
+const default_search_engine = "dd";
 var user_search_engine      = null;
 
 const search_engines = {
