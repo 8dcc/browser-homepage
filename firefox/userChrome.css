@@ -3,7 +3,8 @@
  * to install: https://github.com/8dcc/browser-homepage/tree/main/firefox
  */
 
-/*-------------------------------- TABS --------------------------------*/
+/*----------------------------------------------------------------------------*/
+/* Tabs */
 
 /* All tab backgrounds */
 .tab-background {
@@ -22,7 +23,13 @@
     border-style: solid none none none !important;
 }
 
-/*-------------------------------- MENUS -------------------------------*/
+/* Remove "List all tabs" button */
+#alltabs-button {
+    display: none !important;
+}
+
+/*----------------------------------------------------------------------------*/
+/* Menus */
 
 /* Right click. Less padding */
 menupopup>menu,
